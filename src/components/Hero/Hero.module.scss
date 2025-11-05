@@ -1,0 +1,271 @@
+$font: var(--font-montserrat);
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a2e;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.textContent {
+  flex: 1;
+  max-width: 100%;
+  padding-left: 0;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 80px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-family: $font;
+}
+
+.subtitle {
+  font-size: clamp(18px, 2.5vw, 32px);
+  font-weight: 400;
+  color: white;
+  line-height: 1.5;
+  font-family: $font;
+}
+
+.arrowLeft,
+.arrowRight {
+  width: auto;
+  height: auto;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+  z-index: 3;
+  padding: 10px;
+  flex-shrink: 0;
+
+  svg {
+    width: clamp(24px, 3vw, 40px);
+    height: clamp(24px, 3vw, 40px);
+    stroke-width: 2;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.pagination {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: clamp(12px, 2vw, 20px);
+  z-index: 2;
+}
+
+.paginationDot {
+  width: clamp(60px, 8vw, 120px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &.active {
+    background: white;
+  }
+}
+
+// Большие экраны (1920px+)
+@media (min-width: 1920px) {
+  .heroContent {
+    padding: 0 80px;
+  }
+}
+
+// Очень большие экраны (1440px - 1919px)
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .heroContent {
+    padding: 0 70px;
+  }
+}
+
+// Ноутбуки (1201px - 1439px)
+@media (min-width: 1201px) and (max-width: 1439px) {
+  .heroContent {
+    padding: 0 60px;
+    gap: 50px;
+  }
+}
+
+// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .heroContent {
+    padding: 0 50px;
+    gap: 40px;
+  }
+}
+
+// Планшеты портрет (768px - 1023px)
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero {
+    min-height: 550px;
+  }
+
+  .heroContent {
+    padding: 0 40px;
+    gap: 35px;
+  }
+
+  .title {
+    font-size: clamp(32px, 4vw, 60px);
+  }
+
+  .subtitle {
+    font-size: clamp(16px, 2vw, 28px);
+  }
+
+  .pagination {
+    bottom: 35px;
+  }
+}
+
+// Обычные телефоны (640px - 767px)
+@media (max-width: 767px) and (min-width: 640px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .heroContent {
+    padding: 0 30px;
+    gap: 25px;
+  }
+
+  .title {
+    font-size: clamp(28px, 4vw, 48px);
+  }
+
+  .subtitle {
+    font-size: clamp(14px, 2vw, 22px);
+  }
+
+  .pagination {
+    bottom: 30px;
+    gap: 10px;
+  }
+
+  .paginationDot {
+    width: clamp(40px, 6vw, 80px);
+  }
+}
+
+// Маленькие телефоны (480px - 639px)
+@media (max-width: 639px) and (min-width: 480px) {
+  .hero {
+    min-height: 450px;
+  }
+
+  .heroContent {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    padding: 8px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .title {
+    font-size: clamp(24px, 5vw, 40px);
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: clamp(14px, 2.5vw, 20px);
+  }
+
+  .pagination {
+    bottom: 25px;
+    gap: 8px;
+  }
+
+  .paginationDot {
+    width: clamp(35px, 7vw, 60px);
+    height: 3px;
+  }
+}
+
+// Очень маленькие телефоны (до 479px)
+@media (max-width: 479px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .heroContent {
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    padding: 6px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .title {
+    font-size: clamp(20px, 5vw, 32px);
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: clamp(12px, 2.5vw, 18px);
+  }
+
+  .pagination {
+    bottom: 20px;
+    gap: 6px;
+  }
+
+  .paginationDot {
+    width: clamp(30px, 8vw, 50px);
+    height: 3px;
+  }
+}

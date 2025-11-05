@@ -1,0 +1,378 @@
+.footer {
+  background: #1a1a2e;
+  padding: 60px 0 30px;
+  color: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.logoIcon {
+  font-size: 28px;
+}
+
+.logoText {
+  font-family: var(--font-manrope);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-manrope);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.address {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-family: var(--font-manrope);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-end;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  font-family: var(--font-manrope);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-manrope);
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+// Большие экраны (1920px+)
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+// Очень большие экраны (1440px - 1919px)
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+// Ноутбуки (1201px - 1439px)
+@media (min-width: 1201px) and (max-width: 1439px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+}
+
+// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .container {
+    padding: 0 30px;
+    gap: 40px;
+  }
+
+  .nav {
+    gap: 24px;
+  }
+
+  .navLink {
+    font-size: 15px;
+  }
+}
+
+// Планшеты портрет (768px - 1023px)
+@media (max-width: 1023px) and (min-width: 768px) {
+  .footer {
+    padding: 50px 0 25px;
+  }
+
+  .container {
+    padding: 0 30px;
+    gap: 40px;
+  }
+
+  .left {
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .phone {
+    font-size: 16px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 13px;
+  }
+}
+
+// Обычные телефоны (640px - 767px)
+@media (max-width: 767px) and (min-width: 640px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 35px;
+    padding: 0 25px;
+  }
+
+  .left {
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logoIcon {
+    font-size: 24px;
+  }
+
+  .phone {
+    font-size: 15px;
+  }
+
+  .address {
+    font-size: 13px;
+  }
+
+  .right {
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+
+  .copyright {
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footerLink {
+    font-size: 12px;
+  }
+}
+
+// Маленькие телефоны (480px - 639px)
+@media (max-width: 639px) and (min-width: 480px) {
+  .footer {
+    padding: 35px 0 18px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .left {
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .logoIcon {
+    font-size: 22px;
+  }
+
+  .phone {
+    font-size: 14px;
+  }
+
+  .address {
+    font-size: 12px;
+  }
+
+  .right {
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
+
+  .copyright {
+    align-items: flex-start;
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footerLink {
+    font-size: 11px;
+  }
+}
+
+// Очень маленькие телефоны (до 479px)
+@media (max-width: 479px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .left {
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .logoIcon {
+    font-size: 20px;
+  }
+
+  .phone {
+    font-size: 13px;
+  }
+
+  .address {
+    font-size: 11px;
+  }
+
+  .right {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .navLink {
+    font-size: 11px;
+  }
+
+  .copyright {
+    align-items: flex-start;
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footerLink {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,303 @@
+$font: var(--font-montserrat);
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  transition: background 0.3s ease;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  text-decoration: none;
+  font-family: $font;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.phone,
+.email {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  text-decoration: none;
+  font-family: $font;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+// Большие экраны (1920px+)
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+// Очень большие экраны (1440px+)
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+// Ноутбуки (1200px - 1439px)
+@media (max-width: 1439px) and (min-width: 1201px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 14px;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  .phone,
+  .email {
+    font-size: 12px;
+  }
+}
+
+// Планшеты портрет (768px - 1023px)
+@media (max-width: 1023px) {
+  .nav {
+    gap: 16px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 14px;
+  }
+
+  .phone,
+  .email {
+    font-size: 11px;
+  }
+}
+
+// Обычные телефоны (640px - 767px)
+@media (max-width: 767px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 56px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+
+    &.navOpen {
+      transform: translateX(0);
+    }
+  }
+
+  .navLink {
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .contactInfo {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+
+    span {
+      width: 100%;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    &.open {
+      span {
+        &:nth-of-type(1) {
+          transform: rotate(45deg) translateY(8px);
+        }
+
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+          transform: rotate(-45deg) translateY(-8px);
+        }
+      }
+    }
+  }
+}
+
+// Маленькие телефоны (480px - 639px)
+@media (max-width: 639px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .container {
+    padding: 0 12px;
+    gap: 12px;
+  }
+
+  .logoIcon {
+    width: 36px;
+    height: 50px;
+  }
+
+  .nav {
+    top: 70px;
+    padding: 25px 15px;
+  }
+
+  .navLink {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .mobileMenuButton {
+    width: 28px;
+    height: 22px;
+  }
+}
+
+// Очень маленькие телефоны (до 479px)
+@media (max-width: 479px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 45px;
+  }
+
+  .nav {
+    top: 65px;
+    padding: 20px 12px;
+    gap: 15px;
+  }
+
+  .navLink {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
