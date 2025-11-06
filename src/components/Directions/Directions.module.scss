@@ -1,56 +1,181 @@
 .directions {
-  padding: 120px 0;
-  background: #f5f5f5;
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.header {
-  margin-bottom: 60px;
-}
-
-.title {
-  font-size: 48px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 20px;
-  font-family: var(--font-sans);
-}
-
-.subtitle {
-  font-size: 20px;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 32px;
-  max-width: 1000px;
-  font-family: var(--font-sans);
-}
-
-.catalogBtn {
-  padding: 14px 32px;
-  background: #1a1a2e;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-family: var(--font-sans);
-
-  &:hover {
-    background: #2a2a3e;
+  padding: 120px 10vw;
+  background: white;
+  
+  // Планшеты
+  @media (max-width: 1024px) {
+    padding: 80px 6vw;
+  }
+  
+  // Мобильные
+  @media (max-width: 768px) {
+    padding: 60px 4vw;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 40px 20px;
   }
 }
 
-.directionsGrid {
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 24px;
+  }
+}
+
+.firstRow {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  
+  // Планшеты
+  @media (max-width: 1024px) {
+    gap: 40px;
+  }
+  
+  // Мобильные
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 24px;
+  }
+}
+
+.header {
+  font-family: var(--font-montserrat);
+  
+  .title {
+    font-size: 54px;
+    font-weight: 500;
+    color: #1a1a2e;
+    margin-bottom: 24px;
+    font-family: var(--font-sans);
+    line-height: 1.1;
+    
+    // Планшеты
+    @media (max-width: 1024px) {
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+    
+    // Мобильные
+    @media (max-width: 768px) {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 60px;
+    
+    // Планшеты
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    
+    // Мобильные
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.catalogBtn {
+  background: #3E619B;
+  color: white;
+  border: none;
+  padding: 13px 30px;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block;
+  
+  &:hover {
+    background: #2d2d44;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.firstRowCards,
+.secondRow {
+  display: grid;
+  gap: 40px;
+  width: 100%;
+  height: 320px;
+  align-items: stretch;
+  
+  // Планшеты
+  @media (max-width: 1024px) {
+    gap: 30px;
+    height: 280px;
+  }
+  
+  // Мобильные
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    height: auto;
+    min-height: 260px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 20px;
+    min-height: 240px;
+  }
+}
+
+.firstRowCards {
+  grid-template-columns: 1fr 1fr;
+}
+
+.secondRow {
+  grid-template-columns: repeat(4, 1fr);
+  
+  // Планшеты
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .directionCard {
@@ -58,269 +183,140 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  // Мобильные
+  @media (max-width: 768px) {
+    border-radius: 10px;
+    min-height: 260px;
+  }
+  
+  @media (max-width: 480px) {
+    border-radius: 10px;
+    min-height: 240px;
   }
 }
 
 .directionImage {
-  width: 100%;
-  height: 280px;
-  background-size: cover;
-  background-position: center;
-  background-color: #e0e0e0;
   position: relative;
-  border-radius: 12px 12px 0 0;
+  height: 100%;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent);
+  }
 }
 
 .directionIcon {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  background: rgba(26, 26, 46, 0.9);
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    top: 8px;
+    right: 8px;
+    
+    svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    top: 6px;
+    right: 6px;
+    
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 .directionTitle {
-  padding: 24px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1a1a2e;
+  position: absolute;
+  bottom: 16px;
+  left: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  display: block;
+  font-size: 13px;
+  color: #000;
+  background: #fff;
+  border-radius: 50px;
   font-family: var(--font-manrope);
-}
-
-// Большие экраны (1920px+)
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1600px;
+  z-index: 2;
+  white-space: nowrap;
+  box-sizing: border-box;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  // Планшеты
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    padding: 8px 18px;
+    bottom: 14px;
+    left: 8px;
+    right: 8px;
+    max-width: calc(100% - 16px);
   }
-}
-
-// Очень большие экраны (1440px - 1919px)
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .container {
-    max-width: 1520px;
+  
+  // Мобильные
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 8px 16px;
+    bottom: 12px;
+    left: 8px;
+    right: 8px;
+    max-width: calc(100% - 16px);
   }
-}
-
-// Ноутбуки (1201px - 1439px)
-@media (min-width: 1201px) and (max-width: 1439px) {
-  .container {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-}
-
-// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .container {
-    padding: 0 30px;
-  }
-
-  .directionsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .directionImage {
-    height: 260px;
-  }
-}
-
-// Планшеты портрет (768px - 1023px)
-@media (max-width: 1023px) and (min-width: 768px) {
-  .directions {
-    padding: 100px 0;
-  }
-
-  .container {
-    padding: 0 30px;
-  }
-
-  .header {
-    margin-bottom: 50px;
-  }
-
-  .title {
-    font-size: clamp(36px, 4vw, 42px);
-  }
-
-  .subtitle {
-    font-size: clamp(18px, 2vw, 20px);
-  }
-
-  .directionsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .directionImage {
-    height: 250px;
-  }
-
-  .directionTitle {
-    padding: 20px;
-    font-size: 16px;
-  }
-}
-
-// Обычные телефоны (640px - 767px)
-@media (max-width: 767px) and (min-width: 640px) {
-  .directions {
-    padding: 80px 0;
-  }
-
-  .container {
-    padding: 0 25px;
-  }
-
-  .header {
-    margin-bottom: 40px;
-  }
-
-  .title {
-    font-size: clamp(32px, 4vw, 38px);
-  }
-
-  .subtitle {
-    font-size: clamp(16px, 2vw, 18px);
-    margin-bottom: 24px;
-  }
-
-  .catalogBtn {
-    padding: 12px 28px;
-    font-size: 15px;
-  }
-
-  .directionsGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .directionImage {
-    height: 240px;
-  }
-
-  .directionIcon {
-    width: 36px;
-    height: 36px;
-    top: 12px;
-    right: 12px;
-  }
-
-  .directionTitle {
-    padding: 20px;
-    font-size: 16px;
-  }
-}
-
-// Маленькие телефоны (480px - 639px)
-@media (max-width: 639px) and (min-width: 480px) {
-  .directions {
-    padding: 60px 0;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-
-  .header {
-    margin-bottom: 35px;
-  }
-
-  .title {
-    font-size: clamp(28px, 4vw, 34px);
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    font-size: clamp(14px, 2vw, 16px);
-    margin-bottom: 20px;
-  }
-
-  .catalogBtn {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
-  .directionsGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .directionImage {
-    height: 220px;
-  }
-
-  .directionIcon {
-    width: 32px;
-    height: 32px;
-    top: 12px;
-    right: 12px;
-  }
-
-  .directionTitle {
-    padding: 18px;
-    font-size: 15px;
-  }
-}
-
-// Очень маленькие телефоны (до 479px)
-@media (max-width: 479px) {
-  .directions {
-    padding: 50px 0;
-  }
-
-  .container {
-    padding: 0 15px;
-  }
-
-  .header {
-    margin-bottom: 30px;
-  }
-
-  .title {
-    font-size: clamp(24px, 4vw, 30px);
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-size: clamp(13px, 2vw, 15px);
-    margin-bottom: 16px;
-  }
-
-  .catalogBtn {
-    padding: 10px 20px;
-    font-size: 13px;
-  }
-
-  .directionsGrid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .directionImage {
-    height: 200px;
-  }
-
-  .directionIcon {
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    right: 10px;
-  }
-
-  .directionTitle {
-    padding: 16px;
-    font-size: 14px;
+  
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 7px 14px;
+    bottom: 10px;
+    left: 6px;
+    right: 6px;
+    max-width: calc(100% - 12px);
   }
 }

@@ -1,20 +1,27 @@
 .catalog {
-  padding: 120px 0;
+  padding: 120px 0 120px 10vw;
+  overflow:visible;
   background: white;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
 
 .header {
+  padding-right: 10vw;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 60px;
   gap: 40px;
+  font-family: var(--font-montserrat);
+  
+  h2 {
+    font-size: 54px;
+    font-weight: 500;
+  }
+  
+  p {
+    font-size: 16px;
+  }
 }
 
 .title {
@@ -36,93 +43,117 @@
 .navigation {
   display: flex;
   gap: 12px;
+  margin-left: 10%;
 }
 
 .navButton {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #e0e0e0;
-  color: #1a1a2e;
+  width: 50px;
+  height: 34px;
+  border-radius: 40px;
+  border: 1px solid black;
+  color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s, border-color 0.3s, opacity 0.3s;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
 
   &:hover:not(:disabled) {
-    background: #f5f5f5;
-    border-color: #1a1a2e;
+    background-color: #e0e0e0;
   }
 
   &:disabled {
-    opacity: 0.4;
     cursor: not-allowed;
+    background: #282828;
+    
+    svg {
+      path {
+        fill: white;
+      }
+    }
   }
 }
 
-.productsContainer {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 20px;
-
-  &::-webkit-scrollbar {
+// Swiper контейнер
+.swiperContainer {
+  width: 100%;
+  
+  // Скрываем стандартные стрелки Swiper
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
+  
+  // Кастомные стили для пагинации Swiper
+  .swiper-pagination {
+    position: relative;
+    margin-top: 40px;
+    
+    .swiper-pagination-bullet {
+      width: 40px;
+      height: 4px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.3s;
+      opacity: 1;
+      
+      &.swiper-pagination-bullet-active {
+        background: #1a1a2e;
+      }
+    }
+  }
+}
+
+.swiperSlide {
+  padding-top: 5px;
+  width: 426px !important; // Фиксированная ширина как в оригинальном productCard
 }
 
 .productCard {
-  flex: 0 0 380px;
-  background: white;
-  border-radius: 12px;
+  width: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
 }
 
 .productImage {
   width: 100%;
-  height: 320px;
-  background-size: cover;
-  background-position: center;
-  background-color: #e0e0e0;
+  height: 100%;
   position: relative;
-  border-radius: 12px 12px 0 0;
+  border-radius: 20px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .productIcon {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  background: rgba(26, 26, 46, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
 }
 
 .productTitle {
-  padding: 24px;
+  padding-top: 10px;
   font-size: 18px;
   font-weight: 600;
   color: #1a1a2e;
   font-family: var(--font-manrope);
 }
 
+// Кастомная пагинация (используем вместо стандартной Swiper)
 .pagination {
   display: flex;
   gap: 12px;
@@ -143,262 +174,50 @@
   }
 }
 
-// Большие экраны (1920px+)
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1600px;
+@media (max-width: 1280px) {
+  .header {
+    h2 {
+      font-size: 26px;
+    }
+    
+    p {
+      font-size: 13px;
+    }
   }
 }
 
-// Очень большие экраны (1440px - 1919px)
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .container {
-    max-width: 1520px;
-  }
-}
-
-// Ноутбуки (1201px - 1439px)
-@media (min-width: 1201px) and (max-width: 1439px) {
-  .container {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-}
-
-// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .container {
-    padding: 0 30px;
-  }
-
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 30px;
+    align-items: start;
+    gap: 15px;
+    
+    h2 {
+      margin-bottom: 0;
+    }
   }
-
-  .productCard {
-    flex: 0 0 340px;
-  }
-
-  .productImage {
-    height: 300px;
-  }
-}
-
-// Планшеты портрет (768px - 1023px)
-@media (max-width: 1023px) and (min-width: 768px) {
-  .catalog {
-    padding: 100px 0;
-  }
-
-  .container {
-    padding: 0 30px;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 50px;
-  }
-
-  .title {
-    font-size: clamp(36px, 4vw, 42px);
-  }
-
-  .subtitle {
-    font-size: clamp(18px, 2vw, 20px);
-  }
-
+  
   .navigation {
-    align-self: flex-start;
+    margin-left: 0;
   }
-
-  .productCard {
-    flex: 0 0 320px;
-  }
-
-  .productImage {
-    height: 280px;
-  }
-
-  .productTitle {
-    padding: 20px;
-    font-size: 16px;
+  
+  .swiperSlide {
+    width: 300px; // Уменьшаем ширину слайдов на мобильных
   }
 }
 
-// Обычные телефоны (640px - 767px)
-@media (max-width: 767px) and (min-width: 640px) {
+@media (max-width: 480px) {
   .catalog {
-    padding: 80px 0;
+    padding: 30px 17px;
   }
-
-  .container {
-    padding: 0 25px;
-  }
-
   .header {
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 40px;
+    p {
+      font-size: 10px;
+    }
   }
-
-  .title {
-    font-size: clamp(32px, 4vw, 38px);
+  
+  .swiperSlide {
+    width: 100% !important; // Еще меньше на очень маленьких экранах
   }
-
-  .subtitle {
-    font-size: clamp(16px, 2vw, 18px);
-  }
-
-  .navButton {
-    width: 44px;
-    height: 44px;
-  }
-
-  .productCard {
-    flex: 0 0 300px;
-  }
-
-  .productImage {
-    height: 260px;
-  }
-
-  .productIcon {
-    width: 36px;
-    height: 36px;
-    top: 12px;
-    right: 12px;
-  }
-
-  .productTitle {
-    padding: 20px;
-    font-size: 16px;
-  }
-
-  .pagination {
-    margin-top: 30px;
-  }
-}
-
-// Маленькие телефоны (480px - 639px)
-@media (max-width: 639px) and (min-width: 480px) {
-  .catalog {
-    padding: 60px 0;
-  }
-
-  .container {
-    padding: 0 20px;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 35px;
-  }
-
-  .title {
-    font-size: clamp(28px, 4vw, 34px);
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    font-size: clamp(14px, 2vw, 16px);
-  }
-
-  .navButton {
-    width: 40px;
-    height: 40px;
-  }
-
-  .productCard {
-    flex: 0 0 280px;
-  }
-
-  .productImage {
-    height: 240px;
-  }
-
-  .productIcon {
-    width: 32px;
-    height: 32px;
-    top: 12px;
-    right: 12px;
-  }
-
-  .productTitle {
-    padding: 18px;
-    font-size: 15px;
-  }
-
-  .pagination {
-    margin-top: 25px;
-    gap: 10px;
-  }
-
-  .paginationDot {
-    width: 35px;
-    height: 3px;
-  }
-}
-
-// Очень маленькие телефоны (до 479px)
-@media (max-width: 479px) {
-  .catalog {
-    padding: 50px 0;
-  }
-
-  .container {
-    padding: 0 15px;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 30px;
-  }
-
-  .title {
-    font-size: clamp(24px, 4vw, 30px);
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-size: clamp(13px, 2vw, 15px);
-  }
-
-  .navButton {
-    width: 38px;
-    height: 38px;
-  }
-
-  .productCard {
-    flex: 0 0 260px;
-  }
-
-  .productImage {
-    height: 220px;
-  }
-
-  .productIcon {
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    right: 10px;
-  }
-
-  .productTitle {
-    padding: 16px;
-    font-size: 14px;
-  }
-
-  .pagination {
-    margin-top: 20px;
-    gap: 8px;
-  }
-
-  .paginationDot {
-    width: 30px;
-    height: 3px;
-  }
+  
 }
