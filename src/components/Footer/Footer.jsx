@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
@@ -8,7 +8,15 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.logo}>
-            <div className={styles.logoIcon}>🔥</div>
+            <div className={styles.logoIcon}>
+              <Image
+                src='/icons/Header/logo-fire.svg'
+                alt='Огнещит'
+                width={64}
+                height={64}
+                priority
+              />
+            </div>
             <span className={styles.logoText}>СПО «ОГНЕЩИТ»</span>
           </div>
           <div className={styles.contactInfo}>
