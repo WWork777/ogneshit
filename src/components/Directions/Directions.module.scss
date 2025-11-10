@@ -270,15 +270,17 @@
     }
   }
 }
-
+.titleCon {
+  
+}
 .directionTitle {
-  position: absolute;
-  bottom: 16px;
+  position: relative;
+  top: 85%;
   left: 10px;
   right: 10px;
   padding: 10px 20px;
   font-weight: 500;
-  display: block;
+  display: inline;
   font-size: 13px;
   color: #000;
   background: #fff;
@@ -287,15 +289,14 @@
   z-index: 2;
   white-space: nowrap;
   box-sizing: border-box;
-  max-width: calc(100% - 20px);
   overflow: hidden;
   text-overflow: ellipsis;
   
   // Планшеты
   @media (max-width: 1024px) {
-    font-size: 12px;
+    font-size: 7px;
     padding: 8px 18px;
-    bottom: 14px;
+    top: calc(100% - 40px);
     left: 8px;
     right: 8px;
     max-width: calc(100% - 16px);
@@ -303,18 +304,16 @@
   
   // Мобильные
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 9px;
     padding: 8px 16px;
-    bottom: 12px;
     left: 8px;
     right: 8px;
     max-width: calc(100% - 16px);
   }
   
   @media (max-width: 480px) {
-    font-size: 11px;
+    font-size: 6px;
     padding: 7px 14px;
-    bottom: 10px;
     left: 6px;
     right: 6px;
     max-width: calc(100% - 12px);
