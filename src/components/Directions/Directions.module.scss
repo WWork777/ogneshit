@@ -36,6 +36,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
+  a {
+    display: block;
+    height: 100%;
+  }
   
   // Планшеты
   @media (max-width: 1024px) {
@@ -171,6 +175,10 @@
 
 .secondRow {
   grid-template-columns: repeat(4, 1fr);
+    a {
+    display: block;
+    height: 100%;
+  }
   
   // Планшеты
   @media (max-width: 1024px) {
