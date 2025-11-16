@@ -6,8 +6,6 @@ $font: var(--font-montserrat);
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
   padding: 20px 0;
   transition: background 0.3s ease;
 }

@@ -1,3 +1,5 @@
+$font: var(--font-montserrat);
+
 .projects {
   padding: 120px 0;
   background: white;
@@ -18,7 +20,7 @@
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 20px;
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat);
 }
 
 .subtitle {
@@ -27,7 +29,7 @@
   line-height: 1.6;
   margin-bottom: 32px;
   max-width: 800px;
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat);
 }
 
 .allProjectsBtn {
@@ -40,7 +42,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s;
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat);
 
   &:hover {
     background: #2a2a3e;
@@ -96,13 +98,13 @@
   font-weight: 600;
   color: #1a1a2e;
   margin-bottom: 8px;
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat);
 }
 
 .projectLocation {
   font-size: 16px;
   color: #666;
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat);
 }
 
 .navigation {

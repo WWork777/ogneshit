@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import styles from './Projects.module.scss';
+import { useState, useRef } from "react";
+import styles from "./Projects.module.scss";
 
 export default function Projects() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -10,27 +10,33 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'EXPO 2017',
-      location: 'Астана, Казахстан',
-      image: '/project-expo.jpg',
+      title: "EXPO 2017",
+      location: "Астана, Казахстан",
+      image: "/project-expo.jpg",
     },
     {
       id: 2,
-      title: 'Vladivostok Grand Hotel & Spa',
-      location: 'Владивосток',
-      image: '/project-hotel.jpg',
+      title: "Vladivostok Grand Hotel & Spa",
+      location: "Владивосток",
+      image: "/project-hotel.jpg",
     },
     {
       id: 3,
-      title: 'Теннисный центр в Лужниках',
-      location: 'Москва',
-      image: '/project-tennis.jpg',
+      title: "Теннисный центр в Лужниках",
+      location: "Москва",
+      image: "/project-tennis.jpg",
     },
     {
       id: 4,
-      title: 'Аэропорт',
-      location: 'Санкт-Петербург',
-      image: '/project-airport.jpg',
+      title: "Аэропорт",
+      location: "Санкт-Петербург",
+      image: "/project-airport.jpg",
+    },
+    {
+      id: 5,
+      title: "Аэропорт",
+      location: "Санкт-Петербург",
+      image: "/project-airport.jpg",
     },
   ];
 
@@ -40,20 +46,20 @@ export default function Projects() {
 
     const scrollAmount = 400;
     const newPosition =
-      direction === 'left'
+      direction === "left"
         ? scrollPosition - scrollAmount
         : scrollPosition + scrollAmount;
 
     container.scrollTo({
       left: newPosition,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
 
     setScrollPosition(newPosition);
   };
 
   return (
-    <section id='portfolio' className={styles.projects}>
+    <section id="portfolio" className={styles.projects}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Наши объекты</h2>
@@ -81,34 +87,34 @@ export default function Projects() {
           <div className={styles.navigation}>
             <button
               className={styles.navButton}
-              onClick={() => scroll('left')}
-              aria-label='Previous projects'
+              onClick={() => scroll("left")}
+              aria-label="Previous projects"
             >
               <svg
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
               >
-                <path d='M15 18l-6-6 6-6' />
+                <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
             <button
               className={styles.navButton}
-              onClick={() => scroll('right')}
-              aria-label='Next projects'
+              onClick={() => scroll("right")}
+              aria-label="Next projects"
             >
               <svg
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
               >
-                <path d='M9 18l6-6-6-6' />
+                <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
           </div>

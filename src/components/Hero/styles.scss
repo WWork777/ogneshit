@@ -1,0 +1,22 @@
+.pagination {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: clamp(12px, 2vw, 20px);
+  z-index: 2;
+}
+
+.paginationDot {
+  width: clamp(60px, 8vw, 120px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &.active {
+    background: white;
+  }
+}
