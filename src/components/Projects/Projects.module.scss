@@ -1,27 +1,26 @@
 $font: var(--font-montserrat);
 
 .projects {
-  padding: 60px 10vw;
+  padding: 120px 10vw;
   background: white;
   overflow-x: hidden;
 
   // Планшеты
   @media (max-width: 1024px) {
-    padding: 40px 6vw;
+    padding: 80px 6vw;
   }
 
   // Мобильные
   @media (max-width: 768px) {
-    padding: 30px 4vw;
+    padding: 60px 4vw;
   }
 
   @media (max-width: 480px) {
-    padding: 20px 20px;
+    padding: 40px 20px;
   }
 }
 
 .container {
-  max-width: clamp(300px, 90%, 1520px);
   margin: 0 auto;
   padding: 0;
   display: grid;

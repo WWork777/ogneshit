@@ -1,17 +1,17 @@
 .directions {
   padding: 120px 10vw;
   background: white;
-  
+
   // Планшеты
   @media (max-width: 1024px) {
     padding: 80px 6vw;
   }
-  
+
   // Мобильные
   @media (max-width: 768px) {
     padding: 60px 4vw;
   }
-  
+
   @media (max-width: 480px) {
     padding: 40px 20px;
   }
@@ -21,11 +21,11 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  
+
   @media (max-width: 768px) {
     gap: 30px;
   }
-  
+
   @media (max-width: 480px) {
     gap: 24px;
   }
@@ -36,18 +36,18 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
-  
+
   // Планшеты
   @media (max-width: 1024px) {
     gap: 40px;
   }
-  
+
   // Мобильные
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   @media (max-width: 480px) {
     gap: 24px;
   }
@@ -55,7 +55,7 @@
 
 .header {
   font-family: var(--font-montserrat);
-  
+
   .title {
     font-size: 54px;
     font-weight: 500;
@@ -63,43 +63,43 @@
     margin-bottom: 24px;
     font-family: var(--font-sans);
     line-height: 1.1;
-    
+
     // Планшеты
     @media (max-width: 1024px) {
       font-size: 36px;
       margin-bottom: 18px;
     }
-    
+
     // Мобильные
     @media (max-width: 768px) {
       font-size: 32px;
       margin-bottom: 16px;
     }
-    
+
     @media (max-width: 480px) {
       font-size: 28px;
       margin-bottom: 14px;
     }
   }
-  
+
   .subtitle {
     font-size: 18px;
     color: #666;
     line-height: 1.5;
     margin-bottom: 60px;
-    
+
     // Планшеты
     @media (max-width: 1024px) {
       font-size: 16px;
       margin-bottom: 40px;
     }
-    
+
     // Мобильные
     @media (max-width: 768px) {
       font-size: 16px;
       margin-bottom: 30px;
     }
-    
+
     @media (max-width: 480px) {
       font-size: 14px;
       margin-bottom: 24px;
@@ -109,7 +109,7 @@
 }
 
 .catalogBtn {
-  background: #3E619B;
+  background: #3e619b;
   color: white;
   border: none;
   padding: 13px 30px;
@@ -118,16 +118,16 @@
   border-radius: 15px;
   cursor: pointer;
   transition: background 0.3s ease;
-  
+
   &:hover {
     background: #2d2d44;
   }
-  
+
   @media (max-width: 768px) {
     padding: 12px 28px;
     font-size: 15px;
   }
-  
+
   @media (max-width: 480px) {
     width: 100%;
     padding: 12px 24px;
@@ -143,13 +143,13 @@
   width: 100%;
   height: 320px;
   align-items: stretch;
-  
+
   // Планшеты
   @media (max-width: 1024px) {
     gap: 30px;
     height: 280px;
   }
-  
+
   // Мобильные
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -157,7 +157,7 @@
     height: auto;
     min-height: 260px;
   }
-  
+
   @media (max-width: 480px) {
     gap: 20px;
     min-height: 240px;
@@ -174,11 +174,11 @@
 
 .secondRow {
   grid-template-columns: repeat(4, 1fr);
-    a {
+  a {
     display: block;
     height: 100%;
   }
-  
+
   // Планшеты
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -199,18 +199,18 @@
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
-  
+
   // Мобильные
   @media (max-width: 768px) {
     border-radius: 10px;
     min-height: 260px;
   }
-  
+
   @media (max-width: 480px) {
     border-radius: 10px;
     min-height: 240px;
@@ -221,7 +221,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -247,30 +247,30 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 2;
-  
+
   svg {
     width: 50px;
     height: 50px;
   }
-  
+
   @media (max-width: 768px) {
     width: 45px;
     height: 45px;
     top: 8px;
     right: 8px;
-    
+
     svg {
       width: 45px;
       height: 45px;
     }
   }
-  
+
   @media (max-width: 480px) {
     width: 40px;
     height: 40px;
     top: 6px;
     right: 6px;
-    
+
     svg {
       width: 40px;
       height: 40px;
@@ -278,7 +278,6 @@
   }
 }
 .titleCon {
-  
 }
 .directionTitle {
   position: relative;
@@ -288,7 +287,7 @@
   padding: 10px 20px;
   font-weight: 500;
   display: inline;
-  font-size: .85vw;
+  font-size: 0.85vw;
   color: #000;
   background: #fff;
   border-radius: 50px;
@@ -298,19 +297,19 @@
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   @media (max-width: 1280px) {
-    font-size: .75vw;
+    font-size: 0.75vw;
   }
   @media (max-width: 1024px) {
-    font-size: .7vw;
+    font-size: 0.7vw;
     padding: 8px 18px;
     top: calc(100% - 40px);
     left: 8px;
     right: 8px;
     max-width: calc(100% - 16px);
   }
-  
+
   // Мобильные
   @media (max-width: 768px) {
     font-size: 9px;
@@ -319,7 +318,7 @@
     right: 8px;
     max-width: calc(100% - 16px);
   }
-  
+
   @media (max-width: 480px) {
     font-size: 6px;
     padding: 7px 14px;
