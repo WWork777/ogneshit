@@ -1,21 +1,36 @@
 $font: var(--font-montserrat);
 
 .about {
-  padding: 120px 0;
+  padding: 60px 10vw;
   background: white;
   position: relative;
+
+  // Планшеты
+  @media (max-width: 1024px) {
+    padding: 40px 6vw;
+  }
+
+  // Мобильные
+  @media (max-width: 768px) {
+    padding: 30px 4vw;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 20px;
+  }
 }
 
 .container {
-  max-width: 1520px;
+  max-width: clamp(300px, 90%, 1520px);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0;
+  padding-left: 40px;
   position: relative;
   min-height: 750px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 40px;
 }
 
 .backgroundImage {
@@ -24,7 +39,7 @@ $font: var(--font-montserrat);
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("/images/About/about-bg.webp") center/cover;
+  background: url('/images/About/about-bg.webp') center/cover;
   background-size: cover;
   background-position: center;
   border-radius: 30px;
@@ -39,13 +54,42 @@ $font: var(--font-montserrat);
   padding: 60px;
   border-radius: 20px;
   z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(
+      123.3deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
 
 .title {
-  font-size: clamp(32px, 4vw, 56px);
-  font-weight: 700;
+  font-size: clamp(30px, 4vw, 54px);
+  font-weight: 500;
   color: white;
   margin-bottom: 32px;
   font-family: $font;
@@ -57,7 +101,8 @@ $font: var(--font-montserrat);
   gap: 20px;
 
   p {
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-weight: 400;
     line-height: 1.7;
     color: white;
     font-family: $font;
@@ -73,34 +118,62 @@ $font: var(--font-montserrat);
   justify-content: center;
   align-items: stretch;
   max-width: 400px;
-  min-width: 300px;
+  min-width: 280px;
 }
 
 .statCard {
-  background: rgba(40, 40, 50, 0.4);
-  backdrop-filter: blur(60px) saturate(150%) brightness(0.7);
-  -webkit-backdrop-filter: blur(60px) saturate(150%) brightness(0.7);
+  background: rgba(40, 40, 50, 0.048);
+  backdrop-filter: blur(15px);
   padding: 32px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   width: 100%;
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(
+      123.3deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
 
 .statNumber {
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 700;
+  font-size: clamp(16px, 5vw, 44px);
+  font-weight: 400;
   color: white;
   font-family: $font;
   white-space: nowrap;
 }
 
 .statText {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 400;
   color: white;
   line-height: 1.5;
   font-family: $font;
@@ -108,182 +181,63 @@ $font: var(--font-montserrat);
   flex: 1;
 }
 
-// Большие экраны (1920px+)
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1600px;
-  }
-}
-
-// Очень большие экраны (1440px - 1919px)
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .container {
-    max-width: 1520px;
-  }
-}
-
-// Ноутбуки (1201px - 1439px)
-@media (min-width: 1201px) and (max-width: 1439px) {
-  .container {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-}
-
 // Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
 @media (max-width: 1200px) and (min-width: 1024px) {
   .container {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     align-items: stretch;
-    padding: 0 30px;
+    padding-left: 0;
+    min-height: auto;
   }
 
   .contentCard {
     max-width: 100%;
-    padding: 50px;
-  }
-
-  .stats {
-    max-width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: flex-start;
-  }
-
-  .statCard {
-    flex: 1;
-    min-width: 200px;
-  }
-}
-
-// Планшеты портрет (768px - 1023px)
-@media (max-width: 1023px) and (min-width: 768px) {
-  .about {
-    padding: 100px 0;
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 20px;
-    align-items: stretch;
-    padding: 0 30px;
-    min-height: 600px;
-  }
-
-  .contentCard {
-    max-width: 100%;
-    padding: 45px;
-  }
-
-  .stats {
-    max-width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-
-  .statCard {
-    flex: 1;
-    min-width: 180px;
-    padding: 28px;
-  }
-}
-
-// Обычные телефоны (640px - 767px)
-@media (max-width: 767px) and (min-width: 640px) {
-  .about {
-    padding: 80px 0;
-  }
-
-  .container {
-    padding: 0 25px;
-    min-height: 500px;
-    gap: 20px;
-  }
-
-  .contentCard {
-    padding: 35px;
+    padding: 40px;
   }
 
   .title {
-    font-size: clamp(28px, 4vw, 40px);
-    margin-bottom: 24px;
-  }
-
-  .statCard {
-    padding: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 16px;
-  }
-}
-
-// Маленькие телефоны (480px - 639px)
-@media (max-width: 639px) and (min-width: 480px) {
-  .about {
-    padding: 60px 0;
-  }
-
-  .container {
-    padding: 0 20px;
-    min-height: 450px;
-    gap: 16px;
-  }
-
-  .contentCard {
-    padding: 30px;
-  }
-
-  .title {
-    font-size: clamp(24px, 4vw, 36px);
     margin-bottom: 20px;
   }
 
   .textContent {
     gap: 16px;
-
-    p {
-      font-size: clamp(14px, 1.8vw, 18px);
-    }
-  }
-
-  .statCard {
-    padding: 20px;
-    gap: 10px;
-  }
-
-  .statNumber {
-    font-size: clamp(32px, 5vw, 48px);
-  }
-
-  .statText {
-    font-size: clamp(12px, 1.5vw, 16px);
   }
 
   .stats {
-    gap: 12px;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .statCard {
+    flex: 1;
+    min-width: calc(33.333% - 11px);
+    max-width: calc(33.333% - 11px);
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .statNumber {
+    font-size: clamp(24px, 3.5vw, 32px);
+  }
+
+  .statText {
+    font-size: clamp(11px, 1.3vw, 14px);
   }
 }
 
-// Очень маленькие телефоны (до 479px)
-@media (max-width: 479px) {
-  .about {
-    padding: 50px 0;
-  }
-
+// Планшеты портрет (768px - 1023px)
+@media (max-width: 1023px) and (min-width: 768px) {
   .container {
-    padding: 0 15px;
-    min-height: 400px;
-    gap: 12px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    min-height: auto;
+    padding-left: 0;
   }
 
   .backgroundImage {
@@ -291,12 +245,142 @@ $font: var(--font-montserrat);
   }
 
   .contentCard {
-    padding: 24px;
-    border-radius: 16px;
+    max-width: 100%;
+    padding: 32px;
   }
 
   .title {
-    font-size: clamp(20px, 4vw, 32px);
+    font-size: clamp(26px, 4vw, 38px);
+    margin-bottom: 20px;
+  }
+
+  .textContent {
+    gap: 14px;
+
+    p {
+      font-size: clamp(13px, 1.7vw, 17px);
+      line-height: 1.6;
+    }
+  }
+
+  .stats {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .statCard {
+    flex: 1;
+    min-width: calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .statNumber {
+    font-size: clamp(24px, 3.5vw, 32px);
+  }
+
+  .statText {
+    font-size: clamp(11px, 1.3vw, 14px);
+  }
+}
+
+// Обычные телефоны (640px - 767px)
+@media (max-width: 767px) and (min-width: 640px) {
+  .container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    min-height: auto;
+    padding-left: 0;
+  }
+
+  .backgroundImage {
+    border-radius: 16px;
+  }
+
+  .contentCard {
+    max-width: 100%;
+    padding: 28px;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+  }
+
+  .title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 18px;
+  }
+
+  .textContent {
+    gap: 14px;
+
+    p {
+      font-size: clamp(13px, 2vw, 16px);
+      line-height: 1.6;
+    }
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 14px;
+    max-width: 100%;
+  }
+
+  .statCard {
+    width: 100%;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+  }
+
+  .statNumber {
+    font-size: clamp(28px, 4.5vw, 36px);
+  }
+
+  .statText {
+    font-size: clamp(12px, 1.7vw, 15px);
+  }
+}
+
+// Маленькие телефоны (480px - 639px)
+@media (max-width: 639px) and (min-width: 480px) {
+  .container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    min-height: auto;
+    padding-left: 0;
+  }
+
+  .backgroundImage {
+    border-radius: 16px;
+  }
+
+  .contentCard {
+    max-width: 100%;
+    padding: 24px;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+  }
+
+  .title {
+    font-size: clamp(22px, 5vw, 28px);
     margin-bottom: 16px;
   }
 
@@ -304,26 +388,101 @@ $font: var(--font-montserrat);
     gap: 12px;
 
     p {
-      font-size: clamp(13px, 1.8vw, 16px);
+      font-size: clamp(12px, 2vw, 15px);
       line-height: 1.6;
     }
   }
 
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100%;
+  }
+
   .statCard {
-    padding: 16px;
+    width: 100%;
+    padding: 18px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
     border-radius: 16px;
-    gap: 8px;
+
+    &::before {
+      border-radius: 16px;
+    }
   }
 
   .statNumber {
-    font-size: clamp(28px, 5vw, 40px);
+    font-size: clamp(24px, 4.5vw, 32px);
   }
 
   .statText {
-    font-size: clamp(11px, 1.5vw, 14px);
+    font-size: clamp(11px, 1.7vw, 14px);
+  }
+}
+
+// Очень маленькие телефоны (до 479px)
+@media (max-width: 479px) {
+  .container {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    min-height: auto;
+    padding-left: 0;
+  }
+
+  .backgroundImage {
+    border-radius: 16px;
+  }
+
+  .contentCard {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+  }
+
+  .title {
+    font-size: clamp(20px, 5vw, 26px);
+    margin-bottom: 14px;
+  }
+
+  .textContent {
+    gap: 10px;
+
+    p {
+      font-size: clamp(11px, 2vw, 14px);
+      line-height: 1.5;
+    }
   }
 
   .stats {
+    flex-direction: column;
     gap: 10px;
+    max-width: 100%;
+  }
+
+  .statCard {
+    width: 100%;
+    padding: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+  }
+
+  .statNumber {
+    font-size: clamp(22px, 4.5vw, 28px);
+  }
+
+  .statText {
+    font-size: clamp(10px, 1.7vw, 13px);
   }
 }

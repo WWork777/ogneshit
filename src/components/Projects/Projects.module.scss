@@ -1,368 +1,326 @@
 $font: var(--font-montserrat);
 
 .projects {
-  padding: 120px 0;
+  padding: 60px 10vw;
   background: white;
-}
+  overflow-x: hidden;
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
+  // Планшеты
+  @media (max-width: 1024px) {
+    padding: 40px 6vw;
+  }
 
-.header {
-  margin-bottom: 60px;
-}
+  // Мобильные
+  @media (max-width: 768px) {
+    padding: 30px 4vw;
+  }
 
-.title {
-  font-size: 48px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 20px;
-  font-family: var(--font-montserrat);
-}
-
-.subtitle {
-  font-size: 20px;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 32px;
-  max-width: 800px;
-  font-family: var(--font-montserrat);
-}
-
-.allProjectsBtn {
-  padding: 14px 32px;
-  background: #1a1a2e;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-family: var(--font-montserrat);
-
-  &:hover {
-    background: #2a2a3e;
+  @media (max-width: 480px) {
+    padding: 20px 20px;
   }
 }
 
-.projectsWrapper {
+.container {
+  max-width: clamp(300px, 90%, 1520px);
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 100px;
+  align-items: start;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
-.projectsContainer {
+.header {
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 20px;
+  position: relative;
+  z-index: 10;
 
-  &::-webkit-scrollbar {
+  @media (max-width: 1200px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+}
+
+.swiperSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 54px;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin: 0;
+  font-family: $font;
+  line-height: 1.1;
+  text-wrap: nowrap;
+
+  @media (max-width: 1280px) {
+    font-size: 42px;
+    text-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  font-family: $font;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.allProjectsBtn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px;
+  gap: 10px;
+  width: 188px;
+  height: 45px;
+  background: #282828;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-manrope);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+  text-decoration: none;
+
+  &:hover {
+    background: #1a1a1a;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 24px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  align-self: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+
+  @media (max-width: 768px) {
     display: none;
   }
 }
 
-.projectCard {
-  flex: 0 0 380px;
-  background: white;
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.projectImage {
-  width: 100%;
-  height: 280px;
-  background-size: cover;
-  background-position: center;
-  background-color: #e0e0e0;
-}
-
-.projectInfo {
-  padding: 24px;
-}
-
-.projectTitle {
-  font-size: 20px;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 8px;
-  font-family: var(--font-montserrat);
-}
-
-.projectLocation {
-  font-size: 16px;
-  color: #666;
-  font-family: var(--font-montserrat);
-}
-
-.navigation {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  gap: 12px;
-  z-index: 10;
-}
-
 .navButton {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #e0e0e0;
-  color: #1a1a2e;
+  width: 50px;
+  height: 34px;
+  border-radius: 40px;
+  border: 1px solid black;
+  color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, border-color 0.3s;
+  transition: background 0.3s, border-color 0.3s, opacity 0.3s;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  flex-shrink: 0;
 
-  &:hover {
-    background: #f5f5f5;
-    border-color: #1a1a2e;
+  &:hover:not(:disabled) {
+    background-color: #e0e0e0;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: #282828;
+
+    svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
   }
 }
 
-// Большие экраны (1920px+)
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1600px;
-  }
-}
+// Swiper контейнер
+.swiperContainer {
+  width: 100%;
 
-// Очень большие экраны (1440px - 1919px)
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .container {
-    max-width: 1520px;
-  }
-}
-
-// Ноутбуки (1201px - 1439px)
-@media (min-width: 1201px) and (max-width: 1439px) {
-  .container {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-}
-
-// Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .container {
-    padding: 0 30px;
-  }
-
-  .projectCard {
-    flex: 0 0 340px;
-  }
-
-  .projectImage {
-    height: 260px;
-  }
-}
-
-// Планшеты портрет (768px - 1023px)
-@media (max-width: 1023px) and (min-width: 768px) {
-  .projects {
-    padding: 100px 0;
-  }
-
-  .container {
-    padding: 0 30px;
-  }
-
-  .header {
-    margin-bottom: 50px;
-  }
-
-  .title {
-    font-size: clamp(36px, 4vw, 42px);
-  }
-
-  .subtitle {
-    font-size: clamp(18px, 2vw, 20px);
-  }
-
-  .projectCard {
-    flex: 0 0 320px;
-  }
-
-  .projectImage {
-    height: 250px;
-  }
-
-  .navigation {
+  // Скрываем стандартные стрелки Swiper
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 }
 
-// Обычные телефоны (640px - 767px)
-@media (max-width: 767px) and (min-width: 640px) {
-  .projects {
-    padding: 80px 0;
+.swiperSlide {
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 270px !important; // Фиксированная ширина для slidesPerView: 'auto'
+
+  @media (max-width: 1280px) {
+    width: 250px !important;
   }
 
-  .container {
-    padding: 0 25px;
+  @media (max-width: 1024px) {
+    width: 240px !important;
   }
 
-  .header {
-    margin-bottom: 40px;
+  @media (max-width: 768px) {
+    width: 300px !important; // Уменьшаем ширину слайдов на планшетах
   }
 
-  .title {
-    font-size: clamp(32px, 4vw, 38px);
-  }
-
-  .subtitle {
-    font-size: clamp(16px, 2vw, 18px);
-    margin-bottom: 24px;
-  }
-
-  .projectCard {
-    flex: 0 0 300px;
-  }
-
-  .projectImage {
-    height: 220px;
-  }
-
-  .projectInfo {
-    padding: 20px;
-  }
-
-  .projectTitle {
-    font-size: 18px;
-  }
-
-  .projectLocation {
-    font-size: 14px;
-  }
-
-  .navigation {
-    display: none;
+  @media (max-width: 480px) {
+    width: 280px !important; // Еще меньше на мобильных
   }
 }
 
-// Маленькие телефоны (480px - 639px)
-@media (max-width: 639px) and (min-width: 480px) {
-  .projects {
-    padding: 60px 0;
+.projectCard {
+  position: relative;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectImage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 12px;
+
+  @media (max-width: 1280px) {
+    height: 340px;
   }
 
-  .container {
-    padding: 0 20px;
+  @media (max-width: 1024px) {
+    height: 320px;
   }
 
-  .header {
-    margin-bottom: 35px;
+  @media (max-width: 768px) {
+    height: 280px;
   }
 
-  .title {
-    font-size: clamp(28px, 4vw, 34px);
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    font-size: clamp(14px, 2vw, 16px);
-    margin-bottom: 20px;
-  }
-
-  .allProjectsBtn {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
-  .projectCard {
-    flex: 0 0 280px;
-  }
-
-  .projectImage {
-    height: 200px;
-  }
-
-  .projectInfo {
-    padding: 18px;
-  }
-
-  .projectTitle {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-
-  .projectLocation {
-    font-size: 13px;
-  }
-
-  .navigation {
-    display: none;
+  @media (max-width: 480px) {
+    height: 240px;
   }
 }
 
-// Очень маленькие телефоны (до 479px)
-@media (max-width: 479px) {
-  .projects {
-    padding: 50px 0;
+.projectInfo {
+  padding: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 14px 0 0 0;
   }
 
-  .container {
-    padding: 0 15px;
+  @media (max-width: 480px) {
+    padding: 12px 0 0 0;
+    gap: 4px;
   }
+}
 
-  .header {
-    margin-bottom: 30px;
-  }
+.projectTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin: 0;
+  font-family: $font;
+  line-height: 1.4;
 
-  .title {
-    font-size: clamp(24px, 4vw, 30px);
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-size: clamp(13px, 2vw, 15px);
-    margin-bottom: 16px;
-  }
-
-  .allProjectsBtn {
-    padding: 10px 20px;
-    font-size: 13px;
-  }
-
-  .projectCard {
-    flex: 0 0 260px;
-  }
-
-  .projectImage {
-    height: 180px;
-  }
-
-  .projectInfo {
-    padding: 16px;
-  }
-
-  .projectTitle {
+  @media (max-width: 768px) {
     font-size: 15px;
-    margin-bottom: 4px;
   }
 
-  .projectLocation {
-    font-size: 12px;
+  @media (max-width: 480px) {
+    font-size: 13px;
   }
+}
 
-  .navigation {
-    display: none;
+.projectLocation {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  margin: 0;
+  font-family: $font;
+  line-height: 1.4;
+
+  @media (max-width: 480px) {
+    font-size: 11px;
   }
 }
