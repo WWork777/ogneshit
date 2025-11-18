@@ -22,14 +22,37 @@ $font: var(--font-montserrat);
 
 .container {
   margin: 0 auto;
-  padding: 0;
-  padding-left: 40px;
+  padding: 40px;
   position: relative;
   min-height: 750px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 40px;
+  max-width: 1600px; // Ограничиваем максимальную ширину для больших экранов
+
+  // Ноутбуки (1200px - 1400px)
+  @media (min-width: 1201px) and (max-width: 1400px) {
+    padding: 40px 60px;
+  }
+
+  // Ноутбуки 1440px (1401px - 1600px)
+  @media (min-width: 1401px) and (max-width: 1600px) {
+    padding: 40px 70px;
+  }
+
+  // Большие ноутбуки (1600px - 1919px)
+  @media (min-width: 1601px) and (max-width: 1919px) {
+    padding: 40px 80px;
+  }
+
+  // Обычные ПК (1920px+)
+  @media (min-width: 1920px) {
+    padding: 40px 40px 40px 40px;
+    padding-left: 40px; // Возвращаем карточки к левой части
+    justify-content: flex-start; // Возвращаем карточки к левой части
+    max-width: none; // Убираем ограничение ширины для больших экранов
+  }
 }
 
 .backgroundImage {
@@ -178,6 +201,40 @@ $font: var(--font-montserrat);
   font-family: $font;
   text-align: left;
   flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  min-width: 0; // Позволяет flex-элементу сжиматься меньше своего контента
+}
+
+// Ноутбуки 1440px (1401px - 1600px)
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .container {
+    gap: 35px;
+  }
+
+  .contentCard {
+    padding: 50px;
+    max-width: 700px;
+  }
+
+  .stats {
+    max-width: 380px;
+    min-width: 260px;
+  }
+
+  .statCard {
+    padding: 28px;
+    gap: 18px;
+  }
+
+  .statNumber {
+    font-size: clamp(32px, 4vw, 40px);
+  }
+
+  .statText {
+    font-size: clamp(13px, 1.4vw, 15px);
+  }
 }
 
 // Планшеты ландшафт / маленькие ноутбуки (1024px - 1200px)
@@ -187,6 +244,7 @@ $font: var(--font-montserrat);
     gap: 24px;
     align-items: stretch;
     min-height: auto;
+    padding: 30px;
   }
 
   .contentCard {
@@ -235,6 +293,7 @@ $font: var(--font-montserrat);
     gap: 20px;
     align-items: stretch;
     min-height: auto;
+    padding: 24px;
   }
 
   .backgroundImage {
@@ -293,6 +352,7 @@ $font: var(--font-montserrat);
     gap: 18px;
     align-items: stretch;
     min-height: auto;
+    padding: 20px;
   }
 
   .backgroundImage {
@@ -358,6 +418,7 @@ $font: var(--font-montserrat);
     gap: 16px;
     align-items: stretch;
     min-height: auto;
+    padding: 16px;
   }
 
   .backgroundImage {
@@ -423,6 +484,7 @@ $font: var(--font-montserrat);
     gap: 14px;
     align-items: stretch;
     min-height: auto;
+    padding: 12px;
   }
 
   .backgroundImage {

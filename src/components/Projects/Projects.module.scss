@@ -4,6 +4,7 @@ $font: var(--font-montserrat);
   padding: 120px 10vw;
   background: white;
   overflow-x: hidden;
+  position: relative;
 
   // Планшеты
   @media (max-width: 1024px) {
@@ -25,7 +26,7 @@ $font: var(--font-montserrat);
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1.8fr;
-  gap: 100px;
+  gap: 60px;
   align-items: start;
   position: relative;
   width: 100%;
@@ -33,7 +34,7 @@ $font: var(--font-montserrat);
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 }
 
@@ -62,6 +63,56 @@ $font: var(--font-montserrat);
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.swiperWrapper {
+  width: 100%;
+  max-width: 1044px; // Ограничиваем видимую область для 3.7 карточек (270px * 3.7 + 24px * 2.7 = 1044px)
+  overflow: hidden;
+  position: relative;
+
+  // Очень большие экраны (1920px+): показываем 5 карточек
+  @media (min-width: 1920px) {
+    max-width: 1522px; // 290px * 5 + 24px * 4 = 1546px, округлим до 1522px
+  }
+
+  // Большие экраны (1600px-1919px): показываем 4.5 карточки
+  @media (min-width: 1600px) and (max-width: 1919px) {
+    max-width: 1377px; // 290px * 4.5 + 24px * 3.5 = 1377px
+  }
+
+  // Средние большие экраны (1400px-1599px): показываем 4 карточки
+  @media (min-width: 1400px) and (max-width: 1599px) {
+    max-width: 1232px; // 290px * 4 + 24px * 3 = 1232px
+  }
+
+  // Средние экраны (1280px-1399px): показываем 3.7 карточки
+  @media (min-width: 1280px) and (max-width: 1399px) {
+    max-width: 1044px; // 270px * 3.7 + 24px * 2.7 = 1044px
+  }
+
+  @media (max-width: 1279px) {
+    max-width: 970px; // 250px * 3.7 + 24px * 2.7 = 970px
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 933px; // 240px * 3.7 + 24px * 2.7 = 933px
+  }
+
+  @media (max-width: 768px) {
+    max-width: calc(
+      100vw - 8vw
+    ); // Ограничиваем видимую область для частичного показа карточки
+    margin-right: calc(-10vw);
+    padding-right: 10vw;
+  }
+
+  @media (max-width: 480px) {
+    max-width: calc(
+      100vw - 40px
+    ); // На маленьких экранах учитываем padding секции
+  }
 }
 
 .title {
@@ -157,14 +208,28 @@ $font: var(--font-montserrat);
 .navigation {
   display: flex;
   gap: 12px;
-  margin-top: 30px;
-  align-self: flex-end;
-  justify-content: flex-end;
+  align-self: center;
+  justify-content: center;
   width: 100%;
   z-index: 10;
   position: relative;
+  margin-left: 25%; // Сдвигаем правее от центра для больших экранов
 
-  @media (max-width: 768px) {
+  @media (min-width: 1921px) {
+    margin-left: 60%;
+  }
+
+  @media (min-width: 1401px) and (max-width: 1600px) {
+    margin-left: -5%;
+  }
+
+  // Адаптируем позиционирование для разных размеров экранов
+  @media (min-width: 1025px) and (max-width: 1400px) {
+    margin-left: 10%;
+  }
+
+  // Скрываем кнопки на всех мобильных и планшетных устройствах
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -208,6 +273,8 @@ $font: var(--font-montserrat);
 // Swiper контейнер
 .swiperContainer {
   width: 100%;
+  overflow: visible; // Позволяем карточкам выходить за границы для частичного показа
+  touch-action: pan-x pan-y; // Разрешаем горизонтальный и вертикальный свайп
 
   // Скрываем стандартные стрелки Swiper
   .swiper-button-next,
@@ -223,7 +290,25 @@ $font: var(--font-montserrat);
   flex-shrink: 0;
   width: 270px !important; // Фиксированная ширина для slidesPerView: 'auto'
 
-  @media (max-width: 1280px) {
+  // Очень большие экраны: увеличиваем ширину карточек
+  @media (min-width: 1920px) {
+    width: 290px !important;
+  }
+
+  @media (min-width: 1600px) and (max-width: 1919px) {
+    width: 290px !important;
+  }
+
+  @media (min-width: 1400px) and (max-width: 1599px) {
+    width: 290px !important;
+  }
+
+  // Средние экраны
+  @media (min-width: 1280px) and (max-width: 1399px) {
+    width: 270px !important;
+  }
+
+  @media (max-width: 1279px) {
     width: 250px !important;
   }
 
@@ -231,12 +316,21 @@ $font: var(--font-montserrat);
     width: 240px !important;
   }
 
+  // Планшеты и мобильные
   @media (max-width: 768px) {
-    width: 300px !important; // Уменьшаем ширину слайдов на планшетах
+    width: 280px !important; // Ширина карточки на планшетах
+  }
+
+  @media (max-width: 640px) {
+    width: 260px !important; // Ширина карточки на средних мобильных
   }
 
   @media (max-width: 480px) {
-    width: 280px !important; // Еще меньше на мобильных
+    width: 240px !important; // Ширина карточки на маленьких мобильных
+  }
+
+  @media (max-width: 360px) {
+    width: 220px !important; // Ширина карточки на очень маленьких экранах
   }
 }
 

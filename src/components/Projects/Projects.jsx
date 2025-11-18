@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
@@ -14,7 +14,34 @@ import 'swiper/css/navigation';
 export default function Projects() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+  const swiperInstanceRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Дополнительная инициализация навигации после монтирования
+  useEffect(() => {
+    if (
+      swiperInstanceRef.current &&
+      navigationPrevRef.current &&
+      navigationNextRef.current
+    ) {
+      const swiper = swiperInstanceRef.current;
+      setTimeout(() => {
+        if (swiper && swiper.params && swiper.params.navigation) {
+          // @ts-ignore
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          // @ts-ignore
+          swiper.params.navigation.nextEl = navigationNextRef.current;
+          if (
+            swiper.navigation &&
+            typeof swiper.navigation.init === 'function'
+          ) {
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }
+        }
+      }, 200);
+    }
+  }, []);
 
   const projects = [
     {
@@ -118,49 +145,92 @@ export default function Projects() {
         </div>
 
         <div className={styles.swiperSection}>
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={24}
-            slidesPerView={'auto'}
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            onInit={(swiper) => {
-              // @ts-ignore
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              // @ts-ignore
-              swiper.params.navigation.nextEl = navigationNextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }}
-            className={styles.swiperContainer}
-          >
-            {projects.map((project) => (
-              <SwiperSlide key={project.id} className={styles.swiperSlide}>
-                <div className={styles.projectCard}>
-                  <div className={styles.projectImage}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
+          <div className={styles.swiperWrapper}>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={24}
+              slidesPerView={'auto'}
+              slidesPerGroup={1}
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              allowTouchMove={true}
+              grabCursor={true}
+              touchEventsTarget={'container'}
+              breakpoints={{
+                0: {
+                  spaceBetween: 16,
+                },
+                480: {
+                  spaceBetween: 20,
+                },
+                768: {
+                  spaceBetween: 24,
+                },
+                1024: {
+                  spaceBetween: 24,
+                },
+                1280: {
+                  spaceBetween: 24,
+                },
+                1400: {
+                  spaceBetween: 24,
+                },
+                1600: {
+                  spaceBetween: 24,
+                },
+                1920: {
+                  spaceBetween: 24,
+                },
+              }}
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+              onSwiper={(swiper) => {
+                swiperInstanceRef.current = swiper;
+                // Инициализируем навигацию после полной загрузки Swiper
+                setTimeout(() => {
+                  if (swiper && swiper.params && swiper.params.navigation) {
+                    // @ts-ignore
+                    swiper.params.navigation.prevEl = navigationPrevRef.current;
+                    // @ts-ignore
+                    swiper.params.navigation.nextEl = navigationNextRef.current;
+                    if (
+                      swiper.navigation &&
+                      typeof swiper.navigation.init === 'function'
+                    ) {
+                      swiper.navigation.init();
+                      swiper.navigation.update();
+                    }
+                  }
+                }, 100);
+              }}
+              className={styles.swiperContainer}
+            >
+              {projects.map((project) => (
+                <SwiperSlide key={project.id} className={styles.swiperSlide}>
+                  <div className={styles.projectCard}>
+                    <div className={styles.projectImage}>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                    <div className={styles.projectInfo}>
+                      <h3 className={styles.projectTitle}>{project.title}</h3>
+                      <p className={styles.projectLocation}>
+                        {project.city}
+                        {project.country &&
+                          project.country !== 'Россия' &&
+                          `, ${project.country}`}
+                      </p>
+                    </div>
                   </div>
-                  <div className={styles.projectInfo}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
-                    <p className={styles.projectLocation}>
-                      {project.city}
-                      {project.country &&
-                        project.country !== 'Россия' &&
-                        `, ${project.country}`}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
           <div className={styles.navigation}>
             <button
