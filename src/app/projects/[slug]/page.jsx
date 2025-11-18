@@ -1,82 +1,17 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import styles from "./ProjectSingle.module.scss";
+import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import styles from './ProjectSingle.module.scss';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-const projectsData = {
-  "expo-2017": {
-    id: 1,
-    title: "EXPO 2017",
-    city: "Астана",
-    country: "Казахстан",
-    images: [
-      "/images/Projects/expo.webp",
-      "/images/Projects/expo-2.webp",
-      "/images/Projects/expo-3.webp",
-      "/images/Projects/expo-4.webp",
-    ],
-    description: `
-      <p>Международная специализированная выставка EXPO 2017 в Астане — масштабный проект, 
-      посвященный энергии будущего. Наша компания обеспечила комплексную противопожарную 
-      защиту всех павильонов и сооружений выставки.</p>
-      
-      <p><strong>Основные работы:</strong></p>
-      <ul>
-        <li>Проектирование и монтаж систем автоматической пожарной сигнализации</li>
-        <li>Установка систем пожаротушения в критически важных зонах</li>
-        <li>Оснащение объектов системами оповещения и управления эвакуацией</li>
-        <li>Огнезащитная обработка конструкций</li>
-      </ul>
-      
-      <p>Проект был реализован в сжатые сроки с соблюдением всех международных стандартов 
-      безопасности.</p>
-    `,
-    features: [
-      "Площадь: 174 га",
-      "Срок реализации: 24 месяца",
-      "Оборудование: системы высшей категории надежности",
-      "Стандарты: МЧС РК, международные нормы",
-    ],
-  },
-  "vladivostok-hotel": {
-    id: 2,
-    title: "Vladivostok Grand Hotel & Spa",
-    city: "Владивосток",
-    country: "Россия",
-    images: [
-      "/images/Projects/hotel.webp",
-      "/images/Projects/hotel-2.webp",
-      "/images/Projects/hotel-3.webp",
-    ],
-    description: `
-      <p>Пятизвездочный отель премиум-класса во Владивостоке. Проект включал оснащение 
-      современными системами пожарной безопасности с учетом специфики гостиничного комплекса.</p>
-      
-      <p><strong>Особенности проекта:</strong></p>
-      <ul>
-        <li>Интеграция систем безопасности в единый комплекс управления отелем</li>
-        <li>Зональное разделение систем оповещения</li>
-        <li>Особые решения для SPA-зоны и бассейна</li>
-        <li>Круглосуточный мониторинг и обслуживание</li>
-      </ul>
-    `,
-    features: [
-      "Количество номеров: 150",
-      "Этажность: 18 этажей",
-      "Особые зоны: SPA, рестораны, конференц-залы",
-      "Система: адресно-аналоговая пожарная сигнализация",
-    ],
-  },
-};
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { getProjectBySlug } from '@/data/projects';
 
 export default function ProjectSinglePage() {
   const params = useParams();
@@ -88,20 +23,20 @@ export default function ProjectSinglePage() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
 
-  const project = projectsData[params.slug];
+  const project = getProjectBySlug(params.slug);
 
   const animateText = () => {
     setIsAnimating(true);
 
     if (titleRef.current && subtitleRef.current) {
-      titleRef.current.style.animation = "none";
-      subtitleRef.current.style.animation = "none";
+      titleRef.current.style.animation = 'none';
+      subtitleRef.current.style.animation = 'none';
 
       void titleRef.current.offsetWidth;
       void subtitleRef.current.offsetWidth;
 
-      titleRef.current.style.animation = "";
-      subtitleRef.current.style.animation = "";
+      titleRef.current.style.animation = '';
+      subtitleRef.current.style.animation = '';
     }
 
     setTimeout(() => {
@@ -174,7 +109,7 @@ export default function ProjectSinglePage() {
     return (
       <div className={styles.notFound}>
         <h1>Проект не найден</h1>
-        <Link href="/projects">Вернуться к проектам</Link>
+        <Link href='/projects'>Вернуться к проектам</Link>
       </div>
     );
   }
@@ -204,9 +139,9 @@ export default function ProjectSinglePage() {
                   src={image}
                   alt={`${project.title} - фото ${index + 1}`}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                   priority={index === 0}
-                  sizes="100vw"
+                  sizes='100vw'
                 />
                 <div className={styles.overlay}></div>
               </div>
@@ -214,19 +149,19 @@ export default function ProjectSinglePage() {
               <div className={styles.heroContent}>
                 <button
                   className={styles.arrowLeft}
-                  aria-label="Previous slide"
+                  aria-label='Previous slide'
                   onClick={goPrev}
                   disabled={isAnimating}
                 >
                   <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
                   >
-                    <path d="M15 18l-6-6 6-6" />
+                    <path d='M15 18l-6-6 6-6' />
                   </svg>
                 </button>
 
@@ -245,25 +180,25 @@ export default function ProjectSinglePage() {
                     key={`subtitle-${activeIndex}`}
                   >
                     📍 {project.city}
-                    {project.country !== "Россия" && `, ${project.country}`}
+                    {project.country !== 'Россия' && `, ${project.country}`}
                   </p>
                 </div>
 
                 <button
                   className={styles.arrowRight}
-                  aria-label="Next slide"
+                  aria-label='Next slide'
                   onClick={goNext}
                   disabled={isAnimating}
                 >
                   <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
                   >
-                    <path d="M9 18l6-6-6-6" />
+                    <path d='M9 18l6-6-6-6' />
                   </svg>
                 </button>
               </div>
@@ -276,11 +211,11 @@ export default function ProjectSinglePage() {
             <button
               key={index}
               className={`${styles.paginationDot} ${
-                index === activeIndex ? styles.active : ""
+                index === activeIndex ? styles.active : ''
               }`}
               onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === activeIndex ? "true" : "false"}
+              aria-current={index === activeIndex ? 'true' : 'false'}
               disabled={isAnimating}
             >
               {index === activeIndex && (
@@ -297,9 +232,9 @@ export default function ProjectSinglePage() {
       <div className={styles.contentSection}>
         <div className={styles.container}>
           <nav className={styles.breadcrumbs}>
-            <Link href="/">Главная</Link>
+            <Link href='/'>Главная</Link>
             <span> / </span>
-            <Link href="/projects">Проекты</Link>
+            <Link href='/projects'>Проекты</Link>
             <span> / </span>
             <span>{project.title}</span>
           </nav>
@@ -324,7 +259,7 @@ export default function ProjectSinglePage() {
           </section>
 
           <div className={styles.backButton}>
-            <Link href="/projects" className={styles.backLink}>
+            <Link href='/projects' className={styles.backLink}>
               ← Назад к проектам
             </Link>
           </div>

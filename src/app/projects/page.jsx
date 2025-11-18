@@ -1,75 +1,15 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./ProjectsPage.module.scss";
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './ProjectsPage.module.scss';
+import { getAllProjects } from '@/data/projects';
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: 1,
-      title: "EXPO 2017",
-      city: "Астана",
-      country: "Казахстан",
-      image: "/images/Projects/expo.webp",
-      slug: "expo-2017",
-    },
-    {
-      id: 2,
-      title: "Vladivostok Grand Hotel & Spa",
-      city: "Владивосток",
-      country: "Россия",
-      image: "/images/Projects/hotel.webp",
-      slug: "vladivostok-hotel",
-    },
-    {
-      id: 3,
-      title: "Теннисный центр в Лужниках",
-      city: "Москва",
-      country: "Россия",
-      image: "/images/Projects/tennis.webp",
-      slug: "luzhniki-tennis",
-    },
-    {
-      id: 4,
-      title: "Аэропорт",
-      city: "Южно-Сахалинск",
-      country: "Россия",
-      image: "/images/Projects/airport.webp",
-      slug: "sakhalin-airport",
-    },
-    {
-      id: 5,
-      title: "EXPO 2017",
-      city: "Астана",
-      country: "Казахстан",
-      image: "/images/Projects/expo.webp",
-    },
-    {
-      id: 6,
-      title: "Vladivostok Grand Hotel & Spa",
-      city: "Владивосток",
-      country: "Россия",
-      image: "/images/Projects/hotel.webp",
-    },
-    {
-      id: 7,
-      title: "Теннисный центр в Лужниках",
-      city: "Москва",
-      country: "Россия",
-      image: "/images/Projects/tennis.webp",
-    },
-    {
-      id: 8,
-      title: "Аэропорт",
-      city: "Южно-Сахалинск",
-      country: "Россия",
-      image: "/images/Projects/airport.webp",
-    },
-  ];
+  const projects = getAllProjects();
 
   const getLocationText = (project) => {
-    if (project.country === "Россия") {
+    if (project.country === 'Россия') {
       return project.city;
     }
     return `${project.city}, ${project.country}`;
@@ -99,8 +39,8 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   />
                 </div>
                 <div className={styles.projectInfo}>
