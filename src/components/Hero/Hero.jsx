@@ -12,8 +12,11 @@ import "swiper/css/pagination";
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const swiperRef = useRef(null);
   const progressIntervalRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   const slides = [
     {
@@ -23,18 +26,39 @@ export default function Hero() {
       image: "/images/Hero/hero-airport.webp",
     },
     {
-      title: "Огнезащита, которой доверяют по всей России",
-      subtitle:
-        "Производство и монтаж сертифицированных противопожарных конструкций",
+      title: "Инновационные решения для вашей безопасности",
+      subtitle: "Современные технологии и материалы для эффективной огнезащиты",
       image: "/images/About/about-bg.webp",
     },
     {
-      title: "Огнезащита, которой доверяют по всей России",
-      subtitle:
-        "Производство и монтаж сертифицированных противопожарных конструкций",
+      title: "Надежность проверенная временем",
+      subtitle: "Более 15 лет на рынке противопожарных услуг и конструкций",
       image: "/images/Hero/hero-airport.webp",
     },
   ];
+
+  const animateText = () => {
+    setIsAnimating(true);
+
+    // Сбрасываем анимацию
+    if (titleRef.current && subtitleRef.current) {
+      titleRef.current.style.animation = "none";
+      subtitleRef.current.style.animation = "none";
+
+      // Принудительное переflow
+      void titleRef.current.offsetWidth;
+      void subtitleRef.current.offsetWidth;
+
+      // Запускаем анимацию снова
+      titleRef.current.style.animation = "";
+      subtitleRef.current.style.animation = "";
+    }
+
+    // Завершаем анимацию через 1.2 секунды
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1200);
+  };
 
   const startProgressAnimation = () => {
     setProgress(0);
@@ -60,30 +84,36 @@ export default function Hero() {
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex);
+    animateText();
     startProgressAnimation();
   };
 
   const goNext = () => {
-    if (swiperRef.current) {
+    if (swiperRef.current && !isAnimating) {
       swiperRef.current.swiper.slideNext();
     }
   };
 
   const goPrev = () => {
-    if (swiperRef.current) {
+    if (swiperRef.current && !isAnimating) {
       swiperRef.current.swiper.slidePrev();
     }
   };
 
   const goToSlide = (index) => {
-    if (swiperRef.current) {
+    if (swiperRef.current && !isAnimating) {
       swiperRef.current.swiper.slideToLoop(index);
+      animateText();
       startProgressAnimation();
     }
   };
 
   useEffect(() => {
     startProgressAnimation();
+    // Запускаем начальную анимацию
+    setTimeout(() => {
+      animateText();
+    }, 300);
 
     return () => {
       if (progressIntervalRef.current) {
@@ -104,7 +134,7 @@ export default function Hero() {
           disableOnInteraction: false,
         }}
         loop={true}
-        speed={500}
+        speed={800}
         onSlideChange={handleSlideChange}
         onAutoplay={startProgressAnimation}
         className={styles.swiper}
@@ -118,12 +148,15 @@ export default function Hero() {
                   ? `url(${slide.image})`
                   : "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
               }}
-            ></div>
+            >
+              <div className={styles.backgroundOverlay}></div>
+            </div>
             <div className={styles.heroContent}>
               <button
                 className={styles.arrowLeft}
                 aria-label="Previous slide"
                 onClick={goPrev}
+                disabled={isAnimating}
               >
                 <svg
                   width="24"
@@ -137,14 +170,27 @@ export default function Hero() {
                 </svg>
               </button>
               <div className={styles.textContent}>
-                <h1 className={styles.title}>{slide.title}</h1>
+                <h1
+                  ref={titleRef}
+                  className={styles.title}
+                  key={`title-${activeIndex}`}
+                >
+                  {slide.title}
+                </h1>
                 <div className={styles.divider}></div>
-                <p className={styles.subtitle}>{slide.subtitle}</p>
+                <p
+                  ref={subtitleRef}
+                  className={styles.subtitle}
+                  key={`subtitle-${activeIndex}`}
+                >
+                  {slide.subtitle}
+                </p>
               </div>
               <button
                 className={styles.arrowRight}
                 aria-label="Next slide"
                 onClick={goNext}
+                disabled={isAnimating}
               >
                 <svg
                   width="24"
@@ -172,6 +218,7 @@ export default function Hero() {
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
             aria-current={index === activeIndex ? "true" : "false"}
+            disabled={isAnimating}
           >
             {index === activeIndex && (
               <div

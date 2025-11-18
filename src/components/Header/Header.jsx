@@ -1,21 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from './Header.module.scss';
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Header.module.scss";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
+
+  const pagesWithScrollEffect = [
+    "/",
+    "/projects/expo-2017",
+    "/projects/vladivostok-hotel",
+  ];
+
+  const shouldApplyScrollEffect = pagesWithScrollEffect.includes(pathname);
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
 
-    // Если мы на главной странице, скроллим к элементу
-    if (pathname === '/') {
+    if (pathname === "/") {
       const element = document.querySelector(href);
       if (element) {
         const headerOffset = 80;
@@ -25,13 +33,11 @@ export default function Header() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth',
+          behavior: "smooth",
         });
         setIsMobileMenuOpen(false);
       }
     } else {
-      // Если мы на другой странице, переходим на главную с якорем
-      // Используем window.location для правильной обработки якоря
       window.location.href = `/${href}`;
       setIsMobileMenuOpen(false);
     }
@@ -42,103 +48,112 @@ export default function Header() {
   };
 
   useEffect(() => {
+    if (!shouldApplyScrollEffect) {
+      setIsScrolled(true);
+      setScrollProgress(1);
+      return;
+    }
+
     const handleScroll = () => {
-      // Находим Hero блок - это первый section на странице
-      const heroElement =
-        document.querySelector('section:first-of-type') ||
-        document.querySelector('[class*="hero"]') ||
-        document.querySelector('.hero');
+      const scrollY = window.scrollY;
+      const triggerHeight = 100;
+      const maxHeight = 300;
 
-      if (heroElement) {
-        const heroRect = heroElement.getBoundingClientRect();
-        const heroBottom = heroRect.bottom;
-
-        // Если нижняя граница Hero прошла верх экрана (с небольшим запасом), значит покинули Hero блок
-        setIsScrolled(heroBottom < 100); // -100 для небольшого запаса
-      } else {
-        // Если Hero не найден, используем простое условие по скроллу
-        setIsScrolled(window.scrollY > 100);
-      }
+      const progress = Math.min(
+        (scrollY - triggerHeight) / (maxHeight - triggerHeight),
+        1
+      );
+      setScrollProgress(Math.max(0, progress));
+      setIsScrolled(scrollY > triggerHeight);
     };
 
-    // Проверяем при монтировании
     handleScroll();
 
-    // Добавляем обработчик скролла
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [shouldApplyScrollEffect]);
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+        !shouldApplyScrollEffect ? styles.alwaysOpaque : ""
+      }`}
+      style={
+        shouldApplyScrollEffect
+          ? {
+              "--scroll-progress": scrollProgress,
+            }
+          : undefined
+      }
+    >
       <div className={styles.container}>
-        <Link href='/' className={styles.logoIcon}>
+        <Link href="/" className={styles.logoIcon}>
           <Image
-            src='/icons/Header/logo-fire.svg'
-            alt='Огнещит'
-            width={64}
-            height={64}
+            src="/icons/Header/logo-fire.svg"
+            alt="Огнещит"
+            width={50}
+            height={50}
             priority
           />
         </Link>
         <nav
-          className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}
+          className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ""}`}
         >
           <a
-            href='#about'
+            href="#about"
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, '#about')}
+            onClick={(e) => handleNavClick(e, "#about")}
           >
             О компании
           </a>
           <a
-            href='#catalog'
+            href="#catalog"
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, '#catalog')}
+            onClick={(e) => handleNavClick(e, "#catalog")}
           >
             Каталог продукции
           </a>
           <a
-            href='#directions'
+            href="#directions"
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, '#directions')}
+            onClick={(e) => handleNavClick(e, "#directions")}
           >
             Направления
           </a>
           <a
-            href='#portfolio'
+            href="#portfolio"
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, '#portfolio')}
+            onClick={(e) => handleNavClick(e, "#portfolio")}
           >
             Портфолио
           </a>
           <a
-            href='#contacts'
+            href="#contacts"
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, '#contacts')}
+            onClick={(e) => handleNavClick(e, "#contacts")}
           >
             Контакты
           </a>
         </nav>
         <div className={styles.contactInfo}>
-          <a href='tel:+7900000000' className={styles.phone}>
+          <a href="tel:+7900000000" className={styles.phone}>
             +7900000000
           </a>
-          <a href='mailto:zakaz@ogneshit.ru' className={styles.email}>
+          <a href="mailto:zakaz@ogneshit.ru" className={styles.email}>
             zakaz@ogneshit.ru
           </a>
         </div>
         <button
           className={`${styles.mobileMenuButton} ${
-            isMobileMenuOpen ? styles.open : ''
+            isMobileMenuOpen ? styles.open : ""
           }`}
           onClick={toggleMobileMenu}
-          aria-label='Toggle menu'
+          aria-label="Toggle menu"
         >
           <span></span>
           <span></span>
