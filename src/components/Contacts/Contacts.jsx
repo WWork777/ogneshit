@@ -54,13 +54,37 @@ export default function Contacts() {
       }
     };
 
+    // Проверяем, есть ли уже скрипт Yandex Maps в документе
+    const existingScript = document.querySelector(
+      'script[src*="api-maps.yandex.ru"]'
+    );
+
     if (window.ymaps) {
+      // Если API уже загружен, сразу инициализируем карту
       loadYandexMap();
+    } else if (existingScript) {
+      // Если скрипт уже есть, но API еще не загружен, ждем его загрузки
+      existingScript.addEventListener('load', loadYandexMap);
+      // Проверяем, не загрузился ли API за время между проверками
+      const checkInterval = setInterval(() => {
+        if (window.ymaps) {
+          clearInterval(checkInterval);
+          loadYandexMap();
+        }
+      }, 100);
+
+      // Очистка интервала при размонтировании
+      return () => {
+        clearInterval(checkInterval);
+        existingScript.removeEventListener('load', loadYandexMap);
+      };
     } else {
+      // Если скрипта нет, создаем и добавляем его
       const script = document.createElement('script');
       script.src =
         'https://api-maps.yandex.ru/2.1/?apikey=2a907ab4-e930-4aca-9ebb-13d8e04a56a5&lang=ru_RU';
       script.async = true;
+      script.id = 'yandex-maps-script'; // Добавляем ID для удобства
       script.onload = loadYandexMap;
       document.head.appendChild(script);
     }
