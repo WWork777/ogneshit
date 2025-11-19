@@ -133,7 +133,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
       <main>
         <Hero />
         <About />
@@ -142,7 +141,6 @@ export default function Home() {
         <ProductCatalog />
         <Contacts />
       </main>
-      <Footer />
     </>
   );
 }

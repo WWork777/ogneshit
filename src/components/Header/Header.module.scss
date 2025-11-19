@@ -64,19 +64,17 @@ $font: var(--font-montserrat);
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.4s ease;
-  animation: slideDown 0.6s ease-out 0.2s both;
-
-  // Упрощенная версия без CSS переменных для теста
-  background: rgba(40, 40, 40, 0);
+  background: rgba(40, 40, 40, 0); // Прозрачный по умолчанию
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
 
   &.scrolled {
-    background: rgba(40, 40, 40, 0.781);
+    background: rgba(40, 40, 40, 0.9); // Увеличим непрозрачность для теста
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    animation: none; // Отключаем анимацию при скролле
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+
+    // Временно добавим видимые изменения
   }
 }
 
@@ -229,9 +227,9 @@ $font: var(--font-montserrat);
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 998;
   opacity: 0;
   visibility: hidden;
@@ -240,9 +238,9 @@ $font: var(--font-montserrat);
   &.overlayOpen {
     opacity: 1;
     visibility: visible;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 }
 
@@ -380,16 +378,6 @@ $font: var(--font-montserrat);
 
 // Обычные телефоны (640px - 767px)
 @media (max-width: 767px) {
-  .header {
-    padding: 15px 0;
-
-    &.mobileMenuOpen {
-      background: rgba(40, 40, 40, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-  }
-
   .container {
     padding: 0 20px;
     gap: 20px;
@@ -406,7 +394,7 @@ $font: var(--font-montserrat);
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(20, 20, 20, 0.884);
+    background: rgb(20, 20, 20);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     flex-direction: column;
@@ -459,18 +447,6 @@ $font: var(--font-montserrat);
       &::before {
         transform: translateX(0);
       }
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #ff6b35, #ff8e35);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
     }
   }
 

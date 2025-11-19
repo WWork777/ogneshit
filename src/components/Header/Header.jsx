@@ -109,15 +109,29 @@ export default function Header() {
 
   return (
     <header
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+      className={`${styles.header} ${
         !shouldApplyScrollEffect ? styles.alwaysOpaque : ""
       } ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}
       style={
-        shouldApplyScrollEffect
+        shouldApplyScrollEffect && isScrolled
           ? {
-              "--scroll-progress": scrollProgress,
+              background: "rgba(40, 40, 40, 0.45)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              boxShadow: "0 2px 20px rgba(0, 0, 0, 0.49)",
             }
-          : undefined
+          : shouldApplyScrollEffect
+          ? {
+              background: "rgba(40, 40, 40, 0)",
+              backdropFilter: "blur(0px)",
+              WebkitBackdropFilter: "blur(0px)",
+            }
+          : {
+              background: "rgba(40, 40, 40, 0.45)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              boxShadow: "0 2px 20px rgba(0, 0, 0, 0.49)",
+            }
       }
     >
       <div className={styles.container}>
