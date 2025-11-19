@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Clean-param: etext /
+Sitemap: https://ogneshit.ru/sitemap.xml

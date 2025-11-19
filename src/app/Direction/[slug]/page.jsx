@@ -1,74 +1,90 @@
-'use client';
+import DirectionSinglePage from "./DirectionSinglePage";
+import { getDirectionBySlugServer } from "@/data/directions";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import styles from './DirectionSingle.module.scss';
-import { getDirectionBySlug } from '@/data/directions';
+// Серверная функция для метаданных
+export async function generateMetadata({ params }) {
+  try {
+    // Деструктурируем params с await
+    const { slug } = await params;
 
-export default function DirectionSinglePage() {
-  const params = useParams();
-  const direction = getDirectionBySlug(params.slug);
+    const direction = await getDirectionBySlugServer(slug);
 
-  if (!direction) {
-    return (
-      <div className={styles.notFound}>
-        <h1>Направление не найдено</h1>
-        <Link href='/'>Вернуться на главную</Link>
-      </div>
-    );
+    if (!direction) {
+      return {
+        title: "Направление не найдено | СПО Огнещит",
+        description:
+          "Запрошенное направление не найдено на сайте компании СПО Огнещит",
+      };
+    }
+
+    return {
+      title: `${direction.title} | СПО Огнещит - Производство и монтаж`,
+      description:
+        direction.metaDescription ||
+        `${
+          direction.title
+        } - профессиональные услуги по производству и монтажу от компании СПО Огнещит. ${
+          direction.shortDescription ||
+          "Качественные решения для строительства и противопожарной безопасности."
+        }`,
+      keywords:
+        direction.keywords ||
+        `${direction.title}, светопрозрачные конструкции, противопожарные системы, производство, монтаж, услуги, СПО Огнещит`,
+      alternates: {
+        canonical: `https://ogneshit.ru/directions/${direction.slug}`,
+      },
+      openGraph: {
+        title: `${direction.title} | СПО Огнещит`,
+        description:
+          direction.metaDescription ||
+          `${direction.title} - профессиональные услуги по производству и монтажу`,
+        url: `https://ogneshit.ru/directions/${direction.slug}`,
+        siteName: "СПО Огнещит",
+        images: [
+          {
+            url: direction.image || "/images/directions-og.jpg",
+            width: 1200,
+            height: 630,
+            alt: direction.title,
+          },
+        ],
+        locale: "ru_RU",
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${direction.title} | СПО Огнещит`,
+        description:
+          direction.metaDescription ||
+          `${direction.title} - профессиональные услуги по производству и монтажу`,
+        images: [direction.image || "/images/directions-og.jpg"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {
+      title: "Направление не найдено | СПО Огнещит",
+      description:
+        "Запрошенное направление не найдено на сайте компании СПО Огнещит",
+    };
   }
+}
 
-  return (
-    <main className={styles.directionSingle}>
-      <section className={styles.hero}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={direction.image}
-            alt={direction.title}
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-            sizes='100vw'
-          />
-          <div className={styles.overlay}></div>
-        </div>
+// Серверный компонент по умолчанию
+export default async function Page({ params }) {
+  const { slug } = await params;
+  const direction = await getDirectionBySlugServer(slug);
 
-        <div className={styles.heroContent}>
-          <div className={styles.textContent}>
-            <h1 className={styles.title}>{direction.title}</h1>
-            <div className={styles.divider}></div>
-          </div>
-        </div>
-      </section>
-
-      <div className={styles.contentSection}>
-        <div className={styles.container}>
-          <nav className={styles.breadcrumbs}>
-            <Link href='/'>Главная</Link>
-            <span> / </span>
-            <Link href='/#directions'>Направления</Link>
-            <span> / </span>
-            <span>{direction.title}</span>
-          </nav>
-
-          <section className={styles.content}>
-            <div className={styles.description}>
-              <h2>О направлении</h2>
-              <div
-                className={styles.descriptionText}
-                dangerouslySetInnerHTML={{ __html: direction.description }}
-              />
-            </div>
-          </section>
-
-          <div className={styles.backButton}>
-            <Link href='/#directions' className={styles.backLink}>
-              ← Назад к направлениям
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  return <DirectionSinglePage initialDirection={direction} />;
 }

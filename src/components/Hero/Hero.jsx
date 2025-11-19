@@ -17,6 +17,9 @@ export default function Hero() {
   const progressIntervalRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const dividerRef = useRef(null);
+  const arrowsRef = useRef([]);
+  const paginationRef = useRef(null);
 
   const slides = [
     {
@@ -37,27 +40,34 @@ export default function Hero() {
     },
   ];
 
+  const resetAnimations = () => {
+    // Сбрасываем все анимации
+    const elements = [
+      titleRef.current,
+      subtitleRef.current,
+      dividerRef.current,
+      ...arrowsRef.current,
+      paginationRef.current,
+    ];
+
+    elements.forEach((element) => {
+      if (element) {
+        element.classList.add(styles.resetAnimation);
+        // Принудительное переflow
+        void element.offsetWidth;
+        element.classList.remove(styles.resetAnimation);
+      }
+    });
+  };
+
   const animateText = () => {
     setIsAnimating(true);
+    resetAnimations();
 
-    // Сбрасываем анимацию
-    if (titleRef.current && subtitleRef.current) {
-      titleRef.current.style.animation = "none";
-      subtitleRef.current.style.animation = "none";
-
-      // Принудительное переflow
-      void titleRef.current.offsetWidth;
-      void subtitleRef.current.offsetWidth;
-
-      // Запускаем анимацию снова
-      titleRef.current.style.animation = "";
-      subtitleRef.current.style.animation = "";
-    }
-
-    // Завершаем анимацию через 1.2 секунды
+    // Завершаем анимацию через время, достаточное для всех анимаций
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1200);
+    }, 1500);
   };
 
   const startProgressAnimation = () => {
@@ -109,8 +119,12 @@ export default function Hero() {
   };
 
   useEffect(() => {
+    // Инициализируем refs для стрелок
+    arrowsRef.current = arrowsRef.current.slice(0, 2);
+
     startProgressAnimation();
-    // Запускаем начальную анимацию
+
+    // Запускаем начальную анимацию с небольшой задержкой
     setTimeout(() => {
       animateText();
     }, 300);
@@ -134,7 +148,7 @@ export default function Hero() {
           disableOnInteraction: false,
         }}
         loop={true}
-        speed={800}
+        speed={1000}
         onSlideChange={handleSlideChange}
         onAutoplay={startProgressAnimation}
         className={styles.swiper}
@@ -153,6 +167,7 @@ export default function Hero() {
             </div>
             <div className={styles.heroContent}>
               <button
+                ref={(el) => (arrowsRef.current[0] = el)}
                 className={styles.arrowLeft}
                 aria-label="Previous slide"
                 onClick={goPrev}
@@ -177,7 +192,7 @@ export default function Hero() {
                 >
                   {slide.title}
                 </h1>
-                <div className={styles.divider}></div>
+                <div ref={dividerRef} className={styles.divider}></div>
                 <p
                   ref={subtitleRef}
                   className={styles.subtitle}
@@ -187,6 +202,7 @@ export default function Hero() {
                 </p>
               </div>
               <button
+                ref={(el) => (arrowsRef.current[1] = el)}
                 className={styles.arrowRight}
                 aria-label="Next slide"
                 onClick={goNext}
@@ -208,7 +224,7 @@ export default function Hero() {
         ))}
       </Swiper>
 
-      <div className={styles.pagination}>
+      <div ref={paginationRef} className={styles.pagination}>
         {slides.map((_, index) => (
           <button
             key={index}

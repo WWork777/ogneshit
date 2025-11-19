@@ -8,31 +8,37 @@ export default function Directions() {
       id: 1,
       title: "Светопрозрачные конструкции",
       image: "/images/Directions/Direction_1.webp",
+      slug: "svetoprozrachnye-konstrukcii",
     },
     {
       id: 2,
       title: "Навесные вентилируемые фасады",
       image: "/images/Directions/Direction_2.webp",
+      slug: "navesnye-ventiliruemye-fasady",
     },
     {
       id: 3,
       title: "Научная деятельность",
       image: "/images/Directions/Direction_3.webp",
+      slug: "nauchnaya-deyatelnost",
     },
     {
       id: 4,
       title: "Реставрация витражных конструкций",
       image: "/images/Directions/Direction_4.webp",
+      slug: "restavraciya-vitrazhnyh-konstrukcij",
     },
     {
       id: 5,
       title: "Проектирование фасадов",
       image: "/images/Directions/Direction_5.webp",
+      slug: "proektirovanie-fasadov",
     },
     {
       id: 6,
       title: "Монтаж",
       image: "/images/Directions/Direction_6.webp",
+      slug: "montazh",
     },
   ];
 
@@ -67,7 +73,7 @@ export default function Directions() {
                     backgroundRepeat: "no-repeat",
                   }}
                 >
-                  <Link href={`/Direction/${direction.id}`}>
+                  <Link href={`/Direction/${direction.slug}`}>
                     <div className={styles.directionImage}>
                       <div className={styles.directionIcon}>
                         <svg
@@ -105,7 +111,7 @@ export default function Directions() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <Link href={`/Direction/${direction.id}`}>
+                <Link href={`/Direction/${direction.slug}`}>
                   <div className={styles.directionImage}>
                     <div className={styles.directionIcon}>
                       <svg

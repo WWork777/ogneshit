@@ -156,12 +156,12 @@
     grid-template-columns: 1fr;
     gap: 24px;
     height: auto;
-    min-height: 260px;
+    min-height: 200px;
   }
 
   @media (max-width: 480px) {
     gap: 20px;
-    min-height: 240px;
+    min-height: 180px;
   }
   a {
     display: block;
@@ -171,6 +171,9 @@
 
 .firstRowCards {
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .secondRow {
@@ -183,6 +186,10 @@
   // Планшеты
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -209,12 +216,12 @@
   // Мобильные
   @media (max-width: 768px) {
     border-radius: 10px;
-    min-height: 260px;
+    min-height: 200px;
   }
 
   @media (max-width: 480px) {
     border-radius: 10px;
-    min-height: 240px;
+    min-height: 180px;
   }
 }
 
@@ -224,7 +231,7 @@
   width: 100%;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -278,8 +285,7 @@
     }
   }
 }
-.titleCon {
-}
+
 .directionTitle {
   position: relative;
   top: 85%;
@@ -288,7 +294,7 @@
   padding: 10px 20px;
   font-weight: 500;
   display: inline;
-  font-size: 0.85vw;
+  font-size: 14px;
   color: #000;
   background: #fff;
   border-radius: 50px;
@@ -298,9 +304,10 @@
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
 
   @media (max-width: 1280px) {
-    font-size: 0.75vw;
+    font-size: 0.8vw;
   }
   @media (max-width: 1024px) {
     font-size: 0.7vw;
@@ -313,18 +320,10 @@
 
   // Мобильные
   @media (max-width: 768px) {
-    font-size: 9px;
+    font-size: 12px;
     padding: 8px 16px;
     left: 8px;
     right: 8px;
     max-width: calc(100% - 16px);
-  }
-
-  @media (max-width: 480px) {
-    font-size: 6px;
-    padding: 7px 14px;
-    left: 6px;
-    right: 6px;
-    max-width: calc(100% - 12px);
   }
 }

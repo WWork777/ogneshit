@@ -1,5 +1,58 @@
 $font: var(--font-montserrat);
 
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -65,6 +118,7 @@ $font: var(--font-montserrat);
   line-height: 1.2;
   font-family: $font;
   margin-bottom: 24px;
+  animation: slideInUp 0.8s ease-out 0.3s both;
 
   @media (max-width: 1600px) {
     max-width: 100%;
@@ -79,6 +133,9 @@ $font: var(--font-montserrat);
   @media (max-width: 992px) {
     text-align: center;
   }
+  @media (max-width: 767px) {
+    animation: slideInUp 0.6s ease-out 0.2s both;
+  }
 }
 
 .divider {
@@ -88,6 +145,7 @@ $font: var(--font-montserrat);
   background-color: #f2c7a2;
   margin: 30px 0;
   border: none;
+  animation: scaleIn 0.6s ease-out 0.6s both;
 
   @media (max-width: 1023px) {
     width: 80px;
@@ -98,6 +156,7 @@ $font: var(--font-montserrat);
     width: 60px;
     margin: 20px auto;
     height: 1px;
+    animation: scaleIn 0.5s ease-out 0.4s both;
   }
 
   @media (max-width: 479px) {
@@ -113,6 +172,7 @@ $font: var(--font-montserrat);
   max-width: 70%;
   line-height: 1.4;
   font-family: $font;
+  animation: slideInUp 0.8s ease-out 0.9s both;
 
   @media (max-width: 1600px) {
     max-width: 100%;
@@ -121,6 +181,26 @@ $font: var(--font-montserrat);
 
   @media (max-width: 992px) {
     text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    animation: slideInUp 0.6s ease-out 0.6s both;
+  }
+}
+
+.arrowLeft {
+  animation: slideInLeft 0.8s ease-out 0.3s both;
+
+  @media (max-width: 767px) {
+    animation: fadeIn 0.6s ease-out 0.4s both;
+  }
+}
+
+.arrowRight {
+  animation: slideInRight 0.8s ease-out 0.3s both;
+
+  @media (max-width: 767px) {
+    animation: fadeIn 0.6s ease-out 0.4s both;
   }
 }
 
@@ -180,7 +260,6 @@ $font: var(--font-montserrat);
   display: flex;
   gap: 12px;
   z-index: 2;
-
   @media (max-width: 767px) {
     bottom: 30px;
     gap: 8px;
@@ -190,6 +269,10 @@ $font: var(--font-montserrat);
     bottom: 25px;
     gap: 6px;
   }
+}
+
+.resetAnimation {
+  animation: none !important;
 }
 
 .paginationDot {

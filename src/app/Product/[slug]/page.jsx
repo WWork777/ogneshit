@@ -1,74 +1,92 @@
-'use client';
+import ProductSinglePage from "./ProductSinglePage";
+import { getProductBySlugServer } from "@/data/products";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import styles from './ProductSingle.module.scss';
-import { getProductBySlug } from '@/data/products';
+// Серверная функция для метаданных
+export async function generateMetadata({ params }) {
+  try {
+    // ДОБАВЬТЕ AWAIT ДЛЯ PARAMS
+    const { slug } = await params;
 
-export default function ProductSinglePage() {
-  const params = useParams();
-  const product = getProductBySlug(params.slug);
+    // Используем серверную функцию
+    const product = await getProductBySlugServer(slug);
 
-  if (!product) {
-    return (
-      <div className={styles.notFound}>
-        <h1>Продукт не найден</h1>
-        <Link href='/'>Вернуться на главную</Link>
-      </div>
-    );
+    if (!product) {
+      return {
+        title: "Продукт не найден | СПО Огнещит",
+        description:
+          "Запрошенный продукт не найден в каталоге компании СПО Огнещит",
+      };
+    }
+
+    return {
+      title: `${product.title} | СПО Огнещит - Производство и монтаж`,
+      description:
+        product.metaDescription ||
+        `Производство и монтаж ${product.title.toLowerCase()}. ${
+          product.shortDescription ||
+          "Качественные решения от производителя СПО Огнещит."
+        }`,
+      keywords:
+        product.keywords ||
+        `${product.title}, светопрозрачные конструкции, противопожарные системы, производство, монтаж, СПО Огнещит`,
+      alternates: {
+        canonical: `https://ogneshit.ru/products/${product.slug}`,
+      },
+      openGraph: {
+        title: `${product.title} | СПО Огнещит`,
+        description:
+          product.metaDescription ||
+          `Производство и монтаж ${product.title.toLowerCase()} от компании СПО Огнещит`,
+        url: `https://ogneshit.ru/products/${product.slug}`,
+        siteName: "СПО Огнещит",
+        images: [
+          {
+            url: product.image,
+            width: 1200,
+            height: 630,
+            alt: product.title,
+          },
+        ],
+        locale: "ru_RU",
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${product.title} | СПО Огнещит`,
+        description:
+          product.metaDescription ||
+          `Производство и монтаж ${product.title.toLowerCase()}`,
+        images: [product.image],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {
+      title: "Продукт не найден | СПО Огнещит",
+      description:
+        "Запрошенный продукт не найден в каталоге компании СПО Огнещит",
+    };
   }
+}
 
-  return (
-    <main className={styles.productSingle}>
-      <section className={styles.hero}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={product.image}
-            alt={product.title}
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-            sizes='100vw'
-          />
-          <div className={styles.overlay}></div>
-        </div>
+// Серверный компонент по умолчанию
+export default async function Page({ params }) {
+  // ДОБАВЬТЕ AWAIT ДЛЯ PARAMS
+  const { slug } = await params;
 
-        <div className={styles.heroContent}>
-          <div className={styles.textContent}>
-            <h1 className={styles.title}>{product.title}</h1>
-            <div className={styles.divider}></div>
-          </div>
-        </div>
-      </section>
+  // Получаем продукт на сервере для передачи в клиентский компонент
+  const product = await getProductBySlugServer(slug);
 
-      <div className={styles.contentSection}>
-        <div className={styles.container}>
-          <nav className={styles.breadcrumbs}>
-            <Link href='/'>Главная</Link>
-            <span> / </span>
-            <Link href='/#catalog'>Каталог продукции</Link>
-            <span> / </span>
-            <span>{product.title}</span>
-          </nav>
-
-          <section className={styles.content}>
-            <div className={styles.description}>
-              <h2>О продукции</h2>
-              <div
-                className={styles.descriptionText}
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              />
-            </div>
-          </section>
-
-          <div className={styles.backButton}>
-            <Link href='/#catalog' className={styles.backLink}>
-              ← Назад к каталогу
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  return <ProductSinglePage params={{ slug }} initialProduct={product} />;
 }
