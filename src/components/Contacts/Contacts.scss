@@ -2,8 +2,8 @@
   position: relative;
   width: 100%;
   padding: 50px 12vw 50px 12vw;
-  background: #F7F7F7;
-    .map {
+  background: #f7f7f7;
+  .map {
     width: 100%;
     height: 477px;
     border-radius: 30px;
@@ -21,9 +21,9 @@
     padding: 20px 0 35px 32px;
     margin: 30px 0 30px 30px;
     box-shadow: inset 0 0 50px #fff;
-    box-shadow: 0 4 30px rgba(#000000, .1);
+    box-shadow: 0 4 30px rgba(#000000, 0.1);
     h2 {
-      font-family: "Montserrat";
+      font-family: 'Montserrat';
       font-size: 50px;
       font-weight: 600;
     }
@@ -33,12 +33,12 @@
         flex-direction: column;
         h4 {
           margin-top: 5px;
-          font-family: "Montserrat";
+          font-family: 'Montserrat';
           font-size: 24px;
           font-weight: 500;
         }
         span {
-          font-family: "Montserrat";
+          font-family: 'Montserrat';
           font-size: 18px;
           font-weight: 400;
         }
@@ -47,39 +47,39 @@
         margin-top: 25px;
         display: flex;
         flex-direction: column;
-          h4 {
-            font-family: "Montserrat";
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 5px;
-          }
-          > span {
-            font-family: "Montserrat";
-            font-size: 18px;
-            font-weight: 400;
-          }
-          > span:nth-child(3) {
-            font-weight: 500;
-          }
-          .map-contacts-messages {
+        h4 {
+          font-family: 'Montserrat';
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        > span {
+          font-family: 'Montserrat';
+          font-size: 18px;
+          font-weight: 400;
+        }
+        > span:nth-child(3) {
+          font-weight: 500;
+        }
+        .map-contacts-messages {
+          display: flex;
+          gap: 15px;
+          margin-top: 30px;
+          .map-contact-message {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            .map-contact-message {
-              display: flex;
-              gap: 10px;
-              border-radius: 100px;
-              border: 1px solid #000;
-              justify-content: center;
-              align-items: center;
-              padding: 6px 5px 6px 20px;
-              span {
-                font-family: "Montserrat";
-                font-weight: 400;
-              }
+            gap: 10px;
+            border-radius: 100px;
+            border: 1px solid #000;
+            justify-content: center;
+            align-items: center;
+            padding: 6px 5px 6px 20px;
+            span {
+              font-family: 'Montserrat';
+              font-weight: 400;
             }
           }
         }
+      }
     }
   }
 }
@@ -91,22 +91,108 @@
   }
 }
 @media (max-width: 1100px) {
-    .map-container {
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
     .map-contacts {
-      display: none;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      order: -1; // Размещаем выше карты
     }
   }
 }
 @media (max-width: 820px) {
   .map-container {
     padding: 50px 17px;
+
+    .map-contacts {
+      padding: 20px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .map-all-contacts {
+        .map-contact-adress {
+          h4 {
+            font-size: 20px;
+          }
+          span {
+            font-size: 16px;
+          }
+        }
+        .map-other-contacts {
+          h4 {
+            font-size: 20px;
+          }
+          > span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 @media (max-width: 768px) {
   .map-container {
-      .map {
-        height: 300px;
-        border-radius: 8px;
-  }
+    padding: 30px 17px;
+    gap: 20px;
+
+    .map-contacts {
+      padding: 20px 15px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .map-all-contacts {
+        .map-contact-adress {
+          h4 {
+            font-size: 18px;
+          }
+          span {
+            font-size: 14px;
+          }
+        }
+        .map-other-contacts {
+          margin-top: 20px;
+
+          h4 {
+            font-size: 18px;
+          }
+          > span {
+            font-size: 14px;
+          }
+
+          .map-contacts-messages {
+            gap: 10px;
+            margin-top: 20px;
+
+            .map-contact-message {
+              padding: 5px 4px 5px 15px;
+
+              span {
+                font-size: 14px;
+              }
+
+              svg {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .map {
+      height: 300px;
+      border-radius: 8px;
+    }
   }
 }
