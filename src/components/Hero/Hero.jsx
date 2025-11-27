@@ -23,9 +23,9 @@ export default function Hero() {
 
   const slides = [
     {
-      title: "Огнезащита, которой доверяют по всей России",
+      title: "СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности",
       subtitle:
-        "Производство и монтаж сертифицированных противопожарных конструкций",
+        "Производство, проектирование и монтаж всех типов светопрозрачных конструкций",
       image: "/images/Hero/hero-airport.webp",
     },
     {
@@ -36,7 +36,7 @@ export default function Hero() {
     {
       title: "Надежность проверенная временем",
       subtitle: "Более 15 лет на рынке противопожарных услуг и конструкций",
-      image: "/images/Hero/hero-airport.webp",
+      image: "/images/Hero/hero-airport2.webp",
     },
   ];
 
