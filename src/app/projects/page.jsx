@@ -1,41 +1,40 @@
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./ProjectsPage.module.scss";
-import { getAllProjects } from "@/data/projects";
+import styles from './ProjectsPage.module.scss';
+import { getAllProjects } from '@/data/projects';
+import ProjectsContent from './ProjectsContent';
 
 export async function generateMetadata() {
   return {
     title:
-      "Построенные объекты | СПО Огнещит - Реализованные проекты светопрозрачных конструкций",
+      'Построенные объекты | СПО Огнещит - Реализованные проекты светопрозрачных конструкций',
     description:
-      "Реализованные проекты СПО Огнещит: светопрозрачные витражи, фасады, козырьки, противопожарные конструкции. Объекты по всей России и СНГ.",
+      'Реализованные проекты СПО Огнещит: светопрозрачные витражи, фасады, козырьки, противопожарные конструкции. Объекты по всей России и СНГ.',
     keywords:
-      "построенные объекты, реализованные проекты, светопрозрачные конструкции, готовые объекты, портфолио, выполненные работы, СПО Огнещит проекты",
+      'построенные объекты, реализованные проекты, светопрозрачные конструкции, готовые объекты, портфолио, выполненные работы, СПО Огнещит проекты',
     alternates: {
-      canonical: "https://ogneshit.ru/projects",
+      canonical: 'https://ogneshit.ru/projects',
     },
     openGraph: {
-      title: "Построенные объекты | СПО Огнещит - Реализованные проекты",
+      title: 'Построенные объекты | СПО Огнещит - Реализованные проекты',
       description:
-        "Реализованные проекты светопрозрачных и противопожарных конструкций от СПО Огнещит",
-      url: "https://ogneshit.ru/projects",
-      siteName: "СПО Огнещит",
+        'Реализованные проекты светопрозрачных и противопожарных конструкций от СПО Огнещит',
+      url: 'https://ogneshit.ru/projects',
+      siteName: 'СПО Огнещит',
       images: [
         {
           url: `/images/projects-og.jpg`,
           width: 1200,
           height: 630,
-          alt: "Построенные объекты СПО Огнещит",
+          alt: 'Построенные объекты СПО Огнещит',
         },
       ],
-      locale: "ru_RU",
-      type: "website",
+      locale: 'ru_RU',
+      type: 'website',
     },
     twitter: {
-      card: "summary_large_image",
-      title: "Построенные объекты | СПО Огнещит - Реализованные проекты",
+      card: 'summary_large_image',
+      title: 'Построенные объекты | СПО Огнещит - Реализованные проекты',
       description:
-        "Реализованные проекты светопрозрачных и противопожарных конструкций",
+        'Реализованные проекты светопрозрачных и противопожарных конструкций',
       images: [`/images/projects-og.jpg`],
     },
     robots: {
@@ -44,9 +43,9 @@ export async function generateMetadata() {
       googleBot: {
         index: true,
         follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
   };
@@ -56,31 +55,31 @@ export default function ProjectsPage() {
   const projects = getAllProjects();
 
   const getLocationText = (project) => {
-    if (project.country === "Россия") {
+    if (project.country === 'Россия') {
       return project.city;
     }
     return `${project.city}, ${project.country}`;
   };
 
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Построенные объекты СПО Огнещит",
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Построенные объекты СПО Огнещит',
     description:
-      "Реализованные проекты светопрозрачных и противопожарных конструкций",
-    url: "https://ogneshit.ru/projects",
+      'Реализованные проекты светопрозрачных и противопожарных конструкций',
+    url: 'https://ogneshit.ru/projects',
     numberOfItems: projects.length,
     itemListElement: projects.map((project, index) => ({
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: index + 1,
       item: {
-        "@type": "CreativeWork",
+        '@type': 'CreativeWork',
         name: project.title,
         description: `Объект в ${getLocationText(project)}`,
         image: project.image,
         url: `https://ogneshit.ru/projects/${project.slug}`,
         location: {
-          "@type": "Place",
+          '@type': 'Place',
           address: getLocationText(project),
         },
       },
@@ -90,7 +89,7 @@ export default function ProjectsPage() {
   return (
     <>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className={styles.projectsPage}>
@@ -103,33 +102,7 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className={styles.projectsGrid}>
-            {projects.map((project) => (
-              <Link
-                href={`/projects/${project.slug}`}
-                key={project.id}
-                className={styles.projectLink}
-              >
-                <article className={styles.projectCard}>
-                  <div className={styles.projectImage}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className={styles.projectInfo}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
-                    <p className={styles.projectLocation}>
-                      {getLocationText(project)}
-                    </p>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+          <ProjectsContent />
         </div>
       </main>
     </>

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import styles from "./Hero.module.scss";
+import { useState, useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import styles from './Hero.module.scss';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,20 +23,20 @@ export default function Hero() {
 
   const slides = [
     {
-      title: "СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности",
+      title: 'СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности',
       subtitle:
-        "Производство, проектирование и монтаж всех типов светопрозрачных конструкций",
-      image: "/images/Hero/hero-airport.webp",
+        'Производство, проектирование и монтаж всех типов светопрозрачных конструкций',
+      image: '/images/Hero/hero-airport.webp',
     },
     {
-      title: "Инновационные решения для вашей безопасности",
-      subtitle: "Современные технологии и материалы для эффективной огнезащиты",
-      image: "/images/About/about-bg.webp",
+      title: 'Инновационные решения для вашей безопасности',
+      subtitle: 'Современные технологии и материалы для эффективной огнезащиты',
+      image: '/images/About/about-bg.webp',
     },
     {
-      title: "Надежность проверенная временем",
-      subtitle: "Более 15 лет на рынке противопожарных услуг и конструкций",
-      image: "/images/Hero/hero-airport2.webp",
+      title: 'Надежность проверенная временем',
+      subtitle: 'Более 15 лет на рынке противопожарных услуг и конструкций',
+      image: '/images/Hero/hero-airport2.webp',
     },
   ];
 
@@ -160,7 +160,7 @@ export default function Hero() {
               style={{
                 backgroundImage: slide.image
                   ? `url(${slide.image})`
-                  : "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+                  : 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
               }}
             >
               <div className={styles.backgroundOverlay}></div>
@@ -169,19 +169,19 @@ export default function Hero() {
               <button
                 ref={(el) => (arrowsRef.current[0] = el)}
                 className={styles.arrowLeft}
-                aria-label="Previous slide"
+                aria-label='Previous slide'
                 onClick={goPrev}
                 disabled={isAnimating}
               >
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
                 >
-                  <path d="M15 18l-6-6 6-6" />
+                  <path d='M15 18l-6-6 6-6' />
                 </svg>
               </button>
               <div className={styles.textContent}>
@@ -204,19 +204,19 @@ export default function Hero() {
               <button
                 ref={(el) => (arrowsRef.current[1] = el)}
                 className={styles.arrowRight}
-                aria-label="Next slide"
+                aria-label='Next slide'
                 onClick={goNext}
                 disabled={isAnimating}
               >
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
                 >
-                  <path d="M9 18l6-6-6-6" />
+                  <path d='M9 18l6-6-6-6' />
                 </svg>
               </button>
             </div>
@@ -229,11 +229,11 @@ export default function Hero() {
           <button
             key={index}
             className={`${styles.paginationDot} ${
-              index === activeIndex ? styles.active : ""
+              index === activeIndex ? styles.active : ''
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === activeIndex ? "true" : "false"}
+            aria-current={index === activeIndex ? 'true' : 'false'}
             disabled={isAnimating}
           >
             {index === activeIndex && (

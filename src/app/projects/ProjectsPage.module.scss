@@ -41,7 +41,7 @@ $font: var(--font-montserrat);
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -123,6 +123,111 @@ $font: var(--font-montserrat);
   }
 }
 
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+}
+
+.tabButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 40px;
+  gap: 10px;
+  min-width: 160px;
+  height: 50px;
+  background: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  border: 2px solid #e2e8f0;
+  color: #64748b;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  &:hover {
+    border-color: #ff6b35;
+    color: #ff6b35;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(255, 107, 53, 0.15);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.active {
+    background: #282828;
+    border-color: #282828;
+    color: #ffffff;
+    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background: #1a1a1a;
+      border-color: #1a1a1a;
+      color: #ffffff;
+      box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 32px;
+    font-size: 16px;
+    min-width: 140px;
+    height: 45px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 24px;
+    font-size: 14px;
+    min-width: 120px;
+    height: 40px;
+  }
+}
+
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -189,7 +294,7 @@ $font: var(--font-montserrat);
   border-radius: 20px 20px 0 0;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -199,10 +304,25 @@ $font: var(--font-montserrat);
     opacity: 0;
     transition: opacity 0.4s ease;
     mix-blend-mode: overlay;
+    pointer-events: none;
   }
 
   img {
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  // Стили для видео внутри projectImage
+  video {
+    transition: none; // Убираем анимацию для видео
+  }
+
+  // Когда есть кастомная кнопка play, скрываем стандартную кнопку play в элементах управления
+  &:has(.playButton) {
+    video {
+      &::-webkit-media-controls-play-button {
+        display: none !important;
+      }
+    }
   }
 
   @media (max-width: 1280px) {
@@ -222,6 +342,21 @@ $font: var(--font-montserrat);
   }
 }
 
+// Для карточек видео убираем оранжевый фильтр и анимацию
+.videoCard {
+  .projectImage {
+    &::after {
+      display: none !important; // Убираем оранжевый фильтр
+    }
+
+    &:hover {
+      video {
+        transform: none !important; // Убираем масштабирование видео
+      }
+    }
+  }
+}
+
 .projectInfo {
   padding: 24px;
   display: flex;
@@ -230,7 +365,7 @@ $font: var(--font-montserrat);
   width: 100%;
   box-sizing: border-box;
   background: white;
-  transition: background 0.4s ease;
+  transition: background 0.4s ease, transform 0.3s ease;
   border-radius: 0 0 20px 20px;
 
   @media (max-width: 768px) {
@@ -274,7 +409,7 @@ $font: var(--font-montserrat);
   gap: 6px;
 
   &::before {
-    content: "📍";
+    content: '📍';
     font-size: 12px;
   }
 
@@ -285,7 +420,7 @@ $font: var(--font-montserrat);
 
 // Дополнительные декоративные элементы
 .projectsPage::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
@@ -303,4 +438,71 @@ $font: var(--font-montserrat);
     );
   pointer-events: none;
   z-index: -1;
+}
+
+// Специальные стили для карточек видео
+.videoCard {
+  &:hover {
+    transform: none; // Убираем поднятие карточки
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04); // Оставляем стандартную тень
+
+    .projectInfo {
+      transform: translateY(-4px); // Поднимаем только название
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+// Стили для видео плеера
+.videoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  background: #000;
+  cursor: pointer;
+
+  // Скрываем только кнопку скачивания, все остальное оставляем стандартным
+  &::-webkit-media-controls-download-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
+}
+
+// Кнопка play по центру (большая, когда видео не запущено)
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  padding: 0;
+
+  svg {
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.1);
+    }
+
+    circle {
+      fill: rgba(255, 107, 53, 0.9);
+    }
+  }
+
+  &:active {
+    svg {
+      transform: scale(0.95);
+    }
+  }
 }
