@@ -41,3 +41,10 @@ yarn-error.log*
 next-env.d.ts
 
 # referens.svg
+
+# video files (too large for git)
+public/videos/*.mp4
+public/videos/*.webm
+public/videos/*.ogg
+public/videos/*.mov
+public/videos/*.avi
