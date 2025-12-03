@@ -1,7 +1,253 @@
 // Полные данные о проектах
 export const projectsData = {
-  'expo-2017': {
+  'siberia-arena': {
     id: 1,
+    title: 'Сибирь-Арена',
+    city: 'Новосибирск',
+    country: 'Россия',
+    slug: 'siberia-arena',
+    image: '/images/Projects/siberian-arena.png',
+    images: ['/images/Projects/siberian-arena.png'],
+    description: `      
+      <ul>
+        <li>Витражное остекление фасадов</li>
+        <li>Трансформируемые перегородки</li>
+        <li>Противопожарные светорозрачные конструкции</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'luzhniki-tennis': {
+    id: 2,
+    title: 'Теннисный центр в Лужниках',
+    city: 'Москва',
+    country: 'Россия',
+    slug: 'luzhniki-tennis',
+    image: '/images/Projects/tennis.webp',
+    images: ['/images/Projects/tennis.webp'],
+    description: `
+      <p>Теннисный центр в Лужниках — современный спортивный комплекс с многофункциональными 
+      кортами и зрительскими трибунами. Проект включал комплексную противопожарную защиту 
+      всех помещений и конструкций.</p>
+    `,
+    features: [
+      'Площадь: уточняется',
+      'Срок реализации: уточняется',
+      'Оборудование: системы высшей категории надежности',
+    ],
+  },
+  'vladivastok-burnyi': {
+    id: 3,
+    title: 'Бурный (Многофункциональный комплекс)',
+    city: 'Владивосток',
+    country: 'Россия',
+    slug: 'vladivastok-burnyi',
+    image: '/images/Projects/vladivastok-burnyi.png',
+    images: ['/images/Projects/vladivastok-burnyi.png'],
+    description: `      
+      <ul>
+        <li>Пространственные купольные конструкций.</li>
+        <li>Реставрация фасадов</li>
+        <li>Витражное остекление</li>
+        <li>Алюминиевые светопрозрачные двери</li>
+        <li>Светопрозрачные ограждения НВФ</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'vladivostok-hotel': {
+    id: 4,
+    title: 'Vladivostok Grand Hotel & Spa',
+    city: 'Владивосток',
+    country: 'Россия',
+    slug: 'vladivostok-hotel',
+    image: '/images/Projects/hotel.webp',
+    images: [
+      '/images/Projects/hotel.webp',
+      '/images/Projects/hotel-2.webp',
+      '/images/Projects/hotel-3.webp',
+    ],
+    description: `
+      <p>Пятизвездочный отель премиум-класса во Владивостоке. Проект включал оснащение 
+      современными системами пожарной безопасности с учетом специфики гостиничного комплекса.</p>
+      
+      <p><strong>Особенности проекта:</strong></p>
+      <ul>
+        <li>Интеграция систем безопасности в единый комплекс управления отелем</li>
+        <li>Зональное разделение систем оповещения</li>
+        <li>Особые решения для SPA-зоны и бассейна</li>
+        <li>Круглосуточный мониторинг и обслуживание</li>
+      </ul>
+    `,
+    features: [
+      'Количество номеров: 150',
+      'Этажность: 18 этажей',
+      'Особые зоны: SPA, рестораны, конференц-залы',
+      'Система: адресно-аналоговая пожарная сигнализация',
+    ],
+  },
+  'habarovsk-airport': {
+    id: 5,
+    title: 'Международный аэропорт Хабаровска',
+    city: 'Хабаровск',
+    country: 'Россия',
+    slug: 'habarovsk-airport',
+    image: '/images/Projects/habarovsk-airport.png',
+    images: ['/images/Projects/habarovsk-airport.png'],
+    description: `      
+      <ul>
+        <li>Автоматические алюминиевые двери</li>
+        <li>Противопожарные светопрозрачные двери</li>
+        <li>Противопожарные деревянные двери</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'sakhalin-airport': {
+    id: 6,
+    title: 'Аэропорт',
+    city: 'Южно-Сахалинск',
+    country: 'Россия',
+    slug: 'sakhalin-airport',
+    image: '/images/Projects/airport.webp',
+    images: ['/images/Projects/airport.webp'],
+    description: `
+      <p>Аэропорт в Южно-Сахалинске — важный транспортный узел региона. Проект включал 
+      оснащение современными системами пожарной безопасности с учетом специфики 
+      аэропортовых объектов.</p>
+    `,
+    features: [
+      'Площадь: уточняется',
+      'Срок реализации: уточняется',
+      'Оборудование: системы высшей категории надежности',
+    ],
+  },
+  'krasnoyarsk-airport': {
+    id: 7,
+    title: 'Международный аэропорт Красноярска, VIP терминал',
+    city: 'Красноярск',
+    country: 'Россия',
+    slug: 'krasnoyarsk-airport',
+    image: '/images/Projects/krasnoyarsk-airport.png',
+    images: ['/images/Projects/krasnoyarsk-airport.png'],
+    description: `      
+      <ul>
+        <li>Автоматические светопрозрачные двери</li>
+        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
+        <li>Остекление лифтовых шахт</li>
+        <li>Светопрозрачные козырьки</li>
+        <li>Сантехнические перегородки</li>
+        <li>Противопожарные светопрозрачные перегородки</li>
+        <li>Противопожарные светопрозрачные двери</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'tomsk-airport': {
+    id: 8,
+    title: 'Международный аэропорт Томска',
+    city: 'Томск',
+    country: 'Россия',
+    slug: 'tomsk-airport',
+    image: '/images/Projects/tomsk-airport.png',
+    images: ['/images/Projects/tomsk-airport.png'],
+    description: `      
+      <ul>
+        <li>Противопожарные светопрозрачные конструкции</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'sochi-center': {
+    id: 9,
+    title: 'Центр художественной гимнастики',
+    city: 'Сочи',
+    country: 'Россия',
+    slug: 'sochi-center',
+    image: '/images/Projects/sochi-center.png',
+    images: ['/images/Projects/sochi-center.png'],
+    description: `      
+      <ul>
+        <li>Противопожарные светопрозрачные конструкции</li>
+        <li>Светопрозрачные ограждения</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'kemerovo-cluster': {
+    id: 10,
+    title: 'Культурно-образовательный кластер',
+    city: 'Кемерово',
+    country: 'Россия',
+    slug: 'kemerovo-cluster',
+    image: '/images/Projects/kemerovo-cluster.png',
+    images: ['/images/Projects/kemerovo-cluster.png'],
+    description: `      
+      <ul>
+        <li>Витражное остекление</li>
+        <li>Светопрозрачные алюминиевые перегородки, двери</li>
+        <li>Противопожарные светопрозрачные перегородки, двери, противопожарные наружные витражи</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'ircutsk-perevozki': {
+    id: 11,
+    title: 'Центр управления перевозками',
+    city: 'Иркутск',
+    country: 'Россия',
+    slug: 'ircutsk-perevozki',
+    image: '/images/Projects/ircutsk-perevozki.png',
+    images: ['/images/Projects/ircutsk-perevozki.png'],
+    description: `      
+      <ul>
+        <li>Витражное остекление</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'almaty-fond-nazarbaev': {
+    id: 12,
+    title: 'Фонд Назарбаева (Административное здание)',
+    city: 'Алматы',
+    country: 'Казахстан',
+    slug: 'almaty-fond-nazarbaev',
+    image: '/images/Projects/almaty-fond-nazarbaev.png',
+    images: ['/images/Projects/almaty-fond-nazarbaev.png'],
+    description: `      
+      <ul>
+        <li>Алюминиевые светопрозрачные перегородки, двери</li>
+        <li>Автоматические светопрозрачные двери</li>
+        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
+        <li>Остекление лифтовых шахт</li>
+        <li>Противопожарные светопрозрачные перегородки</li>
+        <li>Противопожарные светопрозрачные двери</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'almaty-kazakhmys': {
+    id: 13,
+    title: 'Kazakhmys (Административное здание)',
+    city: 'Алматы',
+    country: 'Казахстан',
+    slug: 'almaty-kazakhmys',
+    image: '/images/Projects/almaty-kazakhmys.png',
+    images: ['/images/Projects/almaty-kazakhmys.png'],
+    description: `      
+      <ul>
+        <li>Алюминиевые светопрозрачные перегородки, двери</li>
+        <li>Автоматические светопрозрачные двери</li>
+        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
+        <li>Остекление лифтовых шахт</li>
+        <li>Противопожарные светопрозрачные перегородки</li>
+        <li>Противопожарные светопрозрачные двери</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'expo-2017': {
+    id: 14,
     title: 'EXPO 2017',
     city: 'Астана',
     country: 'Казахстан',
@@ -35,246 +281,6 @@ export const projectsData = {
       'Оборудование: системы высшей категории надежности',
       'Стандарты: МЧС РК, международные нормы',
     ],
-  },
-  'vladivostok-hotel': {
-    id: 2,
-    title: 'Vladivostok Grand Hotel & Spa',
-    city: 'Владивосток',
-    country: 'Россия',
-    slug: 'vladivostok-hotel',
-    image: '/images/Projects/hotel.webp',
-    images: [
-      '/images/Projects/hotel.webp',
-      '/images/Projects/hotel-2.webp',
-      '/images/Projects/hotel-3.webp',
-    ],
-    description: `
-      <p>Пятизвездочный отель премиум-класса во Владивостоке. Проект включал оснащение 
-      современными системами пожарной безопасности с учетом специфики гостиничного комплекса.</p>
-      
-      
-    `,
-    features: [
-      'Интеграция систем безопасности в единый комплекс управления отелем',
-      'Зональное разделение систем оповещения',
-      'Особые решения для SPA-зоны и бассейна',
-      'Круглосуточный мониторинг и обслуживание',
-    ],
-  },
-  'luzhniki-tennis': {
-    id: 3,
-    title: 'Теннисный центр в Лужниках',
-    city: 'Москва',
-    country: 'Россия',
-    slug: 'luzhniki-tennis',
-    image: '/images/Projects/tennis.webp',
-    images: ['/images/Projects/tennis.webp'],
-    description: `
-      <p>Теннисный центр в Лужниках — современный спортивный комплекс с многофункциональными 
-      кортами и зрительскими трибунами. Проект включал комплексную противопожарную защиту 
-      всех помещений и конструкций.</p>
-    `,
-    features: [
-      'Площадь: уточняется',
-      'Срок реализации: уточняется',
-      'Оборудование: системы высшей категории надежности',
-    ],
-  },
-  'sakhalin-airport': {
-    id: 4,
-    title: 'Аэропорт',
-    city: 'Южно-Сахалинск',
-    country: 'Россия',
-    slug: 'sakhalin-airport',
-    image: '/images/Projects/airport.webp',
-    images: ['/images/Projects/airport.webp'],
-    description: `
-      <p>Аэропорт в Южно-Сахалинске — важный транспортный узел региона. Проект включал 
-      оснащение современными системами пожарной безопасности с учетом специфики 
-      аэропортовых объектов.</p>
-    `,
-    features: [
-      'Площадь: уточняется',
-      'Срок реализации: уточняется',
-      'Оборудование: системы высшей категории надежности',
-    ],
-  },
-  'siberia-arena': {
-    id: 5,
-    title: 'Сибирь-Арена',
-    city: 'Новосибирск',
-    country: 'Россия',
-    slug: 'siberia-arena',
-    image: '/images/Projects/siberian-arena.png',
-    images: ['/images/Projects/siberian-arena.png'],
-    description: `      
-      <ul>
-        <li>Витражное остекление фасадов</li>
-        <li>Трансформируемые перегородки</li>
-        <li>Противопожарные светорозрачные конструкции</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'vladivastok-burnyi': {
-    id: 6,
-    title: 'Бурный (Многофункциональный комплекс)',
-    city: 'Владивосток',
-    country: 'Россия',
-    slug: 'vladivastok-burnyi',
-    image: '/images/Projects/vladivastok-burnyi.png',
-    images: ['/images/Projects/vladivastok-burnyi.png'],
-    description: `      
-      <ul>
-        <li>Пространственные купольные конструкций.</li>
-        <li>Реставрация фасадов</li>
-        <li>Витражное остекление</li>
-        <li>Алюминиевые светопрозрачные двери</li>
-        <li>Светопрозрачные ограждения НВФ</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'habarovsk-airport': {
-    id: 7,
-    title: 'Международный аэропорт Хабаровска',
-    city: 'Хабаровск',
-    country: 'Россия',
-    slug: 'habarovsk-airport',
-    image: '/images/Projects/habarovsk-airport.png',
-    images: ['/images/Projects/habarovsk-airport.png'],
-    description: `      
-      <ul>
-        <li>Автоматические алюминиевые двери</li>
-        <li>Противопожарные светопрозрачные двери</li>
-        <li>Противопожарные деревянные двери</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'krasnoyarsk-airport': {
-    id: 8,
-    title: 'Международный аэропорт Красноярска, VIP терминал',
-    city: 'Красноярск',
-    country: 'Россия',
-    slug: 'krasnoyarsk-airport',
-    image: '/images/Projects/krasnoyarsk-airport.png',
-    images: ['/images/Projects/krasnoyarsk-airport.png'],
-    description: `      
-      <ul>
-        <li>Автоматические светопрозрачные двери</li>
-        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
-        <li>Остекление лифтовых шахт</li>
-        <li>Светопрозрачные козырьки</li>
-        <li>Сантехнические перегородки</li>
-        <li>Противопожарные светопрозрачные перегородки</li>
-        <li>Противопожарные светопрозрачные двери</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'tomsk-airport': {
-    id: 9,
-    title: 'Международный аэропорт Томска',
-    city: 'Томск',
-    country: 'Россия',
-    slug: 'tomsk-airport',
-    image: '/images/Projects/tomsk-airport.png',
-    images: ['/images/Projects/tomsk-airport.png'],
-    description: `      
-      <ul>
-        <li>Противопожарные светопрозрачные конструкции</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'sochi-center': {
-    id: 10,
-    title: 'Центр художественной гимнастики',
-    city: 'Сочи',
-    country: 'Россия',
-    slug: 'sochi-center',
-    image: '/images/Projects/sochi-center.png',
-    images: ['/images/Projects/sochi-center.png'],
-    description: `      
-      <ul>
-        <li>Противопожарные светопрозрачные конструкции</li>
-        <li>Светопрозрачные ограждения</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'kemerovo-cluster': {
-    id: 11,
-    title: 'Культурно-образовательный кластер',
-    city: 'Кемерово',
-    country: 'Россия',
-    slug: 'kemerovo-cluster',
-    image: '/images/Projects/kemerovo-cluster.png',
-    images: ['/images/Projects/kemerovo-cluster.png'],
-    description: `      
-      <ul>
-        <li>Витражное остекление</li>
-        <li>Светопрозрачные алюминиевые перегородки, двери</li>
-        <li>Противопожарные светопрозрачные перегородки, двери, противопожарные наружные витражи</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'ircutsk-perevozki': {
-    id: 12,
-    title: 'Центр управления перевозками',
-    city: 'Иркутск',
-    country: 'Россия',
-    slug: 'ircutsk-perevozki',
-    image: '/images/Projects/ircutsk-perevozki.png',
-    images: ['/images/Projects/ircutsk-perevozki.png'],
-    description: `      
-      <ul>
-        <li>Витражное остекление</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'almaty-fond-nazarbaev': {
-    id: 13,
-    title: 'Фонд Назарбаева (Административное здание)',
-    city: 'Алматы',
-    country: 'Казахстан',
-    slug: 'almaty-fond-nazarbaev',
-    image: '/images/Projects/almaty-fond-nazarbaev.png',
-    images: ['/images/Projects/almaty-fond-nazarbaev.png'],
-    description: `      
-      <ul>
-        <li>Алюминиевые светопрозрачные перегородки, двери</li>
-        <li>Автоматические светопрозрачные двери</li>
-        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
-        <li>Остекление лифтовых шахт</li>
-        <li>Противопожарные светопрозрачные перегородки</li>
-        <li>Противопожарные светопрозрачные двери</li>
-      </ul>
-    `,
-    features: [],
-  },
-  'almaty-kazakhmys': {
-    id: 14,
-    title: 'Kazakhmys (Административное здание)',
-    city: 'Алматы',
-    country: 'Казахстан',
-    slug: 'almaty-kazakhmys',
-    image: '/images/Projects/almaty-kazakhmys.png',
-    images: ['/images/Projects/almaty-kazakhmys.png'],
-    description: `      
-      <ul>
-        <li>Алюминиевые светопрозрачные перегородки, двери</li>
-        <li>Автоматические светопрозрачные двери</li>
-        <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
-        <li>Остекление лифтовых шахт</li>
-        <li>Противопожарные светопрозрачные перегородки</li>
-        <li>Противопожарные светопрозрачные двери</li>
-      </ul>
-    `,
-    features: [],
   },
   'almaty-arena': {
     id: 15,
@@ -355,8 +361,23 @@ export const projectsData = {
     `,
     features: [],
   },
-  'novosibirsk-mirotel': {
+  'ylta-artek': {
     id: 20,
+    title: 'МДЦ "Артек". Детский лагерь "Солнечный"',
+    city: 'Ялта',
+    country: 'Россия',
+    slug: 'ylta-artek',
+    image: '/images/Projects/ylta-artek.jpg',
+    images: ['/images/Projects/ylta-artek.jpg'],
+    description: `
+      <ul>
+        <li>Светопрозрачные противопожарные конструкции</li>
+      </ul>
+    `,
+    features: [],
+  },
+  'novosibirsk-mirotel': {
+    id: 21,
     title: 'Mirotel (Гостиница)',
     city: 'Новосибирск',
     country: 'Россия',
@@ -371,7 +392,7 @@ export const projectsData = {
     features: [],
   },
   'novosibirsk-pereulok-bulvarniy': {
-    id: 21,
+    id: 22,
     title: 'Переулковый БУЛЬВАРНЫЙ (Жилой комплекс)',
     city: 'Новосибирск',
     country: 'Россия',
@@ -386,7 +407,7 @@ export const projectsData = {
     features: [],
   },
   'omsk-avangard': {
-    id: 22,
+    id: 23,
     title: 'Авангард (Хоккейная Академия)',
     city: 'Омск',
     country: 'Россия',
@@ -404,7 +425,7 @@ export const projectsData = {
     features: [],
   },
   'sila-sibiri': {
-    id: 23,
+    id: 24,
     title: 'Сила Сибири (Магистральный газопровод)',
     city: 'Базы ЛПУ',
     country: 'Россия',
@@ -422,8 +443,24 @@ export const projectsData = {
     `,
     features: [],
   },
+  ruppur: {
+    id: 25,
+    title: 'АЭС Руппур',
+    city: 'Бангладеш',
+    country: 'Россия',
+    slug: 'ruppur',
+    image: '/images/Projects/ruppur.jpg',
+    images: ['/images/Projects/ruppur.jpg'],
+    description: `      
+      <ul>
+        <li>Противопожарные светопрозрачные двери</li>
+        <li>Автоматические окна дымоудаления</li>
+      </ul>
+    `,
+    features: [],
+  },
   'kuzbass-sibirskaya': {
-    id: 24,
+    id: 26,
     title: 'Сибирская (Угольная компания)',
     city: 'Кузбасс',
     country: 'Россия',
@@ -442,7 +479,7 @@ export const projectsData = {
     features: [],
   },
   'cosmodrom-cialkovskiy': {
-    id: 25,
+    id: 27,
     title: 'Циалковский (ЗАТО)',
     city: 'Космодром Восточный',
     country: 'Россия',
@@ -458,7 +495,7 @@ export const projectsData = {
   },
 
   'sakhalin-gres': {
-    id: 26,
+    id: 28,
     title: 'Сахалинская ГРЭС - 2',
     city: 'Южно-Сахалинск',
     country: 'Россия',
@@ -473,7 +510,7 @@ export const projectsData = {
     features: [],
   },
   'vladivostok-tec': {
-    id: 27,
+    id: 29,
     title: 'ТЭЦ Восточная',
     city: 'Владивосток',
     country: 'Россия',
@@ -488,7 +525,7 @@ export const projectsData = {
     features: [],
   },
   aviacia: {
-    id: 28,
+    id: 30,
     title: 'Предприятия Авиационной промышленности',
     city: '',
     country: '',
