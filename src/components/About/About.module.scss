@@ -24,11 +24,11 @@ $font: var(--font-montserrat);
   margin: 0 auto;
   padding: 40px;
   position: relative;
-  min-height: 750px;
+  height: 824px; // Фиксированная высота: карточки (744px) + padding сверху и снизу (40px * 2)
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 150px;
   max-width: 1600px; // Ограничиваем максимальную ширину для больших экранов
 
   // Ноутбуки (1200px - 1400px)
@@ -48,9 +48,8 @@ $font: var(--font-montserrat);
 
   // Обычные ПК (1920px+)
   @media (min-width: 1920px) {
-    padding: 40px 40px 40px 40px;
-    padding-left: 40px; // Возвращаем карточки к левой части
-    justify-content: flex-start; // Возвращаем карточки к левой части
+    padding: 40px;
+    justify-content: center; // Центрируем карточки относительно фона
     max-width: none; // Убираем ограничение ширины для больших экранов
   }
 }
@@ -61,11 +60,23 @@ $font: var(--font-montserrat);
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/images/About/about-bg.webp') center/cover;
+  background: url('/images/Hero/hero-airport2.webp') center/cover;
   background-size: cover;
   background-position: center;
   border-radius: 30px;
   z-index: 0;
+  filter: brightness(0.9); // Затемняем изображение
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); // Дополнительное затемнение через overlay
+    border-radius: 30px;
+  }
 }
 
 .contentCard {
@@ -252,7 +263,7 @@ $font: var(--font-montserrat);
 // Ноутбуки 1440px (1401px - 1600px)
 @media (min-width: 1401px) and (max-width: 1600px) {
   .container {
-    gap: 35px;
+    gap: 50px;
   }
 
   .contentCard {

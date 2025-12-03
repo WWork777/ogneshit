@@ -5,7 +5,7 @@ import styles from './About.module.scss';
 export default function About() {
   const stats = [
     {
-      number: '15',
+      number: '>15',
       text: 'лет на рынке светопрозрачных конструкций',
     },
     {
@@ -17,15 +17,15 @@ export default function About() {
       text: 'реализованных объектов',
     },
     {
-      number: '5000',
+      number: '>5000',
       text: 'м² производственных площадей',
     },
     {
-      number: '1,5',
+      number: '>1,5',
       text: 'млрд. оборот компании',
     },
     {
-      number: '10 000',
+      number: '10 000+',
       text: 'м² конструкции в месяц возможности производства',
     },
   ];
