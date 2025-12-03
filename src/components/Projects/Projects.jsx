@@ -52,8 +52,8 @@ export default function Projects() {
         <div className={styles.header}>
           <h2 className={styles.title}>Наши объекты</h2>
           <p className={styles.subtitle}>
-            Реализованные проекты, подтверждающие качество и надежность наших
-            решений
+            Здесь мы собрали наиболее важные и ответственные проекты,
+            реализованные нашей компанией.
           </p>
           <Link href='/projects' className={styles.allProjectsBtn}>
             Все проекты

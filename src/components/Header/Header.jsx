@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./Header.module.scss";
+import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './Header.module.scss';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,13 +14,14 @@ export default function Header() {
   const navRef = useRef(null);
   const mobileContactRef = useRef(null);
 
-  const pagesWithScrollEffect = [
-    "/",
-    "/projects/expo-2017",
-    "/projects/vladivostok-hotel",
-  ];
+  const pagesWithScrollEffect = ['/'];
 
-  const shouldApplyScrollEffect = pagesWithScrollEffect.includes(pathname);
+  // Для всех страниц проектов, направлений и продуктов хедер должен быть сразу непрозрачным
+  const shouldApplyScrollEffect =
+    pagesWithScrollEffect.includes(pathname) &&
+    !pathname.startsWith('/projects/') &&
+    !pathname.startsWith('/Direction/') &&
+    !pathname.startsWith('/Product/');
 
   const resetAnimations = () => {
     // Сбрасываем анимации при открытии/закрытии мобильного меню
@@ -47,7 +48,7 @@ export default function Header() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
 
-    if (pathname === "/") {
+    if (pathname === '/') {
       const element = document.querySelector(href);
       if (element) {
         const headerOffset = 80;
@@ -57,7 +58,7 @@ export default function Header() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
         setIsMobileMenuOpen(false);
       }
@@ -98,47 +99,47 @@ export default function Header() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, [shouldApplyScrollEffect]);
 
   return (
     <header
       className={`${styles.header} ${
-        !shouldApplyScrollEffect ? styles.alwaysOpaque : ""
-      } ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}
+        !shouldApplyScrollEffect ? styles.alwaysOpaque : ''
+      } ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}
       style={
         shouldApplyScrollEffect && isScrolled
           ? {
-              background: "rgba(40, 40, 40, 0.45)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              boxShadow: "0 2px 20px rgba(0, 0, 0, 0.49)",
+              background: 'rgba(40, 40, 40, 0.45)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: '0 2px 20px rgba(0, 0, 0, 0.49)',
             }
           : shouldApplyScrollEffect
           ? {
-              background: "rgba(40, 40, 40, 0)",
-              backdropFilter: "blur(0px)",
-              WebkitBackdropFilter: "blur(0px)",
+              background: 'rgba(40, 40, 40, 0)',
+              backdropFilter: 'blur(0px)',
+              WebkitBackdropFilter: 'blur(0px)',
             }
           : {
-              background: "rgba(40, 40, 40, 0.45)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              boxShadow: "0 2px 20px rgba(0, 0, 0, 0.49)",
+              background: 'rgba(40, 40, 40, 0.45)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: '0 2px 20px rgba(0, 0, 0, 0.49)',
             }
       }
     >
       <div className={styles.container}>
-        <Link href="/" className={styles.logoIcon}>
+        <Link href='/' className={styles.logoIcon}>
           <Image
-            src="/icons/Header/logo-fire.svg"
-            alt="Огнещит"
+            src='/icons/Header/logo-fire.svg'
+            alt='Огнещит'
             width={50}
             height={50}
             priority
@@ -146,68 +147,68 @@ export default function Header() {
         </Link>
         <nav
           ref={navRef}
-          className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ""}`}
+          className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}
         >
           <a
-            href="#about"
+            href='#about'
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "#about")}
+            onClick={(e) => handleNavClick(e, '#about')}
           >
             О компании
           </a>
           <a
-            href="#portfolio"
+            href='#portfolio'
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "#portfolio")}
+            onClick={(e) => handleNavClick(e, '#portfolio')}
           >
             Портфолио
           </a>
           <a
-            href="#directions"
+            href='#directions'
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "#directions")}
+            onClick={(e) => handleNavClick(e, '#directions')}
           >
             Направления
           </a>
           <a
-            href="#catalog"
+            href='#catalog'
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "#catalog")}
+            onClick={(e) => handleNavClick(e, '#catalog')}
           >
             Каталог продукции
           </a>
           <a
-            href="#contacts"
+            href='#contacts'
             className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "#contacts")}
+            onClick={(e) => handleNavClick(e, '#contacts')}
           >
             Контакты
           </a>
 
           {/* Мобильные контакты */}
           <div ref={mobileContactRef} className={styles.mobileContactInfo}>
-            <a href="tel:+78003339591" className={styles.mobilePhone}>
+            <a href='tel:+78003339591' className={styles.mobilePhone}>
               +7 (800) 333-95-91
             </a>
-            <a href="mailto:zakaz@ogneshit.ru" className={styles.mobileEmail}>
+            <a href='mailto:zakaz@ogneshit.ru' className={styles.mobileEmail}>
               zakaz@ogneshit.ru
             </a>
           </div>
         </nav>
         <div className={styles.contactInfo}>
-          <a href="tel:+78003339591" className={styles.phone}>
+          <a href='tel:+78003339591' className={styles.phone}>
             +7 (800) 333-95-91
           </a>
-          <a href="mailto:zakaz@ogneshit.ru" className={styles.email}>
+          <a href='mailto:zakaz@ogneshit.ru' className={styles.email}>
             zakaz@ogneshit.ru
           </a>
         </div>
         <button
           className={`${styles.mobileMenuButton} ${
-            isMobileMenuOpen ? styles.open : ""
+            isMobileMenuOpen ? styles.open : ''
           }`}
           onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          aria-label='Toggle menu'
         >
           <span></span>
           <span></span>

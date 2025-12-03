@@ -120,6 +120,24 @@ $font: var(--font-montserrat);
   color: white;
   margin-bottom: 32px;
   font-family: $font;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #ff8e35);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 .textContentCon {
@@ -153,27 +171,30 @@ $font: var(--font-montserrat);
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   z-index: 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   max-width: 400px;
   min-width: 280px;
+  height: 744px;
 }
 
 .statCard {
   background: rgba(40, 40, 50, 0.048);
   backdrop-filter: blur(10px);
-  padding: 32px;
-  border-radius: 20px;
+  padding: 20px;
+  border-radius: 16px;
   position: relative;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   width: 100%;
   box-sizing: border-box;
   transition: all 0.3s;
+  flex: 1;
+  min-height: 0;
 
   &:hover {
     transform: translateY(-8px);
@@ -205,18 +226,20 @@ $font: var(--font-montserrat);
 }
 
 .statNumber {
-  font-size: clamp(16px, 5vw, 44px);
-  font-weight: 400;
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: 700;
   color: white;
   font-family: $font;
   white-space: nowrap;
+  line-height: 1.1;
+  flex-shrink: 0;
 }
 
 .statText {
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: clamp(11px, 1.4vw, 14px);
   font-weight: 400;
   color: white;
-  line-height: 1.5;
+  line-height: 1.4;
   font-family: $font;
   text-align: left;
   flex: 1;
@@ -240,19 +263,21 @@ $font: var(--font-montserrat);
   .stats {
     max-width: 380px;
     min-width: 260px;
+    gap: 16px;
+    height: 744px;
   }
 
   .statCard {
-    padding: 28px;
-    gap: 18px;
+    padding: 20px;
+    gap: 16px;
   }
 
   .statNumber {
-    font-size: clamp(32px, 4vw, 40px);
+    font-size: clamp(20px, 4vw, 32px);
   }
 
   .statText {
-    font-size: clamp(13px, 1.4vw, 15px);
+    font-size: clamp(11px, 1.4vw, 13px);
   }
 }
 
@@ -297,7 +322,7 @@ $font: var(--font-montserrat);
   }
 
   .statNumber {
-    font-size: clamp(24px, 3.5vw, 32px);
+    font-size: clamp(28px, 3.5vw, 40px);
   }
 
   .statText {
@@ -356,7 +381,7 @@ $font: var(--font-montserrat);
   }
 
   .statNumber {
-    font-size: clamp(24px, 3.5vw, 32px);
+    font-size: clamp(28px, 3.5vw, 40px);
   }
 
   .statText {
@@ -422,7 +447,7 @@ $font: var(--font-montserrat);
   }
 
   .statNumber {
-    font-size: clamp(28px, 4.5vw, 36px);
+    font-size: clamp(32px, 4.5vw, 44px);
   }
 
   .statText {
@@ -489,7 +514,7 @@ $font: var(--font-montserrat);
   }
 
   .statNumber {
-    font-size: clamp(24px, 4.5vw, 32px);
+    font-size: clamp(28px, 4.5vw, 40px);
   }
 
   .statText {
@@ -556,7 +581,7 @@ $font: var(--font-montserrat);
   }
 
   .statNumber {
-    font-size: clamp(22px, 4.5vw, 28px);
+    font-size: clamp(26px, 4.5vw, 36px);
   }
 
   .statText {

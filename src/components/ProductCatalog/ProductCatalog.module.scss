@@ -1,9 +1,8 @@
 .catalog {
   padding: 120px 0 120px 10vw;
-  overflow:visible;
-  background: #F7F7F7;
+  overflow: visible;
+  background: #f7f7f7;
 }
-
 
 .header {
   padding-right: 10vw;
@@ -13,31 +12,76 @@
   margin-bottom: 60px;
   gap: 40px;
   font-family: var(--font-montserrat);
-  
+
   h2 {
     font-size: 54px;
     font-weight: 500;
   }
-  
+
   p {
     font-size: 16px;
   }
 }
 
 .title {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 54px;
+  font-weight: 500;
   color: #1a1a2e;
   margin-bottom: 20px;
   font-family: var(--font-sans);
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #ff8e35);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 18px;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 800px;
   font-family: var(--font-sans);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .navigation {
@@ -67,7 +111,7 @@
   &:disabled {
     cursor: not-allowed;
     background: #282828;
-    
+
     svg {
       path {
         fill: white;
@@ -79,18 +123,18 @@
 // Swiper контейнер
 .swiperContainer {
   width: 100%;
-  
+
   // Скрываем стандартные стрелки Swiper
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
   }
-  
+
   // Кастомные стили для пагинации Swiper
   .swiper-pagination {
     position: relative;
     margin-top: 40px;
-    
+
     .swiper-pagination-bullet {
       width: 40px;
       height: 4px;
@@ -99,7 +143,7 @@
       cursor: pointer;
       transition: background 0.3s;
       opacity: 1;
-      
+
       &.swiper-pagination-bullet-active {
         background: #1a1a2e;
       }
@@ -129,7 +173,7 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -179,7 +223,7 @@
     h2 {
       font-size: 26px;
     }
-    
+
     p {
       font-size: 13px;
     }
@@ -191,16 +235,16 @@
     flex-direction: column;
     align-items: start;
     gap: 15px;
-    
+
     h2 {
       margin-bottom: 0;
     }
   }
-  
+
   .navigation {
     margin-left: 0;
   }
-  
+
   .swiperSlide {
     width: 300px; // Уменьшаем ширину слайдов на мобильных
   }
@@ -215,9 +259,8 @@
       font-size: 10px;
     }
   }
-  
+
   .swiperSlide {
     width: 100% !important; // Еще меньше на очень маленьких экранах
   }
-  
 }

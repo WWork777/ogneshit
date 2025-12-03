@@ -36,6 +36,18 @@
   font-family: var(--font-manrope);
   font-size: 40px;
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.trademark {
+  position: absolute;
+  top: 0;
+  right: -24px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  font-family: var(--font-manrope);
 }
 
 .contactInfo {
@@ -142,6 +154,11 @@
     font-size: 32px;
     line-height: 1.2;
     white-space: nowrap;
+
+    .trademark {
+      font-size: 24px;
+      right: -18px;
+    }
   }
 
   .nav {
@@ -197,6 +214,11 @@
     font-size: 28px;
     line-height: 1.2;
     white-space: nowrap;
+
+    .trademark {
+      font-size: 21px;
+      right: -16px;
+    }
   }
 
   .nav {
@@ -252,6 +274,11 @@
 
   .logoText {
     font-size: 22px;
+
+    .trademark {
+      font-size: 17px;
+      right: -14px;
+    }
   }
 
   .right {
@@ -310,6 +337,11 @@
 
   .logoText {
     font-size: 20px;
+
+    .trademark {
+      font-size: 15px;
+      right: -13px;
+    }
   }
 
   .nav {

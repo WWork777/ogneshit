@@ -5,26 +5,43 @@ import Link from 'next/link';
 
 export default function Contacts() {
   const mapRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const mapInstanceRef = useRef(null);
 
   useEffect(() => {
     const loadYandexMap = () => {
       if (window.ymaps && mapRef.current) {
         window.ymaps.ready(() => {
+          // Проверяем еще раз, что mapRef.current существует
+          if (!mapRef.current) return;
+
+          // Точные координаты офиса СПО Огнещит
+          const coordinates = [55.087675, 82.975728];
+
           const map = new window.ymaps.Map(mapRef.current, {
-            center: [55.08745, 82.976332],
-            zoom: 16,
+            center: coordinates,
+            zoom: 17,
             // ОТКЛЮЧАЕМ ВСЕ ЛИШНИЕ ЭЛЕМЕНТЫ
             controls: [], // ← пустой массив = никаких элементов управления
             behaviors: ['default', 'scrollZoom'], // оставляем только базовое поведение
             type: 'yandex#map', // обычная схема без лишнего
           });
 
+          // Сохраняем ссылку на карту
+          mapInstanceRef.current = map;
+
           // Создаем кастомный маркер
           const marker = new window.ymaps.Placemark(
-            [55.08745, 82.976332],
+            coordinates,
             {
-              hintContent: 'Наш офис',
-              balloonContent: 'ул. Тульская 28, офис 5',
+              hintContent: 'СПО Огнещит',
+              balloonContent: `
+                <div style="padding: 10px;">
+                  <strong>СПО «ОГНЕЩИТ»®</strong><br/>
+                  630110, г. Новосибирск,<br/>
+                  ул. Богдана Хмельницкого 90/3
+                </div>
+              `,
             },
             {
               // Простой красный маркер
@@ -36,7 +53,15 @@ export default function Contacts() {
           map.geoObjects.add(marker);
 
           // ДОПОЛНИТЕЛЬНО: отключаем рекламу и другие элементы
-          setTimeout(() => {
+          // Очищаем предыдущий таймер, если он был
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+
+          timeoutRef.current = setTimeout(() => {
+            // Проверяем, что mapRef.current существует перед использованием
+            if (!mapRef.current || !mapInstanceRef.current) return;
+
             // Убираем рекламу и копирайты если они есть
             const copyrights = mapRef.current.querySelectorAll(
               '.ymaps-2-1-79-copyrights-pane, .ymaps-2-1-79-copyright'
@@ -45,10 +70,19 @@ export default function Contacts() {
 
             const ads = mapRef.current.querySelectorAll("[class*='ads']");
             ads.forEach((el) => (el.style.display = 'none'));
-            const currentCenter = map.getCenter();
-            // Смещаем на 0.0015 по долготе для сдвига вправо
-            const newCenter = [currentCenter[0], currentCenter[1]];
-            map.setCenter(newCenter, 17, { duration: 300 });
+
+            // Проверяем, что карта все еще существует
+            const map = mapInstanceRef.current;
+            if (map && typeof map.getCenter === 'function') {
+              try {
+                const currentCenter = map.getCenter();
+                // Смещаем на 0.0015 по долготе для сдвига вправо
+                const newCenter = [currentCenter[0], currentCenter[1]];
+                map.setCenter(newCenter, 17, { duration: 300 });
+              } catch (error) {
+                console.error('Error setting map center:', error);
+              }
+            }
           }, 1000);
         });
       }
@@ -59,6 +93,8 @@ export default function Contacts() {
       'script[src*="api-maps.yandex.ru"]'
     );
 
+    let checkInterval = null;
+
     if (window.ymaps) {
       // Если API уже загружен, сразу инициализируем карту
       loadYandexMap();
@@ -66,18 +102,12 @@ export default function Contacts() {
       // Если скрипт уже есть, но API еще не загружен, ждем его загрузки
       existingScript.addEventListener('load', loadYandexMap);
       // Проверяем, не загрузился ли API за время между проверками
-      const checkInterval = setInterval(() => {
+      checkInterval = setInterval(() => {
         if (window.ymaps) {
           clearInterval(checkInterval);
           loadYandexMap();
         }
       }, 100);
-
-      // Очистка интервала при размонтировании
-      return () => {
-        clearInterval(checkInterval);
-        existingScript.removeEventListener('load', loadYandexMap);
-      };
     } else {
       // Если скрипта нет, создаем и добавляем его
       const script = document.createElement('script');
@@ -88,6 +118,25 @@ export default function Contacts() {
       script.onload = loadYandexMap;
       document.head.appendChild(script);
     }
+
+    // Очистка при размонтировании компонента
+    return () => {
+      // Очищаем таймер
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      // Очищаем интервал проверки
+      if (checkInterval) {
+        clearInterval(checkInterval);
+      }
+      // Удаляем обработчик события, если он был добавлен
+      if (existingScript) {
+        existingScript.removeEventListener('load', loadYandexMap);
+      }
+      // Очищаем ссылку на карту
+      mapInstanceRef.current = null;
+    };
   }, []);
 
   return (
@@ -98,16 +147,18 @@ export default function Contacts() {
           <div className='map-contact-adress'>
             <h4>Адрес:</h4>
             <span>
-              630099, г. Новосибирск, ул. Богдана
+              630110, г. Новосибирск, ул. Богдана
               <br />
               Хмельницкого 90/3
             </span>
           </div>
           <div className='map-other-contacts'>
             <h4>Мы на связи</h4>
-            <span>zakaz@ogneshit.ru</span>
-            <span>+7 (800) 333-95-91</span>
-            <div className='map-contacts-messages'>
+            <a href='mailto:zakaz@ogneshit.ru'>zakaz@ogneshit.ru</a>
+            <a href='tel:+78003339591'>+7 (800) 333-95-91</a>
+            <a href='tel:+73832898058'>+7 (383) 28-98-058</a>
+            {/* Закомментировано для будущего возврата */}
+            {/* <div className='map-contacts-messages'>
               <Link href={'#'}>
                 <div className='map-contact-message'>
                   <span>Whatsapp</span>
@@ -158,7 +209,7 @@ export default function Contacts() {
                   </svg>
                 </div>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

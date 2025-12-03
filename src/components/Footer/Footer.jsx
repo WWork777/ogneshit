@@ -17,11 +17,17 @@ export default function Footer() {
                 priority
               />
             </div>
-            <span className={styles.logoText}>СПО «ОГНЕЩИТ»</span>
+            <span className={styles.logoText}>
+              СПО «ОГНЕЩИТ»
+              <sup className={styles.trademark}>®</sup>
+            </span>
           </div>
           <div className={styles.contactInfo}>
-            <a href='tel:+78005559691' className={styles.phone}>
-              8 800 555 96 91
+            <a href='tel:+78003339591' className={styles.phone}>
+              +7 (800) 333-95-91
+            </a>
+            <a href='tel:+73832898058' className={styles.phone}>
+              +7 (383) 28-98-058
             </a>
             <p className={styles.address}>
               Новосибирск, ул. Богдана Хмельницкого 90/3
@@ -33,17 +39,17 @@ export default function Footer() {
             <a href='#about' className={styles.navLink}>
               О компании
             </a>
-            <a href='#catalog' className={styles.navLink}>
-              Каталог продукции
-            </a>
-            <a href='#directions' className={styles.navLink}>
-              Услуги
-            </a>
             <a href='#portfolio' className={styles.navLink}>
               Портфолио
             </a>
-            <a href='#certificates' className={styles.navLink}>
-              Сертификаты
+            <a href='#directions' className={styles.navLink}>
+              Направления
+            </a>
+            <a href='#catalog' className={styles.navLink}>
+              Каталог продукции
+            </a>
+            <a href='#contacts' className={styles.navLink}>
+              Контакты
             </a>
           </nav>
           <div className={styles.copyright}>

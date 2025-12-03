@@ -7,37 +7,37 @@ export default function Directions() {
     {
       id: 1,
       title: 'Светопрозрачные конструкции',
-      image: '/images/Directions/Direction_1.webp',
+      image: '/images/Directions/svetoprozrachnye-konstrukcii.webp',
       slug: 'svetoprozrachnye-konstrukcii',
     },
     {
       id: 2,
       title: 'Навесные вентилируемые фасады',
-      image: '/images/Directions/Direction_2.webp',
+      image: '/images/Directions/navesnye-ventiliruemye-fasady.webp',
       slug: 'navesnye-ventiliruemye-fasady',
     },
     {
       id: 3,
       title: 'Научная деятельность',
-      image: '/images/Directions/Direction_3.webp',
+      image: '/images/Directions/nauchnaya-deyatelnost.webp',
       slug: 'nauchnaya-deyatelnost',
     },
     {
       id: 4,
       title: 'Реставрация витражных конструкций',
-      image: '/images/Directions/Direction_4.webp',
+      image: '/images/Directions/restavraciya-vitrazhnyh-konstrukcij.webp',
       slug: 'restavraciya-vitrazhnyh-konstrukcij',
     },
     {
       id: 5,
       title: 'Проектирование фасадов',
-      image: '/images/Directions/Direction_5.webp',
+      image: '/images/Directions/proektirovanie-fasadov.webp',
       slug: 'proektirovanie-fasadov',
     },
     {
       id: 6,
       title: 'Монтаж',
-      image: '/images/Directions/Direction_6.webp',
+      image: '/images/Directions/montazh.webp',
       slug: 'montazh',
     },
   ];
@@ -54,9 +54,9 @@ export default function Directions() {
             <div className={styles.header}>
               <h2 className={styles.title}>Направления</h2>
               <p className={styles.subtitle}>
-                Мы разрабатываем, производим и устанавливаем противопожарные
-                конструкции, обеспечивая безопасность объектов промышленности,
-                энергетики, логистики и гражданского строительства.
+                Основные направления деятельности нашей компании.
+                <br />
+                Мы не перестаём расти и развиваться.
               </p>
               <Link href={'#catalog'} className={styles.catalogBtn}>
                 Каталог продукции
