@@ -6,8 +6,14 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'siberia-arena',
-    image: '/images/Projects/siberian-arena.png',
-    images: ['/images/Projects/siberian-arena.png'],
+    image: '/images/Projects/siberia-arena/siberia-arena-01.webp',
+    images: [
+      '/images/Projects/siberia-arena/siberia-arena-01.webp',
+      '/images/Projects/siberia-arena/siberia-arena-02.webp',
+      '/images/Projects/siberia-arena/siberia-arena-03.webp',
+      '/images/Projects/siberia-arena/siberia-arena-04.webp',
+      '/images/Projects/siberia-arena/siberia-arena-05.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление фасадов</li>
@@ -23,8 +29,12 @@ export const projectsData = {
     city: 'Москва',
     country: 'Россия',
     slug: 'luzhniki-tennis',
-    image: '/images/Projects/tennis.webp',
-    images: ['/images/Projects/tennis.webp'],
+    image: '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.webp',
+    images: [
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.webp',
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-02.webp',
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-03.webp',
+    ],
     description: `
       <p>Теннисный центр в Лужниках — современный спортивный комплекс с многофункциональными 
       кортами и зрительскими трибунами. Проект включал комплексную противопожарную защиту 
@@ -42,8 +52,14 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivastok-burnyi',
-    image: '/images/Projects/vladivastok-burnyi.png',
-    images: ['/images/Projects/vladivastok-burnyi.png'],
+    image: '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.webp',
+    images: [
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.webp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-02.webp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-03.webp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-04.webp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-05.webp',
+    ],
     description: `      
       <ul>
         <li>Пространственные купольные конструкций.</li>
@@ -61,11 +77,11 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivostok-hotel',
-    image: '/images/Projects/hotel.webp',
+    image: '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.webp',
     images: [
-      '/images/Projects/hotel.webp',
-      '/images/Projects/hotel-2.webp',
-      '/images/Projects/hotel-3.webp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.webp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-02.webp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-03.webp',
     ],
     description: `
       <p>Пятизвездочный отель премиум-класса во Владивостоке. Проект включал оснащение 
@@ -92,8 +108,12 @@ export const projectsData = {
     city: 'Хабаровск',
     country: 'Россия',
     slug: 'habarovsk-airport',
-    image: '/images/Projects/habarovsk-airport.png',
-    images: ['/images/Projects/habarovsk-airport.png'],
+    image: '/images/Projects/habarovsk-airport/habarovsk-airport-01.webp',
+    images: [
+      '/images/Projects/habarovsk-airport/habarovsk-airport-01.webp',
+      '/images/Projects/habarovsk-airport/habarovsk-airport-02.webp',
+      '/images/Projects/habarovsk-airport/habarovsk-airport-03.webp',
+    ],
     description: `      
       <ul>
         <li>Автоматические алюминиевые двери</li>
@@ -109,8 +129,13 @@ export const projectsData = {
     city: 'Южно-Сахалинск',
     country: 'Россия',
     slug: 'sakhalin-airport',
-    image: '/images/Projects/airport.webp',
-    images: ['/images/Projects/airport.webp'],
+    image: '/images/Projects/sakhalin-airport/sakhalin-airport-01.webp',
+    images: [
+      '/images/Projects/sakhalin-airport/sakhalin-airport-01.webp',
+      '/images/Projects/sakhalin-airport/sakhalin-airport-02.webp',
+      '/images/Projects/sakhalin-airport/sakhalin-airport-03.webp',
+      '/images/Projects/sakhalin-airport/sakhalin-airport-04.webp',
+    ],
     description: `
       <p>Аэропорт в Южно-Сахалинске — важный транспортный узел региона. Проект включал 
       оснащение современными системами пожарной безопасности с учетом специфики 
@@ -128,8 +153,14 @@ export const projectsData = {
     city: 'Красноярск',
     country: 'Россия',
     slug: 'krasnoyarsk-airport',
-    image: '/images/Projects/krasnoyarsk-airport.png',
-    images: ['/images/Projects/krasnoyarsk-airport.png'],
+    image: '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.webp',
+    images: [
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-02.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-03.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-04.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-05.webp',
+    ],
     description: `      
       <ul>
         <li>Автоматические светопрозрачные двери</li>
@@ -149,8 +180,13 @@ export const projectsData = {
     city: 'Томск',
     country: 'Россия',
     slug: 'tomsk-airport',
-    image: '/images/Projects/tomsk-airport.png',
-    images: ['/images/Projects/tomsk-airport.png'],
+    image: '/images/Projects/tomsk-airport/tomsk-airport-01.webp',
+    images: [
+      '/images/Projects/tomsk-airport/tomsk-airport-01.webp',
+      '/images/Projects/tomsk-airport/tomsk-airport-02.webp',
+      '/images/Projects/tomsk-airport/tomsk-airport-03.webp',
+    ],
+
     description: `      
       <ul>
         <li>Противопожарные светопрозрачные конструкции</li>
@@ -164,8 +200,13 @@ export const projectsData = {
     city: 'Сочи',
     country: 'Россия',
     slug: 'sochi-center',
-    image: '/images/Projects/sochi-center.png',
-    images: ['/images/Projects/sochi-center.png'],
+    image: '/images/Projects/sochi-center/sochi-center-01.webp',
+    images: [
+      '/images/Projects/sochi-center/sochi-center-01.webp',
+      '/images/Projects/sochi-center/sochi-center-02.webp',
+      '/images/Projects/sochi-center/sochi-center-03.webp',
+      '/images/Projects/sochi-center/sochi-center-04.webp',
+    ],
     description: `      
       <ul>
         <li>Противопожарные светопрозрачные конструкции</li>
@@ -180,8 +221,14 @@ export const projectsData = {
     city: 'Кемерово',
     country: 'Россия',
     slug: 'kemerovo-cluster',
-    image: '/images/Projects/kemerovo-cluster.png',
-    images: ['/images/Projects/kemerovo-cluster.png'],
+    image: '/images/Projects/kemerovo-cluster/kemerovo-cluster-01.webp',
+    images: [
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-01.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-02.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-03.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-04.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-05.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление</li>
@@ -197,8 +244,12 @@ export const projectsData = {
     city: 'Иркутск',
     country: 'Россия',
     slug: 'ircutsk-perevozki',
-    image: '/images/Projects/ircutsk-perevozki.png',
-    images: ['/images/Projects/ircutsk-perevozki.png'],
+    image: '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.webp',
+    images: [
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.webp',
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-02.webp',
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-03.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление</li>
@@ -212,8 +263,14 @@ export const projectsData = {
     city: 'Алматы',
     country: 'Казахстан',
     slug: 'almaty-fond-nazarbaev',
-    image: '/images/Projects/almaty-fond-nazarbaev.png',
-    images: ['/images/Projects/almaty-fond-nazarbaev.png'],
+    image: '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.webp',
+    images: [
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-02.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-03.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-04.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-05.webp',
+    ],
     description: `      
       <ul>
         <li>Алюминиевые светопрозрачные перегородки, двери</li>
@@ -232,8 +289,17 @@ export const projectsData = {
     city: 'Алматы',
     country: 'Казахстан',
     slug: 'almaty-kazakhmys',
-    image: '/images/Projects/almaty-kazakhmys.png',
-    images: ['/images/Projects/almaty-kazakhmys.png'],
+    image: '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.webp',
+    images: [
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-02.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-03.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-04.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-05.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-06.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-07.webp',
+    ],
+
     description: `      
       <ul>
         <li>Алюминиевые светопрозрачные перегородки, двери</li>
@@ -252,12 +318,10 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'expo-2017',
-    image: '/images/Projects/expo.webp',
+    image: '/images/Projects/expo-2017/expo-2017-01.webp',
     images: [
-      '/images/Projects/expo.webp',
-      '/images/Projects/expo.webp',
-      '/images/Projects/expo.webp',
-      '/images/Projects/expo.webp',
+      '/images/Projects/expo-2017/expo-2017-01.webp',
+      '/images/Projects/expo-2017/expo-2017-02.webp',
     ],
     description: `
       <p>Международная специализированная выставка EXPO 2017 в Астане — масштабный проект, 
@@ -288,8 +352,11 @@ export const projectsData = {
     city: 'Алматы',
     country: 'Казахстан',
     slug: 'almaty-arena',
-    image: '/images/Projects/almaty-arena.png',
-    images: ['/images/Projects/almaty-arena.png'],
+    image: '/images/Projects/almaty-arena/almaty-arena-01.webp',
+    images: [
+      '/images/Projects/almaty-arena/almaty-arena-01.webp',
+      '/images/Projects/almaty-arena/almaty-arena-02.webp',
+    ],
     description: `      
       <ul>
         <li>Огнестойкие светопрозрачные перегородки, двери EIW60</li>
@@ -303,8 +370,12 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'astana-aura',
-    image: '/images/Projects/astana-aura.png',
-    images: ['/images/Projects/astana-aura.png'],
+    image: '/images/Projects/astana-aura/astana-aura-01.webp',
+    images: [
+      '/images/Projects/astana-aura/astana-aura-01.webp',
+      '/images/Projects/astana-aura/astana-aura-02.webp',
+      '/images/Projects/astana-aura/astana-aura-03.webp',
+    ],
     description: `      
       <ul>
         <li>Огнестойкие двери EIW30</li>
@@ -318,8 +389,12 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'astana-hilton',
-    image: '/images/Projects/astana-hilton.png',
-    images: ['/images/Projects/astana-hilton.png'],
+    image: '/images/Projects/astana-hilton/astana-hilton-01.webp',
+    images: [
+      '/images/Projects/astana-hilton/astana-hilton-01.webp',
+      '/images/Projects/astana-hilton/astana-hilton-02.webp',
+      '/images/Projects/astana-hilton/astana-hilton-03.webp',
+    ],
     description: `      
       <ul>
         <li>Внутренние огнестойике перегородки, двери EIW60</li>
@@ -333,8 +408,12 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'novosibirsk-lokomotiv-arena',
-    image: '/images/Projects/novosibirsk-lokomotiv-arena.png',
-    images: ['/images/Projects/novosibirsk-lokomotiv-arena.png'],
+    image: '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
+    images: [
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-02.webp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-03.webp',
+    ],
     description: `      
       <ul>
         <li>Светопрозрачные лифтовые шахты в противопожарном исполнении</li>
@@ -349,8 +428,13 @@ export const projectsData = {
     city: 'Норильск',
     country: 'Россия',
     slug: 'norilsk-aika',
-    image: '/images/Projects/norilsk-aika.png',
-    images: ['/images/Projects/norilsk-aika.png'],
+    image: '/images/Projects/norilsk-aika/norilsk-aika-01.webp',
+    images: [
+      '/images/Projects/norilsk-aika/norilsk-aika-01.webp',
+      '/images/Projects/norilsk-aika/norilsk-aika-02.webp',
+      '/images/Projects/norilsk-aika/norilsk-aika-03.webp',
+      '/images/Projects/norilsk-aika/norilsk-aika-04.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление</li>
@@ -367,8 +451,8 @@ export const projectsData = {
     city: 'Ялта',
     country: 'Россия',
     slug: 'ylta-artek',
-    image: '/images/Projects/ylta-artek.jpg',
-    images: ['/images/Projects/ylta-artek.jpg'],
+    image: '/images/Projects/ylta-artek/ylta-artek-01.webp',
+    images: ['/images/Projects/ylta-artek/ylta-artek-01.webp'],
     description: `
       <ul>
         <li>Светопрозрачные противопожарные конструкции</li>
@@ -382,8 +466,12 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'novosibirsk-mirotel',
-    image: '/images/Projects/novosibirsk-mirotel.png',
-    images: ['/images/Projects/novosibirsk-mirotel.png'],
+    image: '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.webp',
+    images: [
+      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.webp',
+      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-02.webp',
+      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-03.webp',
+    ],
     description: `      
       <ul>
         <li>Противопожарные светопрозрачны перегородки, двери</li>
@@ -397,8 +485,12 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'novosibirsk-pereulok-bulvarniy',
-    image: '/images/Projects/novosibirsk-pereulok-bulvarniy.png',
-    images: ['/images/Projects/novosibirsk-pereulok-bulvarniy.png'],
+    image: '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.webp',
+    images: [
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.webp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-02.webp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-03.webp',
+    ],
     description: `      
       <ul>
         <li>Противопожарные светопрозрачные двери, противопожарные витражи </li>
@@ -412,8 +504,11 @@ export const projectsData = {
     city: 'Омск',
     country: 'Россия',
     slug: 'omsk-avangard',
-    image: '/images/Projects/omsk-avangard.png',
-    images: ['/images/Projects/omsk-avangard.png'],
+    image: '/images/Projects/omsk-avangard/omsk-avangard-01.webp',
+    images: [
+      '/images/Projects/omsk-avangard/omsk-avangard-01.webp',
+      '/images/Projects/omsk-avangard/omsk-avangard-02.webp',
+    ],
     description: `      
       <ul>
         <li>Алюминиевые светопрозрачные перегородки</li>
@@ -430,8 +525,12 @@ export const projectsData = {
     city: 'Базы ЛПУ',
     country: 'Россия',
     slug: 'sila-sibiri',
-    image: '/images/Projects/sila-sibiri.png',
-    images: ['/images/Projects/sila-sibiri.png'],
+    image: '/images/Projects/sila-sibiri/sila-sibiri-01.webp',
+    images: [
+      '/images/Projects/sila-sibiri/sila-sibiri-01.webp',
+      '/images/Projects/sila-sibiri/sila-sibiri-02.webp',
+      '/images/Projects/sila-sibiri/sila-sibiri-03.webp',
+    ],
     description: `      
       <ul>
         <li>Алюмининиевые светопрозрачные конструкции</li>
@@ -449,8 +548,8 @@ export const projectsData = {
     city: 'Бангладеш',
     country: 'Россия',
     slug: 'ruppur',
-    image: '/images/Projects/ruppur.jpg',
-    images: ['/images/Projects/ruppur.jpg'],
+    image: '/images/Projects/ruppur/ruppur-01.webp',
+    images: ['/images/Projects/ruppur/ruppur-01.webp'],
     description: `      
       <ul>
         <li>Противопожарные светопрозрачные двери</li>
@@ -465,8 +564,12 @@ export const projectsData = {
     city: 'Кузбасс',
     country: 'Россия',
     slug: 'kuzbass-sibirskaya',
-    image: '/images/Projects/kuzbass-sibirskaya.png',
-    images: ['/images/Projects/kuzbass-sibirskaya.png'],
+    image: '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.webp',
+    images: [
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.webp',
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-02.webp',
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-03.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление</li>
@@ -484,8 +587,12 @@ export const projectsData = {
     city: 'Космодром Восточный',
     country: 'Россия',
     slug: 'cosmodrom-cialkovskiy',
-    image: '/images/Projects/cosmodrom-cialkovskiy.png',
-    images: ['/images/Projects/cosmodrom-cialkovskiy.png'],
+    image: '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.webp',
+    images: [
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.webp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-02.webp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-03.webp',
+    ],
     description: `      
       <ul>
         <li>Витражное остекление, противопожарные светопрозрачные перегородки EIW15,EIW30, EIW45, EIW60 с устройством в них противо-пожарных светопрозрачных дверей, противопожарные окна Е60 </li>
@@ -500,8 +607,12 @@ export const projectsData = {
     city: 'Южно-Сахалинск',
     country: 'Россия',
     slug: 'sakhalin-gres',
-    image: '/images/Projects/sakhalin-gres.png',
-    images: ['/images/Projects/sakhalin-gres.png'],
+    image: '/images/Projects/sakhalin-gres/sakhalin-gres-01.webp',
+    images: [
+      '/images/Projects/sakhalin-gres/sakhalin-gres-01.webp',
+      '/images/Projects/sakhalin-gres/sakhalin-gres-02.webp',
+      '/images/Projects/sakhalin-gres/sakhalin-gres-03.webp',
+    ],
     description: `      
       <ul>
         <li>Легкосбрасываемые конструкции</li>
@@ -515,8 +626,12 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivostok-tec',
-    image: '/images/Projects/vladivostok-tec.png',
-    images: ['/images/Projects/vladivostok-tec.png'],
+    image: '/images/Projects/vladivostok-tec/vladivostok-tec-01.webp',
+    images: [
+      '/images/Projects/vladivostok-tec/vladivostok-tec-01.webp',
+      '/images/Projects/vladivostok-tec/vladivostok-tec-02.webp',
+      '/images/Projects/vladivostok-tec/vladivostok-tec-03.webp',
+    ],
     description: `      
       <ul>
         <li>Легкосбрасываемые конструкции</li>
@@ -530,8 +645,12 @@ export const projectsData = {
     city: '',
     country: '',
     slug: 'aviacia',
-    image: '/images/Projects/aviacia.png',
-    images: ['/images/Projects/aviacia.png'],
+    image: '/images/Projects/aviacia/aviacia-01.webp',
+    images: [
+      '/images/Projects/aviacia/aviacia-01.webp',
+      '/images/Projects/aviacia/aviacia-02.webp',
+      '/images/Projects/aviacia/aviacia-03.webp',
+    ],
     description: `      
       <ul>
         <li>Алюминиевые светопрозрачные перегородки, двери</li>
