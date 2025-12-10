@@ -98,6 +98,21 @@ $font: var(--font-montserrat);
   }
 }
 
+// Левая колонка: фото и документы
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+}
+
 // Секция слайдера (70%)
 .sliderSection {
   position: relative;
@@ -464,5 +479,586 @@ $font: var(--font-montserrat);
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+// Стили для страницы с подразделами (светопрозрачные конструкции)
+.directionTitle {
+  font-size: 42px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 40px;
+  font-family: $font;
+  line-height: 1.2;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.imageDescriptionContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+.mainImageSection {
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.singleImageContainer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 1024px) {
+    height: 280px;
+  }
+
+  @media (max-width: 768px) {
+    height: 220px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 480px) {
+    height: 180px;
+  }
+}
+
+.descriptionSection {
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  .descriptionText {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #475569;
+    font-family: $font;
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    strong {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 16px 0;
+      padding-left: 24px;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.subsectionsSection {
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.subsectionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.subsectionCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 340px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 10px;
+    min-height: 220px;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 10px;
+    min-height: 200px;
+  }
+}
+
+.subsectionImage {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+}
+
+.subsectionIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    top: 8px;
+    right: 8px;
+
+    svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    top: 6px;
+    right: 6px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.subsectionTitle {
+  position: absolute;
+  bottom: 15px;
+  left: 12px;
+  right: 12px;
+  padding: 12px 16px;
+  font-weight: 500;
+  display: block;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  border-radius: 12px;
+  font-family: var(--font-manrope);
+  z-index: 2;
+  white-space: normal;
+  box-sizing: border-box;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  margin: 0;
+  min-height: auto;
+  max-height: none;
+
+  @media (max-width: 1024px) {
+    font-size: 13px;
+    padding: 10px 14px;
+    bottom: 12px;
+    left: 10px;
+    right: 10px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 10px 14px;
+    bottom: 10px;
+    left: 8px;
+    right: 8px;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 8px 12px;
+    bottom: 8px;
+    left: 6px;
+    right: 6px;
+    line-height: 1.3;
+  }
+}
+
+// Стили для блока документов
+.documentsSection {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.documentsTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  font-family: $font;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+}
+
+.documentsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+.documentItem {
+  margin: 0;
+  padding: 0;
+}
+
+.documentLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: $font;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: $font;
+
+  &:hover {
+    background: #f1f5f9;
+    border-color: #ff6b35;
+    color: #ff6b35;
+    transform: translateX(4px);
+  }
+
+  &:active {
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 14px;
+    font-size: 13px;
+    gap: 8px;
+  }
+}
+
+.documentIcon {
+  flex-shrink: 0;
+  color: #64748b;
+  transition: color 0.3s ease;
+
+  .documentLink:hover & {
+    color: #ff6b35;
+  }
+
+  @media (max-width: 480px) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Стили для модального окна просмотра PDF
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
+  color: #1a1a2e;
+
+  &:hover {
+    background: #ff6b35;
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  &:active {
+    transform: rotate(90deg) scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.modalHeader {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    padding: 20px 20px 12px;
+    padding-top: 56px; // Место для кнопки закрытия
+  }
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+  font-family: $font;
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+.modalBody {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  min-height: 0;
+}
+
+.pdfViewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 600px;
+
+  @media (max-width: 1024px) {
+    min-height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 300px;
+  }
+}
+
+.pdfFallback {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+
+  p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    font-family: $font;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 10px;
+    padding: 12px 16px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+    width: calc(100% - 20px);
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+.pdfFallbackLink {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #ff6b35;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: $font;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #ff8e35;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
   }
 }

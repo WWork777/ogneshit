@@ -268,17 +268,6 @@ export default function ProductSinglePage({ params, initialProduct }) {
                     dangerouslySetInnerHTML={{ __html: product.description }}
                   />
                 </div>
-
-                {product.features && product.features.length > 0 && (
-                  <div className={styles.works}>
-                    <h2>Основные работы</h2>
-                    <ul className={styles.worksList}>
-                      {product.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
 

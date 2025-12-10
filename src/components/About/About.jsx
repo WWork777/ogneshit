@@ -22,7 +22,7 @@ export default function About() {
     },
     {
       number: '>1,5',
-      text: 'млрд. оборот компании',
+      text: 'млрд. руб. оборот компании',
     },
     {
       number: '10 000+',

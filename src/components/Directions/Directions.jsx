@@ -13,7 +13,8 @@ export default function Directions() {
     {
       id: 2,
       title: 'Навесные вентилируемые фасады',
-      image: '/images/Directions/navesnye-ventiliruemye-fasady.webp',
+      image:
+        '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady.webp',
       slug: 'navesnye-ventiliruemye-fasady',
     },
     {
@@ -25,13 +26,15 @@ export default function Directions() {
     {
       id: 4,
       title: 'Реставрация витражных конструкций',
-      image: '/images/Directions/restavraciya-vitrazhnyh-konstrukcij.webp',
+      image:
+        '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij.webp',
       slug: 'restavraciya-vitrazhnyh-konstrukcij',
     },
     {
       id: 5,
       title: 'Проектирование фасадов',
-      image: '/images/Directions/proektirovanie-fasadov.webp',
+      image:
+        '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov.webp',
       slug: 'proektirovanie-fasadov',
     },
     {

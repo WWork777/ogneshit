@@ -392,6 +392,32 @@ $font: var(--font-montserrat);
   }
 }
 
+.worksText {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #475569;
+  font-family: $font;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 16px 0;
+    padding-left: 24px;
+
+    li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+  }
+}
+
 .worksList {
   list-style: none;
   padding: 0;

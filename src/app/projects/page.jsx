@@ -97,8 +97,8 @@ export default function ProjectsPage() {
           <div className={styles.header}>
             <h1 className={styles.title}>Наши объекты</h1>
             <p className={styles.subtitle}>
-              Реализованные проекты, подтверждающие качество и надежность наших
-              решений в различных регионах и отраслях
+              Здесь мы собрали наиболее важные и ответственные проекты,
+              реализованные нашей компанией.
             </p>
           </div>
 

@@ -218,22 +218,23 @@ export default function ProjectSinglePage({ initialProject }) {
               </div>
 
               <div className={styles.textSection}>
-                <div className={styles.description}>
-                  <h2>О проекте</h2>
-                  <div
-                    className={styles.descriptionText}
-                    dangerouslySetInnerHTML={{ __html: project.description }}
-                  />
-                </div>
+                {project.about && (
+                  <div className={styles.description}>
+                    <h2>О проекте</h2>
+                    <div
+                      className={styles.descriptionText}
+                      dangerouslySetInnerHTML={{ __html: project.about }}
+                    />
+                  </div>
+                )}
 
-                {project.features && project.features.length > 0 && (
+                {project.works && project.works.trim() !== '' && (
                   <div className={styles.works}>
                     <h2>Основные работы</h2>
-                    <ul className={styles.worksList}>
-                      {project.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
+                    <div
+                      className={styles.worksText}
+                      dangerouslySetInnerHTML={{ __html: project.works }}
+                    />
                   </div>
                 )}
               </div>
