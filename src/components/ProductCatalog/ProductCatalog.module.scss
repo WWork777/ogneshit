@@ -33,7 +33,7 @@
   display: inline-block;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -158,6 +158,9 @@
 
 .productCard {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
@@ -169,15 +172,22 @@
 
 .productImage {
   width: 100%;
-  height: 100%;
+  height: 276px; // Фиксированная высота для всех изображений
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  background: #f0f0f0; // Фон для изображений, которые могут не заполнять всё пространство
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.productImageInner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Обеспечивает одинаковое заполнение пространства
+  object-position: center;
+  transition: transform 0.3s ease;
+
+  .productCard:hover & {
+    transform: scale(1.05);
   }
 }
 
@@ -187,14 +197,19 @@
   right: 10px;
   width: 50px;
   height: 50px;
+  z-index: 2;
 }
 
 .productTitle {
-  padding-top: 10px;
+  padding: 20px 0 10px;
   font-size: 18px;
   font-weight: 600;
   color: #1a1a2e;
   font-family: var(--font-manrope);
+  line-height: 1.4;
+  min-height: 50px; // Фиксированная высота для заголовков
+  display: flex;
+  align-items: center;
 }
 
 // Кастомная пагинация (используем вместо стандартной Swiper)
@@ -228,6 +243,10 @@
       font-size: 13px;
     }
   }
+
+  .productImage {
+    height: 220px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -246,7 +265,16 @@
   }
 
   .swiperSlide {
-    width: 300px; // Уменьшаем ширину слайдов на мобильных
+    width: 300px !important;
+  }
+
+  .productImage {
+    height: 180px;
+  }
+
+  .productTitle {
+    font-size: 16px;
+    min-height: 44px;
   }
 }
 
@@ -254,6 +282,7 @@
   .catalog {
     padding: 30px 17px;
   }
+
   .header {
     p {
       font-size: 10px;
@@ -261,6 +290,15 @@
   }
 
   .swiperSlide {
-    width: 100% !important; // Еще меньше на очень маленьких экранах
+    width: 280px !important;
+  }
+
+  .productImage {
+    height: 160px;
+  }
+
+  .productTitle {
+    font-size: 14px;
+    min-height: 40px;
   }
 }
