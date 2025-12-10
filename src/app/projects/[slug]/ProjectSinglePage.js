@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import styles from './ProjectSingle.module.scss';
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import styles from "./ProjectSingle.module.scss";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { getProjectBySlug } from '@/data/projects';
+import "swiper/css";
+import "swiper/css/navigation";
+import { getProjectBySlug } from "@/data/projects";
 
 export default function ProjectSinglePage({ initialProject }) {
   const params = useParams();
@@ -82,55 +82,55 @@ export default function ProjectSinglePage({ initialProject }) {
     return (
       <div className={styles.notFound}>
         <h1>Проект не найден</h1>
-        <Link href='/projects'>Вернуться к проектам</Link>
+        <Link href="/projects">Вернуться к проектам</Link>
       </div>
     );
   }
 
   // Schema.org разметка для проекта
   const projectSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
     name: project.title,
     description: project.metaDescription || project.shortDescription,
     image: project.images,
     author: {
-      '@type': 'Organization',
-      name: 'СПО Огнещит',
+      "@type": "Organization",
+      name: "СПО Огнещит",
     },
     location: {
-      '@type': 'Place',
+      "@type": "Place",
       address: {
-        '@type': 'PostalAddress',
+        "@type": "PostalAddress",
         addressLocality: project.city,
         addressCountry: project.country,
       },
     },
     dateCreated: project.year || new Date().getFullYear().toString(),
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://ogneshit.ru/projects/${project.slug}`,
+      "@type": "WebPage",
+      "@id": `https://ogneshit.ru/projects/${project.slug}`,
     },
   };
 
   const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: [
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 1,
-        name: 'Главная',
-        item: 'https://ogneshit.ru',
+        name: "Главная",
+        item: "https://ogneshit.ru",
       },
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 2,
-        name: 'Проекты',
-        item: 'https://ogneshit.ru/projects',
+        name: "Проекты",
+        item: "https://ogneshit.ru/projects",
       },
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 3,
         name: project.title,
         item: `https://ogneshit.ru/projects/${project.slug}`,
@@ -142,21 +142,21 @@ export default function ProjectSinglePage({ initialProject }) {
     <>
       {/* Structured Data */}
       <script
-        type='application/ld+json'
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
       />
       <script
-        type='application/ld+json'
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <main className={styles.projectSingle}>
         <div className={styles.contentSection}>
           <div className={styles.container}>
-            <nav className={styles.breadcrumbs} aria-label='Хлебные крошки'>
-              <Link href='/'>Главная</Link>
+            <nav className={styles.breadcrumbs} aria-label="Хлебные крошки">
+              <Link href="/">Главная</Link>
               <span> / </span>
-              <Link href='/projects'>Проекты</Link>
+              <Link href="/projects">Проекты</Link>
               <span> / </span>
               <span>{project.title}</span>
             </nav>
@@ -185,9 +185,9 @@ export default function ProjectSinglePage({ initialProject }) {
                           src={image}
                           alt={`${project.title} - фото ${index + 1}`}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: "cover" }}
                           priority={index === 0}
-                          sizes='(max-width: 768px) 100vw, 70vw'
+                          sizes="(max-width: 768px) 100vw, 70vw"
                         />
                       </div>
                     </SwiperSlide>
@@ -199,11 +199,11 @@ export default function ProjectSinglePage({ initialProject }) {
                       <button
                         key={index}
                         className={`${styles.paginationDot} ${
-                          index === activeIndex ? styles.active : ''
+                          index === activeIndex ? styles.active : ""
                         }`}
                         onClick={() => goToSlide(index)}
                         aria-label={`Go to slide ${index + 1}`}
-                        aria-current={index === activeIndex ? 'true' : 'false'}
+                        aria-current={index === activeIndex ? "true" : "false"}
                       >
                         {index === activeIndex && (
                           <div
@@ -228,7 +228,7 @@ export default function ProjectSinglePage({ initialProject }) {
                   </div>
                 )}
 
-                {project.works && project.works.trim() !== '' && (
+                {project.works && project.works.trim() !== "" && (
                   <div className={styles.works}>
                     <h2>Основные работы</h2>
                     <div
@@ -241,7 +241,7 @@ export default function ProjectSinglePage({ initialProject }) {
             </div>
 
             <div className={styles.backButton}>
-              <Link href='/projects' className={styles.backLink}>
+              <Link href="/projects" className={styles.backLink}>
                 ← Назад к проектам
               </Link>
             </div>

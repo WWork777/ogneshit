@@ -96,14 +96,8 @@ $font: var(--font-montserrat);
     max-width: 933px;
   }
 
-  @media (max-width: 768px) {
-    max-width: calc(100vw - 8vw);
-    margin-right: calc(-10vw);
-    padding-right: 10vw;
-  }
-
   @media (max-width: 480px) {
-    max-width: calc(100vw - 40px);
+    max-width: calc(100vw);
   }
 }
 
@@ -119,7 +113,7 @@ $font: var(--font-montserrat);
   display: inline-block;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -206,7 +200,7 @@ $font: var(--font-montserrat);
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -293,7 +287,7 @@ $font: var(--font-montserrat);
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -406,11 +400,11 @@ $font: var(--font-montserrat);
   }
 
   @media (max-width: 480px) {
-    width: 240px !important;
+    width: 330px !important;
   }
 
-  @media (max-width: 360px) {
-    width: 220px !important;
+  @media (max-width: 390px) {
+    width: 290px !important;
   }
 }
 
@@ -480,7 +474,7 @@ $font: var(--font-montserrat);
   }
 
   @media (max-width: 480px) {
-    height: 240px;
+    height: 300px;
   }
 }
 
@@ -504,7 +498,7 @@ $font: var(--font-montserrat);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   &::after {
-    content: '→';
+    content: "→";
     margin-left: 8px;
     font-weight: 600;
     transition: transform 0.3s ease;
@@ -549,7 +543,7 @@ $font: var(--font-montserrat);
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 0;

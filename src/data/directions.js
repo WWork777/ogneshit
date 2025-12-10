@@ -2,47 +2,47 @@
 export const directionsData = {
   1: {
     id: 1,
-    title: 'Светопрозрачные конструкции',
-    slug: 'svetoprozrachnye-konstrukcii',
-    image: '/images/Directions/svetoprozrachnye-konstrukcii.webp',
+    title: "Светопрозрачные конструкции",
+    slug: "svetoprozrachnye-konstrukcii",
+    image: "/images/Directions/svetoprozrachnye-konstrukcii.webp",
     metaDescription:
-      'Профессиональные услуги по проектированию, производству и монтажу светопрозрачных конструкций. Фасады, витражи, остекление от компании СПО Огнещит.',
+      "Профессиональные услуги по проектированию, производству и монтажу светопрозрачных конструкций. Фасады, витражи, остекление от компании СПО Огнещит.",
     description: `
       <p>«СПО Огнещит» выполняет полный комплекс услуг: проектирование, изготовление, монтаж, гарантийное обслуживание светопрозрачных конструкций на основе отечественных и зарубежных профильных систем. Ниже представлены основные типы светопрозрачных конструкций производимых и поставляемых нашей компанией.</p>
     `,
     keywords:
-      'светопрозрачные конструкции, фасадное остекление, витражи, спайдерное остекление, структурное остекление, алюминиевые конструкции',
+      "светопрозрачные конструкции, фасадное остекление, витражи, спайдерное остекление, структурное остекление, алюминиевые конструкции",
     hasSubsections: true, // Флаг для отображения подразделов
   },
   2: {
     id: 2,
-    title: 'Навесные вентилируемые фасады',
-    slug: 'navesnye-ventiliruemye-fasady',
+    title: "Навесные вентилируемые фасады",
+    slug: "navesnye-ventiliruemye-fasady",
     image:
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady.webp',
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady.webp",
     images: [
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-1.webp',
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-2.webp',
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-3.webp',
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-4.webp',
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-5.webp',
-      '/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-6.webp',
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-1.webp",
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-2.webp",
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-3.webp",
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-4.webp",
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-5.webp",
+      "/images/Directions/Navesnye-ventiliruemye-fasady/navesnye-ventiliruemye-fasady-6.webp",
     ],
     metaDescription:
-      'Проектирование и монтаж навесных вентилируемых фасадов от СПО Огнещит. Керамогранит, композитные панели, фиброцемент. Гарантия качества и долговечности.',
+      "Проектирование и монтаж навесных вентилируемых фасадов от СПО Огнещит. Керамогранит, композитные панели, фиброцемент. Гарантия качества и долговечности.",
     description: `
       Наша компания готова выполнить монтаж Навесных Вентилируемых Фасадов любой сложности, всех типов подсистем и облицовочных материалов представленных на рынке на сегодняшний день.
     `,
     keywords:
-      'навесные вентилируемые фасады, вентфасады, керамогранит, композитные панели, фиброцемент, облицовка фасадов, фасадные системы',
+      "навесные вентилируемые фасады, вентфасады, керамогранит, композитные панели, фиброцемент, облицовка фасадов, фасадные системы",
   },
   3: {
     id: 3,
-    title: 'Научная деятельность',
-    slug: 'nauchnaya-deyatelnost',
-    image: '/images/Directions/nauchnaya-deyatelnost-2.webp',
+    title: "Научная деятельность",
+    slug: "nauchnaya-deyatelnost",
+    image: "/images/Directions/nauchnaya-deyatelnost-2.webp",
     metaDescription:
-      'Научно-исследовательская деятельность СПО Огнещит в области противопожарной защиты, испытаний материалов и разработки инновационных решений.',
+      "Научно-исследовательская деятельность СПО Огнещит в области противопожарной защиты, испытаний материалов и разработки инновационных решений.",
     description: `
       <p>Помимо того что наша компания имеет Свидетельство СРО на осуществление проектных и строительно-монтажных работ, Лицензию МЧС позволяющую нам выполнять монтаж огнестойких конструкций, Лицензию позволяющую нам вести работы на объектах Атомной промышленности, мы ведем активную научную деятельность в разрезе испытания производимых нами конструкций на различные типы нагрузок.</p>
       
@@ -55,78 +55,78 @@ export const directionsData = {
       <p>Мы готовы получать разрешительную документацию на всевозможные нестандартные решения, проводить испытания конструкций «под объект».</p>
     `,
     keywords:
-      'научная деятельность, исследования и разработки, противопожарная защита, испытания материалов, огнестойкость конструкций, инновационные решения',
+      "научная деятельность, исследования и разработки, противопожарная защита, испытания материалов, огнестойкость конструкций, инновационные решения",
     documents: [
       {
         id: 1,
-        title: 'Сертификат ИСО 9001:2015',
-        file: '/documents/iso-certificate.pdf',
+        title: "Сертификат ИСО 9001:2015",
+        file: "/documents/iso-certificate.pdf",
       },
       {
         id: 2,
-        title: 'Лицензия МЧС',
-        file: '/documents/mchs-license.pdf',
+        title: "Лицензия МЧС",
+        file: "/documents/mchs-license.pdf",
       },
       {
         id: 3,
-        title: 'Лицензия на право сооружения радиационных источников',
-        file: '/documents/atomic-industry-license.pdf',
+        title: "Лицензия на право сооружения радиационных источников",
+        file: "/documents/atomic-industry-license.pdf",
       },
       {
         id: 4,
-        title: 'Технический отчет от сейсмика',
-        file: '/documents/seismic-certificate.pdf',
+        title: "Технический отчет от сейсмика",
+        file: "/documents/seismic-certificate.pdf",
       },
     ],
   },
   4: {
     id: 4,
-    title: 'Реставрация витражных конструкций',
-    slug: 'restavraciya-vitrazhnyh-konstrukcij',
+    title: "Реставрация витражных конструкций",
+    slug: "restavraciya-vitrazhnyh-konstrukcij",
     image:
-      '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij.webp',
+      "/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij.webp",
     metaDescription:
-      'Профессиональная реставрация исторических витражей и витражных конструкций. Восстановление культурного наследия с сохранением аутентичности.',
+      "Профессиональная реставрация исторических витражей и витражных конструкций. Восстановление культурного наследия с сохранением аутентичности.",
     description: `
       <p>«СПО Огнещит» готова выполнить работы по реставрации витражных конструкций. Это направление очень актуально при возобновлении строительства ранее замороженных объектов, а также объектов, фасады зданий которых утратили свои технические и эстетические свойства вследствие длительного периода эксплуатации.</p>
       
       <p>Мы восстанавливаем герметичность фасадов, проводим работы по восстановлению полимерного покрытия алюминиевого профиля, производим замену стеклопакетов и прочих комплектующих.</p>
     `,
     keywords:
-      'реставрация витражей, восстановление витражных конструкций, исторические витражи, культурное наследие, ремонт витражей, сохранение архитектуры',
+      "реставрация витражей, восстановление витражных конструкций, исторические витражи, культурное наследие, ремонт витражей, сохранение архитектуры",
   },
   5: {
     id: 5,
-    title: 'Проектирование фасадов',
-    slug: 'proektirovanie-fasadov',
+    title: "Проектирование фасадов",
+    slug: "proektirovanie-fasadov",
     image:
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov.webp',
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov.webp",
     images: [
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.bmp',
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.bmp",
+      "/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.bmp",
     ],
     metaDescription:
-      'Архитектурное и техническое проектирование фасадов зданий. Разработка комплексных решений для вентилируемых, светопрозрачных и комбинированных систем.',
+      "Архитектурное и техническое проектирование фасадов зданий. Разработка комплексных решений для вентилируемых, светопрозрачных и комбинированных систем.",
     description: `
       <p>Наша компания имеет свидетельство СРО на осуществление проектных работ. Наличие в штате компании специалистов с большим опытом проектирования, позволяет нам в кратчайшие сроки разрабатывать сложные конструктивные решения для самых ответственных объектов. Подготовка проектной документации на производимые нами конструкции ведётся согласно утверждённого заказчиком технического задания, в строгом соответствии с требованиями действующих норм и технических условий на продукцию.</p>
       
       <p>Мы можем выполнять полноценные проекты на фасады как светопрозрачные, так и навесные вентилируемые для всех участников строительного рынка: заказчиков, инвесторов, фасадных компаний и проектных институтов, в том числе и в BIM-средах.</p>
     `,
     keywords:
-      'проектирование фасадов, архитектурное проектирование, фасадные системы, техническое проектирование, рабочие чертежи, расчет конструкций',
+      "проектирование фасадов, архитектурное проектирование, фасадные системы, техническое проектирование, рабочие чертежи, расчет конструкций",
   },
   6: {
     id: 6,
-    title: 'Монтаж',
-    slug: 'montazh',
-    image: '/images/Directions/montazh.webp',
+    title: "Монтаж",
+    slug: "montazh",
+    image: "/images/Directions/montazh.webp",
     metaDescription:
-      'Профессиональный монтаж фасадных систем, светопрозрачных конструкций и противопожарных элементов. Высотные работы любой сложности от СПО Огнещит.',
+      "Профессиональный монтаж фасадных систем, светопрозрачных конструкций и противопожарных элементов. Высотные работы любой сложности от СПО Огнещит.",
     description: `
       <p>Наша компания имеет Свидетельство СРО на осуществление строительно-монтажных работ, Лицензию МЧС позволяющую нам выполнять монтаж огнестойких конструкций, Лицензию позволяющую нам вести работы на объектах Атомной промышленности.</p>
       
@@ -135,7 +135,7 @@ export const directionsData = {
       <p>Собственный автопарк строительной техники (автовышки до 50 метров), строительно-монтажные и вспомогательные механизмы (строительные подъемники, строительные леса, вакуумные захваты стеклянных изделий, гибочные станки для фасонных элементов), позволяют нам осуществлять монтажные работы в кратчайшие сроки.</p>
     `,
     keywords:
-      'монтаж фасадов, установка конструкций, высотные работы, монтажные услуги, профессиональный монтаж, фасадные работы, строительный монтаж',
+      "монтаж фасадов, установка конструкций, высотные работы, монтажные услуги, профессиональный монтаж, фасадные работы, строительный монтаж",
   },
 };
 
