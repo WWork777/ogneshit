@@ -196,16 +196,16 @@ export default function ProductCatalog() {
                   <div className={styles.productImage}>
                     <Image
                       src={product.image}
-                      width={IMAGE_WIDTH}
-                      height={IMAGE_HEIGHT}
+                      width={1920}
+                      height={1080}
                       alt={product.title}
                       className={styles.productImageInner}
                       priority={product.id <= 3}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 426px"
                       style={{
                         width: "100%",
-                        height: `${IMAGE_HEIGHT}px`,
-                        objectFit: "cover",
+                        // height: `${IMAGE_HEIGHT}px`,
+                        // objectFit: "cover",
                       }}
                     />
                     <div className={styles.productIcon}>
