@@ -124,7 +124,13 @@ export const directionsData = {
     id: 6,
     title: 'Монтаж',
     slug: 'montazh',
-    image: '/images/Directions/montazh.webp',
+    image: '/images/Directions/Montazh/montazh-01.webp',
+    images: [
+      '/images/Directions/Montazh/montazh-01.webp',
+      '/images/Directions/Montazh/montazh-02.bmp',
+      '/images/Directions/Montazh/montazh-03.bmp',
+      '/images/Directions/Montazh/montazh-04.bmp',
+    ],
     metaDescription:
       'Профессиональный монтаж фасадных систем, светопрозрачных конструкций и противопожарных элементов. Высотные работы любой сложности от СПО Огнещит.',
     description: `

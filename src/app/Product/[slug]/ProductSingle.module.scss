@@ -79,6 +79,31 @@ $font: var(--font-montserrat);
   }
 }
 
+// Заголовок продукта
+.productTitle {
+  font-size: 42px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 40px;
+  font-family: $font;
+  line-height: 1.2;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
 // Основной контент - слайдер и текст
 .mainContent {
   display: grid;

@@ -40,7 +40,7 @@ export default function Directions() {
     {
       id: 6,
       title: 'Монтаж',
-      image: '/images/Directions/montazh.webp',
+      image: '/images/Directions/Montazh/montazh-01.webp',
       slug: 'montazh',
     },
   ];

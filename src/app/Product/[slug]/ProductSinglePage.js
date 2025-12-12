@@ -189,6 +189,9 @@ export default function ProductSinglePage({ params, initialProduct }) {
               <span>{product.title}</span>
             </nav>
 
+            {/* Заголовок раздела */}
+            <h2 className={styles.productTitle}>{product.title}</h2>
+
             <div className={styles.mainContent}>
               <div className={styles.sliderSection}>
                 {images.length > 1 ? (

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Link from 'next/link';
+import { getCatalogProducts } from '@/data/products';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,80 +19,7 @@ export default function ProductCatalog() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
 
-  const products = [
-    {
-      id: 1,
-      title: 'Противопожарные двери -IW-50',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-dveri-iw-50',
-    },
-    {
-      id: 2,
-      title: 'Противопожарные двери -IW-60',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-dveri-iw-60',
-    },
-    {
-      id: 3,
-      title: 'Противопожарные двери -IW-90',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-dveri-iw-90',
-    },
-    {
-      id: 4,
-      title: 'Светопрозрачные противопожарные перегородки',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'svetoprozrachnye-protivopozharnye-peregorodki',
-    },
-    {
-      id: 5,
-      title: 'Противопожарные ворота',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-vorota',
-    },
-    {
-      id: 6,
-      title: 'Противопожарные люки и окна',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-lyuki-i-okna',
-    },
-    {
-      id: 7,
-      title: 'Огнезащитные составы для металлоконструкций',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'ognezaschitnye-sostavy-dlya-metallokonstrukcij',
-    },
-    {
-      id: 8,
-      title: 'Огнезащита воздуховодов',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'ognezaschita-vozduhovodov',
-    },
-    {
-      id: 9,
-      title: 'Огнезащитная обработка деревянных конструкций',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'ognezaschitnaya-obrabotka-derevyannyh-konstrukcij',
-    },
-    {
-      id: 10,
-      title: 'Системы автоматического дымоудаления',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'sistemy-avtomaticheskogo-dymoudaleniya',
-    },
-    {
-      id: 11,
-      title: 'Противопожарные шторы и экраны',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'protivopozharnye-shtory-i-ekrany',
-    },
-    {
-      id: 12,
-      title: 'Огнестойкие герметики и мастики',
-      image: '/images/Catalog/Product_1.webp',
-      slug: 'ognestojkie-germetiki-i-mastiki',
-    },
-  ];
+  const products = getCatalogProducts();
 
   // Количество объектов в одной группе (фрейме)
   const itemsPerPage = 3;

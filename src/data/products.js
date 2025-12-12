@@ -548,3 +548,41 @@ export function getProductById(id) {
 export function getAllProducts() {
   return products;
 }
+
+// Получить данные для каталога (только для лендинга - краткая информация)
+export function getCatalogProducts() {
+  return products.map((product) => ({
+    id: product.id,
+    title: product.title,
+    image: product.image,
+    slug: product.slug,
+    category: product.category || 'Без категории',
+  }));
+}
+
+// Получить все уникальные категории
+export function getAllCategories() {
+  const categories = new Set();
+  products.forEach((product) => {
+    if (product.category) {
+      categories.add(product.category);
+    }
+  });
+  return Array.from(categories).sort();
+}
+
+// Получить продукты по категории
+export function getProductsByCategory(category) {
+  return products.filter((product) => product.category === category);
+}
+
+// Получить продукты по категории (для каталога - краткая информация)
+export function getCatalogProductsByCategory(category) {
+  return getProductsByCategory(category).map((product) => ({
+    id: product.id,
+    title: product.title,
+    image: product.image,
+    slug: product.slug,
+    category: product.category || 'Без категории',
+  }));
+}
