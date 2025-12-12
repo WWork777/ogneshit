@@ -1,5 +1,5 @@
-import DirectionSinglePage from "./DirectionSinglePage";
-import { getDirectionBySlugServer } from "@/data/directions";
+import DirectionSinglePage from './DirectionSinglePage';
+import { getDirectionBySlugServer } from '@/data/directions';
 
 // Серверная функция для метаданных
 export async function generateMetadata({ params }) {
@@ -11,9 +11,9 @@ export async function generateMetadata({ params }) {
 
     if (!direction) {
       return {
-        title: "Направление не найдено | СПО Огнещит",
+        title: 'Направление не найдено | СПО Огнещит',
         description:
-          "Запрошенное направление не найдено на сайте компании СПО Огнещит",
+          'Запрошенное направление не найдено на сайте компании СПО Огнещит',
       };
     }
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
           direction.title
         } - профессиональные услуги по производству и монтажу от компании СПО Огнещит. ${
           direction.shortDescription ||
-          "Качественные решения для строительства и противопожарной безопасности."
+          'Качественные решения для строительства и противопожарной безопасности.'
         }`,
       keywords:
         direction.keywords ||
@@ -39,25 +39,25 @@ export async function generateMetadata({ params }) {
           direction.metaDescription ||
           `${direction.title} - профессиональные услуги по производству и монтажу`,
         url: `https://ogneshit.ru/directions/${direction.slug}`,
-        siteName: "СПО Огнещит",
+        siteName: 'СПО Огнещит',
         images: [
           {
-            url: direction.image || "/images/directions-og.jpg",
+            url: direction.image || '/images/directions-og.webp',
             width: 1200,
             height: 630,
             alt: direction.title,
           },
         ],
-        locale: "ru_RU",
-        type: "article",
+        locale: 'ru_RU',
+        type: 'article',
       },
       twitter: {
-        card: "summary_large_image",
+        card: 'summary_large_image',
         title: `${direction.title} | СПО Огнещит`,
         description:
           direction.metaDescription ||
           `${direction.title} - профессиональные услуги по производству и монтажу`,
-        images: [direction.image || "/images/directions-og.jpg"],
+        images: [direction.image || '/images/directions-og.webp'],
       },
       robots: {
         index: true,
@@ -65,18 +65,18 @@ export async function generateMetadata({ params }) {
         googleBot: {
           index: true,
           follow: true,
-          "max-video-preview": -1,
-          "max-image-preview": "large",
-          "max-snippet": -1,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
         },
       },
     };
   } catch (error) {
-    console.error("Error generating metadata:", error);
+    console.error('Error generating metadata:', error);
     return {
-      title: "Направление не найдено | СПО Огнещит",
+      title: 'Направление не найдено | СПО Огнещит',
       description:
-        "Запрошенное направление не найдено на сайте компании СПО Огнещит",
+        'Запрошенное направление не найдено на сайте компании СПО Огнещит',
     };
   }
 }

@@ -21,7 +21,7 @@ export async function generateMetadata() {
       siteName: 'СПО Огнещит',
       images: [
         {
-          url: `/images/projects-og.jpg`,
+          url: `/images/projects-og.webp`,
           width: 1200,
           height: 630,
           alt: 'Построенные объекты СПО Огнещит',
@@ -35,7 +35,7 @@ export async function generateMetadata() {
       title: 'Построенные объекты | СПО Огнещит - Реализованные проекты',
       description:
         'Реализованные проекты светопрозрачных и противопожарных конструкций',
-      images: [`/images/projects-og.jpg`],
+      images: [`/images/projects-og.webp`],
     },
     robots: {
       index: true,

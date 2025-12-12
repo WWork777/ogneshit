@@ -102,13 +102,13 @@ export const directionsData = {
     image:
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov.webp',
     images: [
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.webp',
     ],
     metaDescription:
       'Архитектурное и техническое проектирование фасадов зданий. Разработка комплексных решений для вентилируемых, светопрозрачных и комбинированных систем.',
@@ -127,9 +127,9 @@ export const directionsData = {
     image: '/images/Directions/Montazh/montazh-01.webp',
     images: [
       '/images/Directions/Montazh/montazh-01.webp',
-      '/images/Directions/Montazh/montazh-02.bmp',
-      '/images/Directions/Montazh/montazh-03.bmp',
-      '/images/Directions/Montazh/montazh-04.bmp',
+      '/images/Directions/Montazh/montazh-02.webp',
+      '/images/Directions/Montazh/montazh-03.webp',
+      '/images/Directions/Montazh/montazh-04.webp',
     ],
     metaDescription:
       'Профессиональный монтаж фасадных систем, светопрозрачных конструкций и противопожарных элементов. Высотные работы любой сложности от СПО Огнещит.',

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './ProductCatalog.module.scss';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,14 +12,90 @@ import { getCatalogProducts } from '@/data/products';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+const CATALOG_SCROLL_KEY = 'catalogScrollPosition';
+const CATALOG_SLIDE_KEY = 'catalogSlideIndex';
+
 export default function ProductCatalog() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const catalogSectionRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(() => {
+    // Инициализируем из sessionStorage если есть
+    if (typeof window !== 'undefined') {
+      const saved = sessionStorage.getItem(CATALOG_SLIDE_KEY);
+      return saved ? parseInt(saved, 10) : 0;
+    }
+    return 0;
+  });
   const [isEnd, setIsEnd] = useState(false);
+  const isRestoredRef = useRef(false);
 
   const products = getCatalogProducts();
+
+  // Сохранение позиции при каждом изменении слайда
+  const savePosition = () => {
+    if (typeof window !== 'undefined' && swiperRef.current) {
+      const currentIndex = swiperRef.current.activeIndex;
+      sessionStorage.setItem(CATALOG_SLIDE_KEY, currentIndex.toString());
+
+      // Сохраняем позицию скролла
+      const catalogElement = document.getElementById('catalog');
+      if (catalogElement) {
+        const scrollPosition =
+          window.scrollY + catalogElement.getBoundingClientRect().top;
+        sessionStorage.setItem(CATALOG_SCROLL_KEY, scrollPosition.toString());
+      }
+    }
+  };
+
+  // Сохранение позиции при клике на продукт
+  const handleProductClick = () => {
+    savePosition();
+  };
+
+  // Восстановление позиции скролла при монтировании
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedScrollPosition = sessionStorage.getItem(CATALOG_SCROLL_KEY);
+
+      // Восстанавливаем скролл если вернулись на страницу с каталогом
+      if (savedScrollPosition !== null) {
+        const scrollPosition = parseInt(savedScrollPosition, 10);
+        let scrollRestored = false;
+
+        // Функция восстановления скролла
+        const restoreScroll = (attempt = 1) => {
+          if (scrollRestored) return;
+
+          const catalogElement = document.getElementById('catalog');
+          if (catalogElement) {
+            const targetScroll = scrollPosition;
+            const currentScroll = window.scrollY;
+
+            // Если мы еще не на нужной позиции, прокручиваем
+            if (Math.abs(currentScroll - targetScroll) > 50) {
+              window.scrollTo({
+                top: targetScroll,
+                behavior: 'instant',
+              });
+              scrollRestored = true;
+            } else {
+              scrollRestored = true;
+            }
+          }
+        };
+
+        // Пробуем восстановить несколько раз с увеличивающейся задержкой
+        // чтобы перехватить прокрутку Next.js к якорю
+        setTimeout(() => restoreScroll(1), 200);
+        setTimeout(() => restoreScroll(2), 500);
+        setTimeout(() => restoreScroll(3), 800);
+        setTimeout(() => restoreScroll(4), 1200);
+        setTimeout(() => restoreScroll(5), 2000);
+      }
+    }
+  }, []);
 
   // Количество объектов в одной группе (фрейме)
   const itemsPerPage = 3;
@@ -34,7 +110,7 @@ export default function ProductCatalog() {
     : Math.min(Math.floor(activeIndex / itemsPerPage), totalPages - 1);
 
   return (
-    <section id='catalog' className={styles.catalog}>
+    <section id='catalog' ref={catalogSectionRef} className={styles.catalog}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Каталог продукции</h2>
@@ -87,6 +163,7 @@ export default function ProductCatalog() {
           modules={[Navigation]}
           spaceBetween={40}
           slidesPerView={'auto'}
+          initialSlide={activeIndex}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -100,10 +177,46 @@ export default function ProductCatalog() {
             swiper.navigation.init();
             swiper.navigation.update();
             setIsEnd(swiper.isEnd);
+
+            // Восстанавливаем позицию слайдера после инициализации
+            if (!isRestoredRef.current) {
+              const savedSlideIndex = sessionStorage.getItem(CATALOG_SLIDE_KEY);
+
+              if (savedSlideIndex !== null) {
+                const index = parseInt(savedSlideIndex, 10);
+
+                // Используем несколько попыток для надежности
+                const restoreSlide = (attempt = 1) => {
+                  if (swiper && swiper.slides && swiper.slides.length > index) {
+                    swiper.slideTo(index, 0);
+                    setActiveIndex(index);
+                    isRestoredRef.current = true;
+                  } else if (attempt < 5) {
+                    setTimeout(() => restoreSlide(attempt + 1), 100);
+                  } else {
+                    isRestoredRef.current = true;
+                  }
+                };
+
+                setTimeout(() => restoreSlide(), 100);
+              } else {
+                isRestoredRef.current = true;
+              }
+            }
           }}
           onSlideChange={(swiper) => {
             setActiveIndex(swiper.activeIndex);
             setIsEnd(swiper.isEnd);
+            // Сохраняем позицию при каждом изменении (после восстановления)
+            if (isRestoredRef.current) {
+              savePosition();
+            }
+          }}
+          onTouchEnd={(swiper) => {
+            // Сохраняем позицию после свайпа
+            if (isRestoredRef.current) {
+              savePosition();
+            }
           }}
           onReachEnd={(swiper) => {
             setIsEnd(true);
@@ -115,14 +228,25 @@ export default function ProductCatalog() {
         >
           {products.map((product) => (
             <SwiperSlide key={product.id} className={styles.swiperSlide}>
-              <Link href={`/Product/${product.slug}`}>
+              <Link
+                href={`/Product/${product.slug}`}
+                onClick={handleProductClick}
+              >
                 <div className={styles.productCard}>
                   <div className={styles.productImage}>
                     <Image
                       src={product.image}
-                      width={426}
-                      height={276}
-                      alt='Противопожарные двери'
+                      width={1920}
+                      height={1080}
+                      alt={product.title}
+                      className={styles.productImageInner}
+                      priority={product.id <= 3}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 426px'
+                      style={{
+                        width: '100%',
+                        // height: `${IMAGE_HEIGHT}px`,
+                        // objectFit: "cover",
+                      }}
                     />
                     <div className={styles.productIcon}>
                       <svg
@@ -159,6 +283,10 @@ export default function ProductCatalog() {
                   // Переходим к первому слайду группы (фрейма из 4 объектов)
                   const targetIndex = pageIndex * itemsPerPage;
                   swiperRef.current.slideTo(targetIndex);
+                  // Сохраняем позицию после перехода
+                  setTimeout(() => {
+                    savePosition();
+                  }, 100);
                 }
               }}
             />

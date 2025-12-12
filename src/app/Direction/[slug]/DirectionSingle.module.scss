@@ -103,6 +103,9 @@ $font: var(--font-montserrat);
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     gap: 30px;
@@ -120,7 +123,7 @@ $font: var(--font-montserrat);
   height: 600px;
   border-radius: 8px;
   overflow: hidden;
-
+  max-width: 100%;
   @media (max-width: 1024px) {
     height: 500px;
   }
@@ -294,7 +297,7 @@ $font: var(--font-montserrat);
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -8px;
     left: -8px;
@@ -330,6 +333,7 @@ $font: var(--font-montserrat);
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 100%;
 }
 
 // Текстовая секция (30%)
@@ -594,6 +598,12 @@ $font: var(--font-montserrat);
   @media (max-width: 768px) {
     margin-bottom: 40px;
   }
+
+  .subsectionsSection_title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
 }
 
 .subsectionsGrid {
@@ -616,7 +626,7 @@ $font: var(--font-montserrat);
     gap: 20px;
   }
 
-  a {
+  .subsection_block {
     display: block;
     height: 100%;
   }
@@ -664,7 +674,7 @@ $font: var(--font-montserrat);
   width: 100%;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -780,7 +790,8 @@ $font: var(--font-montserrat);
 .documentsSection {
   margin-top: 0;
   margin-bottom: 0;
-
+  width: 100%; // Добавляем ширину
+  max-width: 100%;
   @media (max-width: 768px) {
     margin-top: 0;
     margin-bottom: 0;

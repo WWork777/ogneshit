@@ -7,7 +7,7 @@ export const videosData = [
     id: 1,
     title: 'Международный аэропорт',
     videoUrl: '/videos/emelianovov-airport.mp4', // Путь к локальному видео файлу
-    thumbnail: '/images/Projects/krasnoyarsk-airport.png', // Превью/обложка видео
+    thumbnail: '/images/Projects/krasnoyarsk-airport.webp', // Превью/обложка видео
     city: 'Красноярск',
     country: 'Россия',
   },
@@ -15,7 +15,7 @@ export const videosData = [
     id: 2,
     title: 'Фонд Назарбаева',
     videoUrl: '/videos/fond.mp4',
-    thumbnail: '/images/Projects/almaty-fond-nazarbaev.png',
+    thumbnail: '/images/Projects/almaty-fond-nazarbaev.webp',
     city: 'Алматы',
     country: 'Казахстан',
   },
@@ -23,7 +23,7 @@ export const videosData = [
     id: 3,
     title: 'Административное здание Казахмыс',
     videoUrl: '/videos/kazyhmis.mp4',
-    thumbnail: '/images/Projects/almaty-kazakhmys.png',
+    thumbnail: '/images/Projects/almaty-kazakhmys.webp',
     city: 'Алматы',
     country: 'Казахстан',
   },

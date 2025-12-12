@@ -1,18 +1,70 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './ProjectsPage.module.scss';
 import { getAllProjects } from '@/data/projects';
 import { getAllVideos } from '@/data/videos';
 
+const PROJECTS_SCROLL_KEY = 'projectsPageScrollPosition';
+
 export default function ProjectsContent() {
   const [activeTab, setActiveTab] = useState('projects'); // 'projects' или 'videos'
   const [playingVideoIds, setPlayingVideoIds] = useState(new Set());
   const videoRefs = useRef({});
+  const projectsContainerRef = useRef(null);
+  const isRestoredRef = useRef(false);
   const projects = getAllProjects();
   const videos = getAllVideos();
+
+  // Восстановление позиции скролла при монтировании
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !isRestoredRef.current) {
+      const savedScrollPosition = sessionStorage.getItem(PROJECTS_SCROLL_KEY);
+
+      if (savedScrollPosition !== null) {
+        const scrollPosition = parseInt(savedScrollPosition, 10);
+
+        // Восстанавливаем позицию скролла с несколькими попытками
+        const restoreScroll = (attempt = 1) => {
+          if (attempt > 10) {
+            isRestoredRef.current = true;
+            return;
+          }
+
+          const currentScroll = window.scrollY;
+          const targetScroll = scrollPosition;
+
+          if (Math.abs(currentScroll - targetScroll) > 50) {
+            window.scrollTo({
+              top: targetScroll,
+              behavior: 'instant',
+            });
+            setTimeout(() => restoreScroll(attempt + 1), 100);
+          } else {
+            isRestoredRef.current = true;
+          }
+        };
+
+        // Запускаем восстановление после загрузки
+        setTimeout(() => restoreScroll(), 100);
+        setTimeout(() => restoreScroll(), 300);
+        setTimeout(() => restoreScroll(), 600);
+        setTimeout(() => restoreScroll(), 1000);
+      } else {
+        isRestoredRef.current = true;
+      }
+    }
+  }, []);
+
+  // Сохранение позиции при клике на проект
+  const handleProjectClick = () => {
+    if (typeof window !== 'undefined') {
+      const scrollPosition = window.scrollY;
+      sessionStorage.setItem(PROJECTS_SCROLL_KEY, scrollPosition.toString());
+    }
+  };
 
   const handleVideoPlay = (videoId) => {
     setPlayingVideoIds((prev) => new Set(prev).add(videoId));
@@ -34,12 +86,12 @@ export default function ProjectsContent() {
     });
   };
 
-  const getLocationText = (project) => {
-    if (project.country === 'Россия') {
-      return project.city;
-    }
-    return `${project.city}, ${project.country}`;
-  };
+  // const getLocationText = (project) => {
+  //   if (project.country === 'Россия') {
+  //     return project.city;
+  //   }
+  //   return `${project.city}, ${project.country}`;
+  // };
 
   return (
     <>
@@ -63,12 +115,13 @@ export default function ProjectsContent() {
       </div>
 
       {activeTab === 'projects' && (
-        <div className={styles.projectsGrid}>
+        <div ref={projectsContainerRef} className={styles.projectsGrid}>
           {projects.map((project) => (
             <Link
               href={`/projects/${project.slug}`}
               key={project.id}
               className={styles.projectLink}
+              onClick={handleProjectClick}
             >
               <article className={styles.projectCard}>
                 <div className={styles.projectImage}>
@@ -82,9 +135,7 @@ export default function ProjectsContent() {
                 </div>
                 <div className={styles.projectInfo}>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.projectLocation}>
-                    {getLocationText(project)}
-                  </p>
+                  <p className={styles.projectLocation}>{project.city}</p>
                 </div>
               </article>
             </Link>

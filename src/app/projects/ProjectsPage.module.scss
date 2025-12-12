@@ -41,7 +41,7 @@ $font: var(--font-montserrat);
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -169,7 +169,7 @@ $font: var(--font-montserrat);
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -362,7 +362,7 @@ $font: var(--font-montserrat);
 }
 
 .projectTitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #1e293b;
   margin: 0;
@@ -391,7 +391,7 @@ $font: var(--font-montserrat);
   gap: 6px;
 
   &::before {
-    content: '📍';
+    content: "📍";
     font-size: 12px;
   }
 
@@ -402,7 +402,7 @@ $font: var(--font-montserrat);
 
 // Дополнительные декоративные элементы
 .projectsPage::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;

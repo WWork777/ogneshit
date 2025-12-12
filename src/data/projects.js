@@ -6,13 +6,13 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'siberia-arena',
-    image: '/images/Projects/siberia-arena/siberia-arena-01.bmp',
+    image: '/images/Projects/siberia-arena/siberia-arena-01.webp',
     images: [
-      '/images/Projects/siberia-arena/siberia-arena-01.bmp',
-      '/images/Projects/siberia-arena/siberia-arena-02.bmp',
-      '/images/Projects/siberia-arena/siberia-arena-03.bmp',
+      '/images/Projects/siberia-arena/siberia-arena-01.webp',
+      '/images/Projects/siberia-arena/siberia-arena-02.webp',
+      '/images/Projects/siberia-arena/siberia-arena-03.webp',
     ],
-    about: `<p>Сибирь-Арена — многофункциональный спортивный комплекс в Новосибирске, предназначенный для проведения крупных спортивных мероприятий, концертов и культурных событий. Арена является одной из крупнейших в Сибири и может вмещать тысячи зрителей.</p>`,
+    about: `<p>Сибирь-Арена — многофункциональный спортивный комплекс в Новосибирске, предназначенный для проведения крупных спортивных мероприятий, концертов и культурных событий. Арена является одной из крупнейших в Сибири и может вмещать до 12 000 зрителей.</p>`,
     works: `
     <ul>
         <li>Витражное остекление фасадов</li>
@@ -27,11 +27,11 @@ export const projectsData = {
     city: 'Москва',
     country: 'Россия',
     slug: 'luzhniki-tennis',
-    image: '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.bmp',
+    image: '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.webp',
     images: [
-      '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.bmp',
-      '/images/Projects/luzhniki-tennis/luzhniki-tennis-02.bmp',
-      '/images/Projects/luzhniki-tennis/luzhniki-tennis-03.bmp',
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.webp',
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-02.webp',
+      // "/images/Projects/luzhniki-tennis/luzhniki-tennis-03.webp",
     ],
     about: `<p>Теннисный центр в Лужниках — современный спортивный комплекс с многофункциональными кортами и зрительскими трибунами. Объект расположен на территории Олимпийского комплекса "Лужники" в Москве и предназначен для проведения профессиональных теннисных турниров и тренировок спортсменов.</p>`,
     works: `<ul>
@@ -50,14 +50,14 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivastok-burnyi',
-    image: '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.bmp',
+    image: '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.webp',
     images: [
-      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.bmp',
-      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-02.bmp',
-      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-03.bmp',
-      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-04.bmp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.webp',
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-02.webp',
+      // "/images/Projects/vladivastok-burnyi/vladivastok-burnyi-03.webp",
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-04.webp',
     ],
-    about: `<p>Многофункциональный комплекс "Бурный" во Владивостоке — современное здание, сочетающее в себе офисные, торговые и развлекательные функции. Комплекс отличается уникальной архитектурой с использованием пространственных купольных конструкций и современных светопрозрачных решений.</p>`,
+    about: `<p>«Бурный» — многофункциональный комплекс во Владивостоке, расположенный на мысе Бурном. С трёх сторон он окружён заливом, а с четвёртой выходит в центр города. Комплекс включает в себя: бизнес-центр класса «А+», конференц-залы и переговорные комнаты, Апарт-отель 5*, рестораны разных кухонь мира, торговая галерея, СПА и фитнес-зал, благоустроенная территория с амфитеатром и вертолётной площадкой.</p>`,
     works: `<ul>
         <li>Пространственные купольные конструкций.</li>
         <li>Реставрация фасадов</li>
@@ -73,11 +73,11 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivostok-hotel',
-    image: '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.bmp',
+    image: '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.webp',
     images: [
-      '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.bmp',
-      '/images/Projects/vladivostok-hotel/vladivostok-hotel-02.bmp',
-      '/images/Projects/vladivostok-hotel/vladivostok-hotel-03.bmp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-01.webp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-02.webp',
+      '/images/Projects/vladivostok-hotel/vladivostok-hotel-03.webp',
     ],
     about: `<p>Vladivostok Grand Hotel & Spa — пятизвездочный отель премиум-класса во Владивостоке, расположенный в центре города с видом на бухту Золотой Рог. Отель предлагает роскошные номера, рестораны высокого класса, SPA-центр и современные конференц-залы для деловых мероприятий.</p>`,
     works: `<ul>
@@ -99,11 +99,11 @@ export const projectsData = {
     city: 'Хабаровск',
     country: 'Россия',
     slug: 'habarovsk-airport',
-    image: '/images/Projects/habarovsk-airport/habarovsk-airport-01.bmp',
+    image: '/images/Projects/habarovsk-airport/habarovsk-airport-01.webp',
     images: [
-      '/images/Projects/habarovsk-airport/habarovsk-airport-01.bmp',
-      '/images/Projects/habarovsk-airport/habarovsk-airport-02.bmp',
-      '/images/Projects/habarovsk-airport/habarovsk-airport-03.bmp',
+      '/images/Projects/habarovsk-airport/habarovsk-airport-01.webp',
+      '/images/Projects/habarovsk-airport/habarovsk-airport-02.webp',
+      '/images/Projects/habarovsk-airport/habarovsk-airport-03.webp',
     ],
     about: `<p>Международный аэропорт Хабаровска (аэропорт имени Г.И. Невельского) — крупнейший аэропорт Дальнего Востока России, обслуживающий как внутренние, так и международные рейсы. Аэропорт является важным транспортным узлом, связывающим регион с остальной частью страны и зарубежными странами.</p>`,
     works: `
@@ -120,13 +120,14 @@ export const projectsData = {
     city: 'Южно-Сахалинск',
     country: 'Россия',
     slug: 'sakhalin-airport',
-    image: '/images/Projects/sakhalin-airport/sakhalin-airport-01.bmp',
+    image: '/images/Projects/sakhalin-airport/sakhalin-airport-01.webp',
     images: [
-      '/images/Projects/sakhalin-airport/sakhalin-airport-01.bmp',
-      '/images/Projects/sakhalin-airport/sakhalin-airport-02.bmp',
+      '/images/Projects/sakhalin-airport/sakhalin-airport-01.webp',
+      '/images/Projects/sakhalin-airport/sakhalin-airport-02.webp',
     ],
     about: `<p>Аэропорт Южно-Сахалинска (аэропорт имени А.П. Чехова) — главный аэропорт Сахалинской области, обслуживающий региональные и международные рейсы. Аэропорт играет ключевую роль в транспортной инфраструктуре острова Сахалин, обеспечивая связь с материковой частью России и зарубежными странами.</p>`,
-    works: `Пространственный навес «сухой пассажир»
+    works: `<ul>
+        <li>Пространственный навес «сухой пассажир»</li>
         <li>Автоматические светопрозрачные двери</li>
         <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
         <li>Остекление лифтовых шахт</li>
@@ -146,15 +147,15 @@ export const projectsData = {
     city: 'Красноярск',
     country: 'Россия',
     slug: 'krasnoyarsk-airport',
-    image: '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.bmp',
+    image: '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.webp',
     images: [
-      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.bmp',
-      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-02.bmp',
-      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-03.bmp',
-      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-04.bmp',
-      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-05.bmp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-01.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-02.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-03.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-04.webp',
+      '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-05.webp',
     ],
-    about: `<p>Международный аэропорт Красноярска (аэропорт имени В.П. Астафьева) — крупный аэропорт в Сибири, обслуживающий как пассажирские, так и грузовые рейсы. VIP-терминал аэропорта обеспечивает комфортное обслуживание пассажиров бизнес-класса с использованием современных архитектурных и инженерных решений.</p>`,
+    about: `<p>Международный аэропорт Красноярск им. Д.А. Хворостовского — один из важнейших авиатранспортных узлов Сибири и Дальнего Востока, стратегический транзитный узел в воздушном сообщении между Европой и Азией. Регулярные и чартерные пассажирские перевозки из международного аэропорта Красноярск осуществляют более 20 авиакомпаний по более, чем 60 направлениям.</p>`,
     works: `<ul>
         <li>Автоматические светопрозрачные двери</li>
         <li>Светопрозрачные ограждения лестничных маршей, атриумов</li>
@@ -172,11 +173,11 @@ export const projectsData = {
     city: 'Томск',
     country: 'Россия',
     slug: 'tomsk-airport',
-    image: '/images/Projects/tomsk-airport/tomsk-airport-01.bmp',
+    image: '/images/Projects/tomsk-airport/tomsk-airport-01.webp',
     images: [
-      '/images/Projects/tomsk-airport/tomsk-airport-01.bmp',
-      '/images/Projects/tomsk-airport/tomsk-airport-02.bmp',
-      '/images/Projects/tomsk-airport/tomsk-airport-03.bmp',
+      '/images/Projects/tomsk-airport/tomsk-airport-01.webp',
+      '/images/Projects/tomsk-airport/tomsk-airport-02.webp',
+      '/images/Projects/tomsk-airport/tomsk-airport-03.webp',
     ],
 
     about: `<p>Международный аэропорт Томска (аэропорт Богашёво) — региональный аэропорт, обслуживающий Томскую область и прилегающие регионы. Аэропорт обеспечивает регулярное авиасообщение с крупными городами России и является важным элементом транспортной инфраструктуры Сибири.</p>`,
@@ -192,12 +193,12 @@ export const projectsData = {
     city: 'Сочи',
     country: 'Россия',
     slug: 'sochi-center',
-    image: '/images/Projects/sochi-center/sochi-center-01.bmp',
+    image: '/images/Projects/sochi-center/sochi-center-01.webp',
     images: [
-      '/images/Projects/sochi-center/sochi-center-01.bmp',
-      '/images/Projects/sochi-center/sochi-center-02.bmp',
-      '/images/Projects/sochi-center/sochi-center-03.bmp',
-      '/images/Projects/sochi-center/sochi-center-04.bmp',
+      '/images/Projects/sochi-center/sochi-center-01.webp',
+      '/images/Projects/sochi-center/sochi-center-02.webp',
+      '/images/Projects/sochi-center/sochi-center-03.webp',
+      '/images/Projects/sochi-center/sochi-center-04.webp',
     ],
     about: `<p>Центр художественной гимнастики в Сочи — специализированный спортивный комплекс, построенный для подготовки спортсменов и проведения соревнований по художественной гимнастике. Центр оснащен современным оборудованием и отвечает всем требованиям международных стандартов для проведения крупных спортивных мероприятий.</p>`,
     works: `<ul>
@@ -212,12 +213,12 @@ export const projectsData = {
     city: 'Кемерово',
     country: 'Россия',
     slug: 'kemerovo-cluster',
-    image: '/images/Projects/kemerovo-cluster/kemerovo-cluster-01.bmp',
+    image: '/images/Projects/kemerovo-cluster/kemerovo-cluster-02.webp',
     images: [
-      '/images/Projects/kemerovo-cluster/kemerovo-cluster-01.bmp',
-      '/images/Projects/kemerovo-cluster/kemerovo-cluster-02.bmp',
-      '/images/Projects/kemerovo-cluster/kemerovo-cluster-03.bmp',
-      '/images/Projects/kemerovo-cluster/kemerovo-cluster-04.bmp',
+      // "/images/Projects/kemerovo-cluster/kemerovo-cluster-01.webp",
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-02.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-03.webp',
+      '/images/Projects/kemerovo-cluster/kemerovo-cluster-04.webp',
     ],
     about: `<p>Культурно-образовательный кластер в Кемерово — масштабный проект, объединяющий образовательные, культурные и развлекательные функции. Комплекс включает в себя современные здания с инновационными архитектурными решениями, предназначенные для развития образования и культуры в регионе.</p>`,
     works: `
@@ -235,11 +236,11 @@ export const projectsData = {
     city: 'Иркутск',
     country: 'Россия',
     slug: 'ircutsk-perevozki',
-    image: '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.bmp',
+    image: '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.webp',
     images: [
-      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.bmp',
-      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-02.bmp',
-      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-03.bmp',
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-01.webp',
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-02.webp',
+      '/images/Projects/ircutsk-perevozki/ircutsk-perevozki-03.webp',
     ],
     about: `<p>Центр управления перевозками в Иркутске — современное административное здание, предназначенное для координации и управления транспортными потоками региона. Центр оснащен передовыми технологиями мониторинга и управления транспортной инфраструктурой.</p>`,
     works: `
@@ -255,13 +256,13 @@ export const projectsData = {
     country: 'Казахстан',
     slug: 'almaty-fond-nazarbaev',
     image:
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.bmp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.webp',
     images: [
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.bmp',
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-02.bmp',
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-03.bmp',
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-04.bmp',
-      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-05.bmp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-01.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-02.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-03.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-04.webp',
+      '/images/Projects/almaty-fond-nazarbaev/almaty-fond-nazarbaev-05.webp',
     ],
     about: `<p>Административное здание Фонда Назарбаева в Алматы — современный офисный комплекс, построенный для размещения административных структур фонда. Здание отличается современной архитектурой и оснащено передовыми инженерными системами, обеспечивающими комфортные условия для работы.</p>`,
     works: `
@@ -282,15 +283,15 @@ export const projectsData = {
     city: 'Алматы',
     country: 'Казахстан',
     slug: 'almaty-kazakhmys',
-    image: '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.bmp',
+    image: '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.webp',
     images: [
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-02.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-03.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-04.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-05.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-06.bmp',
-      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-07.bmp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-01.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-02.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-03.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-04.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-05.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-06.webp',
+      '/images/Projects/almaty-kazakhmys/almaty-kazakhmys-07.webp',
     ],
     about: `<p>Административное здание компании Kazakhmys в Алматы — современный корпоративный центр одной из крупнейших горнодобывающих компаний Казахстана. Здание представляет собой образец современной бизнес-архитектуры с использованием передовых технологий и материалов.</p>`,
     works: `
@@ -310,12 +311,12 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'expo-2017',
-    image: '/images/Projects/expo-2017/expo-2017-01.bmp',
+    image: '/images/Projects/expo-2017/expo-2017-01.webp',
     images: [
-      '/images/Projects/expo-2017/expo-2017-01.bmp',
-      '/images/Projects/expo-2017/expo-2017-02.bmp',
+      '/images/Projects/expo-2017/expo-2017-01.webp',
+      '/images/Projects/expo-2017/expo-2017-02.webp',
     ],
-    about: `<p>EXPO 2017 — международная специализированная выставка, проходившая в Астане (ныне Нур-Султан) с темой "Энергия будущего". Выставка собрала более 100 стран-участниц и миллионы посетителей. Главный павильон "Нур Алем" стал символом выставки и крупнейшим сферическим зданием в мире, демонстрирующим инновационные энергетические технологии.</p>`,
+    about: `<p>EXPO 2017 — международная специализированная выставка, проходившая в Астане с темой "Энергия будущего". Выставка собрала более 100 стран-участниц и миллионы посетителей. Главный павильон "Нур Алем" стал символом выставки и крупнейшим сферическим зданием в мире, демонстрирующим инновационные энергетические технологии.</p>`,
     works: `В административных блоках С-3 и С-4 установлены светопрозрачные огнестойкие перегородки, двери EIW60`,
   },
   'almaty-arena': {
@@ -324,12 +325,12 @@ export const projectsData = {
     city: 'Алматы',
     country: 'Казахстан',
     slug: 'almaty-arena',
-    image: '/images/Projects/almaty-arena/almaty-arena-01.bmp',
+    image: '/images/Projects/almaty-arena/almaty-arena-01.webp',
     images: [
-      '/images/Projects/almaty-arena/almaty-arena-01.bmp',
-      '/images/Projects/almaty-arena/almaty-arena-02.bmp',
+      '/images/Projects/almaty-arena/almaty-arena-01.webp',
+      '/images/Projects/almaty-arena/almaty-arena-02.webp',
     ],
-    about: `<p>Almaty Arena — современный ледовый дворец в Алматы, предназначенный для проведения хоккейных матчей, концертов и других крупных мероприятий. Арена является домашней площадкой для хоккейного клуба и может вмещать тысячи зрителей. Объект построен с использованием современных технологий и материалов.</p>`,
+    about: `<p>Almaty Arena — современный ледовый дворец в Алматы, предназначенный для проведения хоккейных матчей, концертов и других крупных мероприятий. Арена является домашней площадкой для хоккейного клуба и может вмещать до 12 000 зрителей. Объект построен с использованием современных технологий и материалов.</p>`,
     works: `<ul>
         <li>Огнестойкие светопрозрачные перегородки, двери EIW60</li>
       </ul>`,
@@ -340,11 +341,11 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'astana-aura',
-    image: '/images/Projects/astana-aura/astana-aura-01.bmp',
+    image: '/images/Projects/astana-aura/astana-aura-01.webp',
     images: [
-      '/images/Projects/astana-aura/astana-aura-01.bmp',
-      '/images/Projects/astana-aura/astana-aura-02.bmp',
-      '/images/Projects/astana-aura/astana-aura-03.bmp',
+      '/images/Projects/astana-aura/astana-aura-01.webp',
+      '/images/Projects/astana-aura/astana-aura-02.webp',
+      '/images/Projects/astana-aura/astana-aura-03.webp',
     ],
     about: `<p>Бизнес-центр "Аура" в Астане — современное офисное здание премиум-класса, расположенное в деловом центре столицы Казахстана. Бизнес-центр предлагает высококачественные офисные помещения с современной инфраструктурой и отвечает всем требованиям международных стандартов для деловых центров.</p>`,
     works: `<ul>
@@ -357,11 +358,11 @@ export const projectsData = {
     city: 'Астана',
     country: 'Казахстан',
     slug: 'astana-hilton',
-    image: '/images/Projects/astana-hilton/astana-hilton-01.bmp',
+    image: '/images/Projects/astana-hilton/astana-hilton-01.webp',
     images: [
-      '/images/Projects/astana-hilton/astana-hilton-01.bmp',
-      '/images/Projects/astana-hilton/astana-hilton-02.bmp',
-      '/images/Projects/astana-hilton/astana-hilton-03.bmp',
+      '/images/Projects/astana-hilton/astana-hilton-01.webp',
+      '/images/Projects/astana-hilton/astana-hilton-02.webp',
+      '/images/Projects/astana-hilton/astana-hilton-03.webp',
     ],
     about: `<p>Hilton Astana — пятизвездочный отель международной сети Hilton в столице Казахстана. Отель расположен в центре города и предлагает роскошные номера, рестораны высокого класса, конференц-залы и бизнес-центр. Отель соответствует высочайшим международным стандартам гостеприимства.</p>`,
     works: `<ul>
@@ -375,11 +376,11 @@ export const projectsData = {
     country: 'Россия',
     slug: 'novosibirsk-lokomotiv-arena',
     image:
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.bmp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
     images: [
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.bmp',
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-02.bmp',
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-03.bmp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-02.webp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-03.webp',
     ],
     about: `<p>Локомотив-Арена — региональный центр волейбола в Новосибирске, современный спортивный комплекс для проведения соревнований по волейболу и другим видам спорта. Арена является домашней площадкой волейбольного клуба "Локомотив" и может принимать крупные спортивные мероприятия и концерты.</p>`,
     works: `<ul>
@@ -393,11 +394,11 @@ export const projectsData = {
     city: 'Норильск',
     country: 'Россия',
     slug: 'norilsk-aika',
-    image: '/images/Projects/norilsk-aika/norilsk-aika-01.bmp',
+    image: '/images/Projects/norilsk-aika/norilsk-aika-01.webp',
     images: [
-      '/images/Projects/norilsk-aika/norilsk-aika-01.bmp',
-      '/images/Projects/norilsk-aika/norilsk-aika-02.bmp',
-      '/images/Projects/norilsk-aika/norilsk-aika-03.bmp',
+      '/images/Projects/norilsk-aika/norilsk-aika-01.webp',
+      '/images/Projects/norilsk-aika/norilsk-aika-02.webp',
+      '/images/Projects/norilsk-aika/norilsk-aika-03.webp',
     ],
     about: `<p>Физкультурно-оздоровительный комплекс "Айка" в Норильске — современный спортивный объект, предназначенный для занятий различными видами спорта и проведения спортивных мероприятий. ФОК оснащен современным оборудованием и создает комфортные условия для занятий спортом в условиях Крайнего Севера.</p>`,
     works: `<ul>
@@ -426,12 +427,12 @@ export const projectsData = {
     city: 'Новосибирск',
     country: 'Россия',
     slug: 'novosibirsk-mirotel',
-    image: '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.bmp',
+    image: '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.webp',
     images: [
-      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.bmp',
-      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-02.bmp',
+      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-01.webp',
+      '/images/Projects/novosibirsk-mirotel/novosibirsk-mirotel-02.webp',
     ],
-    about: `<p>Гостиница Mirotel в Новосибирске — современный отель, расположенный в центре города. Отель предлагает комфортабельные номера для деловых и туристических поездок, а также конференц-залы для проведения деловых мероприятий.</p>`,
+    about: `<p>Гостиница Mirotel в Новосибирске — современный отель, расположенный на левом берегу города. Отель предлагает комфортабельные номера для деловых и туристических поездок, а также конференц-залы для проведения деловых мероприятий.</p>`,
     works: `
     <ul>
         <li>Противопожарные светопрозрачны перегородки, двери</li>
@@ -445,13 +446,13 @@ export const projectsData = {
     country: 'Россия',
     slug: 'novosibirsk-pereulok-bulvarniy',
     image:
-      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.bmp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.webp',
     images: [
-      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.bmp',
-      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-02.bmp',
-      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-03.bmp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-01.webp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-02.webp',
+      '/images/Projects/novosibirsk-pereulok-bulvarniy/novosibirsk-pereulok-bulvarniy-03.webp',
     ],
-    about: `<p>Жилой комплекс "Переулковый БУЛЬВАРНЫЙ" в Новосибирске — современный жилой комплекс с развитой инфраструктурой. Комплекс включает в себя жилые здания с комфортабельными квартирами, подземные парковки и благоустроенную прилегающую территорию.</p>`,
+    about: `<p>Жилой комплекс "Переулок БУЛЬВАРНЫЙ" в Новосибирске — современный жилой комплекс с развитой инфраструктурой. Комплекс включает в себя жилые здания с комфортабельными квартирами, подземные парковки и благоустроенную прилегающую территорию.</p>`,
     works: `<ul>
         <li>Противопожарные светопрозрачные двери, противопожарные витражи </li>
       </ul>`,
@@ -462,10 +463,10 @@ export const projectsData = {
     city: 'Омск',
     country: 'Россия',
     slug: 'omsk-avangard',
-    image: '/images/Projects/omsk-avangard/omsk-avangard-01.bmp',
+    image: '/images/Projects/omsk-avangard/omsk-avangard-01.webp',
     images: [
-      '/images/Projects/omsk-avangard/omsk-avangard-01.bmp',
-      '/images/Projects/omsk-avangard/omsk-avangard-02.bmp',
+      '/images/Projects/omsk-avangard/omsk-avangard-01.webp',
+      '/images/Projects/omsk-avangard/omsk-avangard-02.webp',
     ],
     about: `<p>Хоккейная Академия "Авангард" в Омске — специализированное спортивное учреждение для подготовки юных хоккеистов. Академия оснащена современными ледовыми аренами, тренажерными залами и учебными классами, создавая оптимальные условия для развития хоккейного таланта.</p>`,
     works: `<ul>
@@ -481,11 +482,11 @@ export const projectsData = {
     city: 'Республика Саха (Якутия)',
     country: 'Россия',
     slug: 'sila-sibiri',
-    image: '/images/Projects/sila-sibiri/sila-sibiri-01.bmp',
+    image: '/images/Projects/sila-sibiri/sila-sibiri-01.webp',
     images: [
-      '/images/Projects/sila-sibiri/sila-sibiri-01.bmp',
-      '/images/Projects/sila-sibiri/sila-sibiri-02.bmp',
-      '/images/Projects/sila-sibiri/sila-sibiri-03.bmp',
+      '/images/Projects/sila-sibiri/sila-sibiri-01.webp',
+      '/images/Projects/sila-sibiri/sila-sibiri-02.webp',
+      '/images/Projects/sila-sibiri/sila-sibiri-03.webp',
     ],
     about: `<p>"Сила Сибири" — магистральный газопровод, один из крупнейших инфраструктурных проектов России, предназначенный для транспортировки природного газа из Восточной Сибири в Китай. Проект включает строительство множества объектов инфраструктуры, включая базы линейно-производственных управлений (ЛПУ) с административными и производственными зданиями.</p>`,
     works: ` <ul>
@@ -516,13 +517,13 @@ export const projectsData = {
     city: 'Кузбасс',
     country: 'Россия',
     slug: 'kuzbass-sibirskaya',
-    image: '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.bmp',
+    image: '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.webp',
     images: [
-      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.bmp',
-      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-02.bmp',
-      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-03.bmp',
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-01.webp',
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-02.webp',
+      '/images/Projects/kuzbass-sibirskaya/kuzbass-sibirskaya-03.webp',
     ],
-    about: `<p>Административное здание угольной компании "Сибирская" в Кузбассе — современный корпоративный центр для управления горнодобывающими операциями. Здание оснащено современными системами управления и обеспечивает комфортные условия для работы сотрудников компании.</p>`,
+    about: `<p>Акционерное общество «Угольная компания Сибирская» – горно-обогатительный комплекс, включающий следующие предприятия: Шахта «Увальная», Обогатительная фабрика «Увальная», а также комплексы объектов инфраструктуры, включающие системы электроснабжения и железнодорожного транспорта с углесборочной станцией «Увальная-Южная».</p>`,
     works: `<ul>
         <li>Витражное остекление</li>
         <li>Легкосбрасываемые конструкции</li>
@@ -538,15 +539,15 @@ export const projectsData = {
     country: 'Россия',
     slug: 'cosmodrom-cialkovskiy',
     image:
-      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.bmp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.webp',
     images: [
-      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.bmp',
-      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-02.bmp',
-      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-03.bmp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-01.webp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-02.webp',
+      '/images/Projects/cosmodrom-cialkovskiy/cosmodrom-cialkovskiy-03.webp',
     ],
     about: `<p>ЗАТО "Циалковский" — закрытое административно-территориальное образование, расположенное вблизи космодрома Восточный в Амурской области. Поселок предназначен для проживания сотрудников космодрома и их семей, включает в себя жилые здания, объекты социальной инфраструктуры и административные здания.</p>`,
     works: `<ul>
-        <li>Витражное остекление, противопожарные светопрозрачные перегородки EIW15,EIW30, EIW45, EIW60 с устройством в них противо-пожарных светопрозрачных дверей, противопожарные окна Е60 </li>
+        <li>Витражное остекление, противопожарные светопрозрачные перегородки EIW15, EIW30, EIW45, EIW60 с устройством в них противо-пожарных светопрозрачных дверей, противопожарные окна Е60 </li>
       </ul>`,
   },
 
@@ -556,13 +557,13 @@ export const projectsData = {
     city: 'Южно-Сахалинск',
     country: 'Россия',
     slug: 'sakhalin-gres',
-    image: '/images/Projects/sakhalin-gres/sakhalin-gres-01.bmp',
+    image: '/images/Projects/sakhalin-gres/sakhalin-gres-01.webp',
     images: [
-      '/images/Projects/sakhalin-gres/sakhalin-gres-01.bmp',
-      '/images/Projects/sakhalin-gres/sakhalin-gres-02.bmp',
-      '/images/Projects/sakhalin-gres/sakhalin-gres-03.bmp',
+      '/images/Projects/sakhalin-gres/sakhalin-gres-01.webp',
+      '/images/Projects/sakhalin-gres/sakhalin-gres-02.webp',
+      '/images/Projects/sakhalin-gres/sakhalin-gres-03.webp',
     ],
-    about: `<p>Сахалинская ГРЭС-2 — тепловая электростанция в Южно-Сахалинске, обеспечивающая электроэнергией и теплом Сахалинскую область. Электростанция является важным элементом энергетической инфраструктуры региона и использует современные технологии для эффективного производства энергии.</p>`,
+    about: `<p>Сахалинская ГРЭС-2 — тепловая электростанция, расположенная на острове Сахалин, обеспечивающая электроэнергией и теплом Сахалинскую область. Электростанция является важным элементом энергетической инфраструктуры региона и использует современные технологии для эффективного производства энергии.</p>`,
     works: `<ul>
         <li>Легкосбрасываемые конструкции</li>
       </ul>`,
@@ -573,11 +574,11 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivostok-tec',
-    image: '/images/Projects/vladivostok-tec/vladivostok-tec-01.bmp',
+    image: '/images/Projects/vladivostok-tec/vladivostok-tec-01.webp',
     images: [
-      '/images/Projects/vladivostok-tec/vladivostok-tec-01.bmp',
-      '/images/Projects/vladivostok-tec/vladivostok-tec-02.bmp',
-      '/images/Projects/vladivostok-tec/vladivostok-tec-03.bmp',
+      '/images/Projects/vladivostok-tec/vladivostok-tec-01.webp',
+      '/images/Projects/vladivostok-tec/vladivostok-tec-02.webp',
+      '/images/Projects/vladivostok-tec/vladivostok-tec-03.webp',
     ],
     about: `<p>ТЭЦ "Восточная" во Владивостоке — теплоэлектроцентраль, обеспечивающая тепловой и электрической энергией восточную часть города Владивостока. ТЭЦ является важным элементом энергетической инфраструктуры региона и использует современные технологии для эффективного производства энергии.</p>`,
     works: `<ul>
@@ -587,14 +588,14 @@ export const projectsData = {
   aviacia: {
     id: 30,
     title: 'Предприятия Авиационной промышленности',
-    city: '',
-    country: '',
+    city: 'Россия',
+    country: 'Россия',
     slug: 'aviacia',
-    image: '/images/Projects/aviacia/aviacia-01.bmp',
+    image: '/images/Projects/aviacia/aviacia-01.webp',
     images: [
-      '/images/Projects/aviacia/aviacia-01.bmp',
-      '/images/Projects/aviacia/aviacia-02.bmp',
-      '/images/Projects/aviacia/aviacia-03.bmp',
+      '/images/Projects/aviacia/aviacia-01.webp',
+      '/images/Projects/aviacia/aviacia-02.webp',
+      '/images/Projects/aviacia/aviacia-03.webp',
     ],
     about: `<p>Предприятия авиационной промышленности — комплекс объектов, включающий производственные цеха, административные здания и научно-исследовательские центры авиастроительных компаний. Эти объекты оснащены современным оборудованием и соответствуют высоким требованиям авиационной отрасли.</p>`,
     works: `<ul>
