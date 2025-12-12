@@ -154,19 +154,42 @@ $font: var(--font-montserrat);
 .textContentCon {
   flex: 1;
   overflow-y: scroll;
-  scrollbar-width: none;
   min-height: 0;
   padding-bottom: 20px;
+  padding-right: 8px; // Отступ для скроллбара
 
+  // Кастомный скроллбар для WebKit браузеров (Chrome, Safari, Edge)
   &::-webkit-scrollbar {
-    display: none;
+    width: 6px;
   }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  // Кастомный скроллбар для Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.1);
 
   .textContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-bottom: 20px;
+    padding-right: 12px; // Дополнительный отступ для текста
 
     p {
       font-size: clamp(14px, 1.8vw, 18px);

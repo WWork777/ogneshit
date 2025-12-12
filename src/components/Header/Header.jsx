@@ -51,7 +51,11 @@ export default function Header() {
     if (pathname === '/') {
       const element = document.querySelector(href);
       if (element) {
-        const headerOffset = 80;
+        // Разный отступ для разных секций
+        let headerOffset = 80;
+        if (href === '#about') {
+          headerOffset = 0; // Меньший отступ для "О компании"
+        }
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition =
           elementPosition + window.pageYOffset - headerOffset;

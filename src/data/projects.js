@@ -31,7 +31,7 @@ export const projectsData = {
     images: [
       '/images/Projects/luzhniki-tennis/luzhniki-tennis-01.webp',
       '/images/Projects/luzhniki-tennis/luzhniki-tennis-02.webp',
-      // "/images/Projects/luzhniki-tennis/luzhniki-tennis-03.webp",
+      '/images/Projects/luzhniki-tennis/luzhniki-tennis-03.webp',
     ],
     about: `<p>Теннисный центр в Лужниках — современный спортивный комплекс с многофункциональными кортами и зрительскими трибунами. Объект расположен на территории Олимпийского комплекса "Лужники" в Москве и предназначен для проведения профессиональных теннисных турниров и тренировок спортсменов.</p>`,
     works: `<ul>
@@ -54,7 +54,7 @@ export const projectsData = {
     images: [
       '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-01.webp',
       '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-02.webp',
-      // "/images/Projects/vladivastok-burnyi/vladivastok-burnyi-03.webp",
+      '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-03.webp',
       '/images/Projects/vladivastok-burnyi/vladivastok-burnyi-04.webp',
     ],
     about: `<p>«Бурный» — многофункциональный комплекс во Владивостоке, расположенный на мысе Бурном. С трёх сторон он окружён заливом, а с четвёртой выходит в центр города. Комплекс включает в себя: бизнес-центр класса «А+», конференц-залы и переговорные комнаты, Апарт-отель 5*, рестораны разных кухонь мира, торговая галерея, СПА и фитнес-зал, благоустроенная территория с амфитеатром и вертолётной площадкой.</p>`,

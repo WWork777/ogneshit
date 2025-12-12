@@ -15,6 +15,8 @@ export default function ProjectsContent() {
   const videoRefs = useRef({});
   const projectsContainerRef = useRef(null);
   const isRestoredRef = useRef(false);
+  const userScrolledRef = useRef(false);
+  const restoreTimeoutRef = useRef(null);
   const projects = getAllProjects();
   const videos = getAllVideos();
 
@@ -25,11 +27,28 @@ export default function ProjectsContent() {
 
       if (savedScrollPosition !== null) {
         const scrollPosition = parseInt(savedScrollPosition, 10);
+        let lastScrollY = window.scrollY;
+        let restoreAttempts = 0;
+        const maxAttempts = 3;
 
-        // Восстанавливаем позицию скролла с несколькими попытками
-        const restoreScroll = (attempt = 1) => {
-          if (attempt > 10) {
+        // Отслеживание пользовательского скролла
+        const handleUserScroll = () => {
+          const currentScroll = window.scrollY;
+          // Если пользователь скроллит (разница больше 5px), останавливаем восстановление
+          if (Math.abs(currentScroll - lastScrollY) > 5) {
+            userScrolledRef.current = true;
+            if (restoreTimeoutRef.current) {
+              clearTimeout(restoreTimeoutRef.current);
+            }
+          }
+          lastScrollY = currentScroll;
+        };
+
+        // Восстанавливаем позицию скролла
+        const restoreScroll = () => {
+          if (userScrolledRef.current || restoreAttempts >= maxAttempts) {
             isRestoredRef.current = true;
+            window.removeEventListener('scroll', handleUserScroll);
             return;
           }
 
@@ -41,17 +60,47 @@ export default function ProjectsContent() {
               top: targetScroll,
               behavior: 'instant',
             });
-            setTimeout(() => restoreScroll(attempt + 1), 100);
+            restoreAttempts++;
+            // Пробуем еще раз только если пользователь не скроллил
+            if (!userScrolledRef.current) {
+              restoreTimeoutRef.current = setTimeout(() => {
+                if (!userScrolledRef.current) {
+                  restoreScroll();
+                } else {
+                  isRestoredRef.current = true;
+                  window.removeEventListener('scroll', handleUserScroll);
+                }
+              }, 200);
+            } else {
+              isRestoredRef.current = true;
+              window.removeEventListener('scroll', handleUserScroll);
+            }
           } else {
             isRestoredRef.current = true;
+            window.removeEventListener('scroll', handleUserScroll);
           }
         };
 
-        // Запускаем восстановление после загрузки
-        setTimeout(() => restoreScroll(), 100);
-        setTimeout(() => restoreScroll(), 300);
-        setTimeout(() => restoreScroll(), 600);
-        setTimeout(() => restoreScroll(), 1000);
+        // Отслеживаем пользовательский скролл
+        window.addEventListener('scroll', handleUserScroll, { passive: true });
+
+        // Запускаем восстановление после небольшой задержки
+        restoreTimeoutRef.current = setTimeout(() => {
+          if (!userScrolledRef.current) {
+            restoreScroll();
+          } else {
+            isRestoredRef.current = true;
+            window.removeEventListener('scroll', handleUserScroll);
+          }
+        }, 100);
+
+        // Очистка при размонтировании
+        return () => {
+          if (restoreTimeoutRef.current) {
+            clearTimeout(restoreTimeoutRef.current);
+          }
+          window.removeEventListener('scroll', handleUserScroll);
+        };
       } else {
         isRestoredRef.current = true;
       }

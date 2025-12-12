@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import styles from './ProductCatalog.module.scss';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,7 +19,6 @@ export default function ProductCatalog() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   const swiperRef = useRef(null);
-  const catalogSectionRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(() => {
     // Инициализируем из sessionStorage если есть
     if (typeof window !== 'undefined') {
@@ -54,49 +53,6 @@ export default function ProductCatalog() {
     savePosition();
   };
 
-  // Восстановление позиции скролла при монтировании
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedScrollPosition = sessionStorage.getItem(CATALOG_SCROLL_KEY);
-
-      // Восстанавливаем скролл если вернулись на страницу с каталогом
-      if (savedScrollPosition !== null) {
-        const scrollPosition = parseInt(savedScrollPosition, 10);
-        let scrollRestored = false;
-
-        // Функция восстановления скролла
-        const restoreScroll = (attempt = 1) => {
-          if (scrollRestored) return;
-
-          const catalogElement = document.getElementById('catalog');
-          if (catalogElement) {
-            const targetScroll = scrollPosition;
-            const currentScroll = window.scrollY;
-
-            // Если мы еще не на нужной позиции, прокручиваем
-            if (Math.abs(currentScroll - targetScroll) > 50) {
-              window.scrollTo({
-                top: targetScroll,
-                behavior: 'instant',
-              });
-              scrollRestored = true;
-            } else {
-              scrollRestored = true;
-            }
-          }
-        };
-
-        // Пробуем восстановить несколько раз с увеличивающейся задержкой
-        // чтобы перехватить прокрутку Next.js к якорю
-        setTimeout(() => restoreScroll(1), 200);
-        setTimeout(() => restoreScroll(2), 500);
-        setTimeout(() => restoreScroll(3), 800);
-        setTimeout(() => restoreScroll(4), 1200);
-        setTimeout(() => restoreScroll(5), 2000);
-      }
-    }
-  }, []);
-
   // Количество объектов в одной группе (фрейме)
   const itemsPerPage = 3;
 
@@ -110,7 +66,7 @@ export default function ProductCatalog() {
     : Math.min(Math.floor(activeIndex / itemsPerPage), totalPages - 1);
 
   return (
-    <section id='catalog' ref={catalogSectionRef} className={styles.catalog}>
+    <section id='catalog' className={styles.catalog}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Каталог продукции</h2>
