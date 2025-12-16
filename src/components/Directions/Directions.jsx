@@ -27,7 +27,7 @@ export default function Directions() {
       id: 4,
       title: 'Реставрация витражных конструкций',
       image:
-        '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij.webp',
+        '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij-02.jpg',
       slug: 'restavraciya-vitrazhnyh-konstrukcij',
     },
     {

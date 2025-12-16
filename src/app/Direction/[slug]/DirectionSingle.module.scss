@@ -297,7 +297,7 @@ $font: var(--font-montserrat);
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -8px;
     left: -8px;
@@ -630,6 +630,21 @@ $font: var(--font-montserrat);
     display: block;
     height: 100%;
   }
+
+  // Стили для ссылок внутри сетки
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+
+    &:hover {
+      .subsectionCard {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
 }
 
 .subsectionCard {
@@ -668,13 +683,21 @@ $font: var(--font-montserrat);
   }
 }
 
+// Специальный стиль для карточки "Стекло с электрообогревом" (id:8)
+// чтобы изображение отображалось полностью и было чуть больше
+.subsectionCardContain {
+  background-size: 110% !important;
+  background-color: white;
+  background-position: center;
+}
+
 .subsectionImage {
   position: relative;
   height: 100%;
   width: 100%;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

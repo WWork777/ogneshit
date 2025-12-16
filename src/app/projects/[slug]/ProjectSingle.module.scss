@@ -315,6 +315,7 @@ $font: var(--font-montserrat);
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: white; // Белый фон для изображений с object-fit: contain
 }
 
 // Текстовая секция (30%)

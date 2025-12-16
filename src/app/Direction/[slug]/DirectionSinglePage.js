@@ -1,17 +1,18 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import styles from "./DirectionSingle.module.scss";
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import styles from './DirectionSingle.module.scss';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import { getDirectionBySlug } from "@/data/directions";
-import { getAllTranslucentSubsections } from "@/data/translucentStructures";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { getDirectionBySlug } from '@/data/directions';
+import { getAllTranslucentSubsections } from '@/data/translucentStructures';
+import { getProductById } from '@/data/products';
 
 export default function DirectionSinglePage({ initialDirection }) {
   const params = useParams();
@@ -97,23 +98,23 @@ export default function DirectionSinglePage({ initialDirection }) {
   useEffect(() => {
     if (isModalOpen) {
       // Блокируем скролл body
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
 
       // Закрытие по Escape
       const handleEscape = (e) => {
-        if (e.key === "Escape") {
+        if (e.key === 'Escape') {
           setIsModalOpen(false);
         }
       };
 
-      window.addEventListener("keydown", handleEscape);
+      window.addEventListener('keydown', handleEscape);
 
       return () => {
-        document.body.style.overflow = "unset";
-        window.removeEventListener("keydown", handleEscape);
+        document.body.style.overflow = 'unset';
+        window.removeEventListener('keydown', handleEscape);
       };
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
   }, [isModalOpen]);
 
@@ -121,48 +122,48 @@ export default function DirectionSinglePage({ initialDirection }) {
     return (
       <div className={styles.notFound}>
         <h1>Направление не найдено</h1>
-        <Link href="/#directions">Вернуться к направлениям</Link>
+        <Link href='/#directions'>Вернуться к направлениям</Link>
       </div>
     );
   }
 
   // Schema.org разметка для направления/услуги
   const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
+    '@context': 'https://schema.org',
+    '@type': 'Service',
     name: direction.title,
     description: direction.metaDescription || direction.shortDescription,
     provider: {
-      "@type": "Organization",
-      name: "СПО Огнещит",
-      url: "https://ogneshit.ru",
+      '@type': 'Organization',
+      name: 'СПО Огнещит',
+      url: 'https://ogneshit.ru',
     },
-    areaServed: "RU",
-    serviceType: direction.category || "Строительные услуги",
+    areaServed: 'RU',
+    serviceType: direction.category || 'Строительные услуги',
     offers: {
-      "@type": "Offer",
-      category: "Строительные услуги",
+      '@type': 'Offer',
+      category: 'Строительные услуги',
     },
   };
 
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
     itemListElement: [
       {
-        "@type": "ListItem",
+        '@type': 'ListItem',
         position: 1,
-        name: "Главная",
-        item: "https://ogneshit.ru",
+        name: 'Главная',
+        item: 'https://ogneshit.ru',
       },
       {
-        "@type": "ListItem",
+        '@type': 'ListItem',
         position: 2,
-        name: "Направления",
-        item: "https://ogneshit.ru/#directions",
+        name: 'Направления',
+        item: 'https://ogneshit.ru/#directions',
       },
       {
-        "@type": "ListItem",
+        '@type': 'ListItem',
         position: 3,
         name: direction.title,
         item: `https://ogneshit.ru/Direction/${direction.slug}`,
@@ -178,21 +179,21 @@ export default function DirectionSinglePage({ initialDirection }) {
     <>
       {/* Structured Data */}
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <main className={styles.directionSingle}>
         <div className={styles.contentSection}>
           <div className={styles.container}>
-            <nav className={styles.breadcrumbs} aria-label="Хлебные крошки">
-              <Link href="/">Главная</Link>
+            <nav className={styles.breadcrumbs} aria-label='Хлебные крошки'>
+              <Link href='/'>Главная</Link>
               <span> / </span>
-              <Link href="/#directions">Направления</Link>
+              <Link href='/#directions'>Направления</Link>
               <span> / </span>
               <span>{direction.title}</span>
             </nav>
@@ -212,9 +213,9 @@ export default function DirectionSinglePage({ initialDirection }) {
                         src={direction.image}
                         alt={direction.title}
                         fill
-                        style={{ objectFit: "cover" }}
+                        style={{ objectFit: 'cover' }}
                         priority
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes='(max-width: 768px) 100vw, 50vw'
                       />
                     </div>
                   </div>
@@ -236,18 +237,28 @@ export default function DirectionSinglePage({ initialDirection }) {
                     Виды работ
                   </h2>
                   <div className={styles.subsectionsGrid}>
-                    {subsections.map((subsection) => (
-                      <div
-                        key={subsection.id}
-                        className={styles.subsectionCard}
-                        style={{
-                          backgroundImage: `url(${subsection.image})`,
-                          backgroundRepeat: "no-repeat",
-                        }}
-                      >
-                        <div className={styles.subsection_block}>
-                          <div className={styles.subsectionImage}>
-                            {/* <div className={styles.subsectionIcon}>
+                    {subsections.map((subsection) => {
+                      // Получаем соответствующий продукт по id (id подраздела соответствует id продукта)
+                      // Исключаем подраздел id:8 "Стекло с электрообогревом" - для него нет ссылки
+                      const product =
+                        subsection.id !== 8
+                          ? getProductById(subsection.id)
+                          : null;
+                      const cardContent = (
+                        <div
+                          className={`${styles.subsectionCard} ${
+                            subsection.id === 8
+                              ? styles.subsectionCardContain
+                              : ''
+                          }`}
+                          style={{
+                            backgroundImage: `url(${subsection.image})`,
+                            backgroundRepeat: 'no-repeat',
+                          }}
+                        >
+                          <div className={styles.subsection_block}>
+                            <div className={styles.subsectionImage}>
+                              {/* <div className={styles.subsectionIcon}>
                               <svg
                                 width="50"
                                 height="50"
@@ -262,13 +273,26 @@ export default function DirectionSinglePage({ initialDirection }) {
                                 />
                               </svg>
                             </div> */}
-                            <h3 className={styles.subsectionTitle}>
-                              {subsection.title}
-                            </h3>
+                              <h3 className={styles.subsectionTitle}>
+                                {subsection.title}
+                              </h3>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+
+                      // Обёртываем в Link только если есть соответствующий продукт (не для id:8)
+                      return product ? (
+                        <Link
+                          key={subsection.id}
+                          href={`/Product/${product.slug}`}
+                        >
+                          {cardContent}
+                        </Link>
+                      ) : (
+                        <div key={subsection.id}>{cardContent}</div>
+                      );
+                    })}
                   </div>
                 </div>
               </>
@@ -299,22 +323,26 @@ export default function DirectionSinglePage({ initialDirection }) {
                             onAutoplay={startProgressAnimation}
                             className={styles.swiper}
                           >
-                            {images.map((image, index) => (
-                              <SwiperSlide key={index} className={styles.slide}>
-                                <div className={styles.imageContainer}>
-                                  <Image
-                                    src={image}
-                                    alt={`${direction.title} - фото ${
-                                      index + 1
-                                    }`}
-                                    fill
-                                    style={{ objectFit: "cover" }}
-                                    priority={index === 0}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                  />
-                                </div>
-                              </SwiperSlide>
-                            ))}
+                            {images.map((image, index) => {
+                              // Для 20170609_115450.jpg в Montazh используем contain, чтобы показать полностью
+                              const isMontazhFull = image.includes('Montazh/20170609_115450.jpg');
+                              return (
+                                <SwiperSlide key={index} className={styles.slide}>
+                                  <div className={styles.imageContainer}>
+                                    <Image
+                                      src={image}
+                                      alt={`${direction.title} - фото ${
+                                        index + 1
+                                      }`}
+                                      fill
+                                      style={{ objectFit: isMontazhFull ? 'contain' : 'cover' }}
+                                      priority={index === 0}
+                                      sizes='(max-width: 768px) 100vw, 50vw'
+                                    />
+                                  </div>
+                                </SwiperSlide>
+                              );
+                            })}
                           </Swiper>
                           <div
                             ref={paginationRef}
@@ -324,12 +352,12 @@ export default function DirectionSinglePage({ initialDirection }) {
                               <button
                                 key={index}
                                 className={`${styles.paginationDot} ${
-                                  index === activeIndex ? styles.active : ""
+                                  index === activeIndex ? styles.active : ''
                                 }`}
                                 onClick={() => goToSlide(index)}
                                 aria-label={`Go to slide ${index + 1}`}
                                 aria-current={
-                                  index === activeIndex ? "true" : "false"
+                                  index === activeIndex ? 'true' : 'false'
                                 }
                               >
                                 {index === activeIndex && (
@@ -348,9 +376,9 @@ export default function DirectionSinglePage({ initialDirection }) {
                             src={direction.image}
                             alt={direction.title}
                             fill
-                            style={{ objectFit: "cover" }}
+                            style={{ objectFit: 'cover' }}
                             priority
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                            sizes='(max-width: 768px) 100vw, 50vw'
                           />
                         </div>
                       )}
@@ -365,24 +393,24 @@ export default function DirectionSinglePage({ initialDirection }) {
                             <li key={doc.id} className={styles.documentItem}>
                               <button
                                 onClick={() => {
-                                  window.open(doc.file, "_blank");
+                                  window.open(doc.file, '_blank');
                                 }}
                                 className={styles.documentLink}
                               >
                                 <svg
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 20 20"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                  width='20'
+                                  height='20'
+                                  viewBox='0 0 20 20'
+                                  fill='none'
+                                  xmlns='http://www.w3.org/2000/svg'
                                   className={styles.documentIcon}
                                 >
                                   <path
-                                    d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5M13.3333 8.33333L10 11.6667M10 11.6667L6.66667 8.33333M10 11.6667V2.5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
+                                    d='M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5M13.3333 8.33333L10 11.6667M10 11.6667L6.66667 8.33333M10 11.6667V2.5'
+                                    stroke='currentColor'
+                                    strokeWidth='1.5'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
                                   />
                                 </svg>
                                 <span>{doc.title}</span>
@@ -422,7 +450,7 @@ export default function DirectionSinglePage({ initialDirection }) {
             )}
 
             <div className={styles.backButton}>
-              <Link href="/#directions" className={styles.backLink}>
+              <Link href='/#directions' className={styles.backLink}>
                 ← Назад к направлениям
               </Link>
             </div>
@@ -443,21 +471,21 @@ export default function DirectionSinglePage({ initialDirection }) {
             <button
               className={styles.modalClose}
               onClick={() => setIsModalOpen(false)}
-              aria-label="Закрыть"
+              aria-label='Закрыть'
             >
               <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
               >
                 <path
-                  d="M18 6L6 18M6 6L18 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  d='M18 6L6 18M6 6L18 18'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
             </button>
@@ -471,7 +499,7 @@ export default function DirectionSinglePage({ initialDirection }) {
                 title={selectedDocument.title}
                 onError={() => {
                   // Если не удалось загрузить, открываем в новой вкладке
-                  window.open(selectedDocument.file, "_blank");
+                  window.open(selectedDocument.file, '_blank');
                   setIsModalOpen(false);
                 }}
               />
@@ -479,8 +507,8 @@ export default function DirectionSinglePage({ initialDirection }) {
                 <p>Если PDF не отображается, откройте его в новой вкладке:</p>
                 <a
                   href={selectedDocument.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className={styles.pdfFallbackLink}
                   onClick={(e) => {
                     e.stopPropagation();

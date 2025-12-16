@@ -84,7 +84,7 @@ export const directionsData = {
     title: 'Реставрация витражных конструкций',
     slug: 'restavraciya-vitrazhnyh-konstrukcij',
     image:
-      '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij.webp',
+      '/images/Directions/Restavraciya-vitrazhnyh-konstrukcij/restavraciya-vitrazhnyh-konstrukcij-02.jpg',
     metaDescription:
       'Профессиональная реставрация исторических витражей и витражных конструкций. Восстановление культурного наследия с сохранением аутентичности.',
     description: `
@@ -102,13 +102,13 @@ export const directionsData = {
     image:
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov.webp',
     images: [
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.webp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.webp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.bmp',
+      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.bmp',
     ],
     metaDescription:
       'Архитектурное и техническое проектирование фасадов зданий. Разработка комплексных решений для вентилируемых, светопрозрачных и комбинированных систем.',
@@ -126,10 +126,9 @@ export const directionsData = {
     slug: 'montazh',
     image: '/images/Directions/Montazh/montazh-01.webp',
     images: [
-      '/images/Directions/Montazh/montazh-01.webp',
-      '/images/Directions/Montazh/montazh-02.webp',
-      '/images/Directions/Montazh/montazh-03.webp',
-      '/images/Directions/Montazh/montazh-04.webp',
+      '/images/Directions/Montazh/montazh-03.bmp',
+      '/images/Directions/Montazh/20170609_115450.jpg',
+      '/images/Directions/Montazh/IMG_3939.JPG',
     ],
     metaDescription:
       'Профессиональный монтаж фасадных систем, светопрозрачных конструкций и противопожарных элементов. Высотные работы любой сложности от СПО Огнещит.',
