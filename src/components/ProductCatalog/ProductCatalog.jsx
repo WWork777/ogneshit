@@ -200,8 +200,10 @@ export default function ProductCatalog() {
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 426px'
                       style={{
                         width: '100%',
-                        // height: `${IMAGE_HEIGHT}px`,
-                        // objectFit: "cover",
+                        objectFit:
+                          product.slug === 'legkosbrosyvaemye-konstrukcii'
+                            ? 'contain'
+                            : 'cover',
                       }}
                     />
                     <div className={styles.productIcon}>
