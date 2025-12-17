@@ -41,7 +41,7 @@ $font: var(--font-montserrat);
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -169,7 +169,7 @@ $font: var(--font-montserrat);
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -100%;
@@ -324,6 +324,27 @@ $font: var(--font-montserrat);
   }
 }
 
+// Специальные стили для изображения проекта "Бурный"
+.burnyiImage {
+  img {
+    object-position: 80% center; // Сдвигаем изображение влево, чтобы было видно все здание
+  }
+}
+
+// Специальные стили для изображения проекта "Hilton Astana"
+.hiltonImage {
+  img {
+    object-position: 20% center; // Сдвигаем изображение вправо, чтобы показать правую часть
+  }
+}
+
+// Специальные стили для изображения проекта "Aviacia"
+.aviaciaImage {
+  img {
+    object-position: 60% center; // Сдвигаем изображение влево
+  }
+}
+
 // Для карточек видео убираем оранжевый фильтр и анимацию
 .videoCard {
   .projectImage {
@@ -391,7 +412,7 @@ $font: var(--font-montserrat);
   gap: 6px;
 
   &::before {
-    content: "📍";
+    content: '📍';
     font-size: 12px;
   }
 
@@ -402,7 +423,7 @@ $font: var(--font-montserrat);
 
 // Дополнительные декоративные элементы
 .projectsPage::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 0;
   left: 0;

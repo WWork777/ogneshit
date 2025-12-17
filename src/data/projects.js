@@ -32,7 +32,7 @@ export const projectsData = {
     slug: 'luzhniki-tennis',
     image: '/images/Projects/luzhniki-tennis/12.bmp',
     images: [
-      '/images/Projects/luzhniki-tennis/8.webp',
+      '/images/Projects/luzhniki-tennis/8.jpg',
       '/images/Projects/luzhniki-tennis/11.jpg',
       '/images/Projects/luzhniki-tennis/7.jpg',
       '/images/Projects/luzhniki-tennis/10.jpg',
@@ -64,7 +64,7 @@ export const projectsData = {
       '/images/Projects/vladivastok-burnyi/19.jpg',
       '/images/Projects/vladivastok-burnyi/20.jpg',
     ],
-    about: `<p>«Бурный» — многофункциональный комплекс во Владивостоке, расположенный на мысе Бурном. С трёх сторон он окружён заливом, а с четвёртой выходит в центр города. Комплекс включает в себя: бизнес-центр класса «А+», конференц-залы и переговорные комнаты, Апарт-отель 5*, рестораны разных кухонь мира, торговая галерея, СПА и фитнес-зал, благоустроенная территория с амфитеатром и вертолётной площадкой.</p>`,
+    about: `<p>«Бурный» — многофункциональный комплекс во Владивостоке, расположенный на мысе Бурном. С трёх сторон он окружён заливом, а с четвёртой выходит в центр города. Комплекс включает в себя: бизнес-центр класса «А+», конференц-залы и переговорные комнаты, Апарт-отель 5*, рестораны разных кухонь мира, торговую галерею, СПА и фитнес-зал, благоустроенную территорию с амфитеатром и вертолётной площадкой.</p>`,
     works: `<ul>
         <li>Пространственные купольные конструкций.</li>
         <li>Реставрация фасадов</li>
@@ -81,11 +81,11 @@ export const projectsData = {
     city: 'Владивосток',
     country: 'Россия',
     slug: 'vladivostok-hotel',
-    image: '/images/Projects/vladivostok-hotel/23.1.webp',
+    image: '/images/Projects/vladivostok-hotel/25.webp',
     images: [
       '/images/Projects/vladivostok-hotel/24.bmp',
       '/images/Projects/vladivostok-hotel/22.jpg',
-      '/images/Projects/vladivostok-hotel/23.1.webp',
+      '/images/Projects/vladivostok-hotel/25.webp',
       '/images/Projects/vladivostok-hotel/23.jpg',
     ],
     about: `<p>Vladivostok Grand Hotel & Spa — пятизвездочный отель премиум-класса во Владивостоке, расположенный в центре города с видом на бухту Золотой Рог. Отель предлагает роскошные номера, рестораны высокого класса, SPA-центр и современные конференц-залы для деловых мероприятий.</p>`,
@@ -130,7 +130,7 @@ export const projectsData = {
     city: 'Южно-Сахалинск',
     country: 'Россия',
     slug: 'sakhalin-airport',
-    image: '/images/Projects/sakhalin-airport/30.jpg',
+    image: '/images/Projects/sakhalin-airport/sakhalin-airport-01.bmp',
     images: [
       '/images/Projects/sakhalin-airport/sakhalin-airport-01.bmp',
       '/images/Projects/sakhalin-airport/35.jpg',
@@ -164,7 +164,7 @@ export const projectsData = {
     images: [
       '/images/Projects/krasnoyarsk-airport/krasnoyarsk-airport-02.bmp',
       '/images/Projects/krasnoyarsk-airport/42.jpg',
-      '/images/Projects/krasnoyarsk-airport/37 Крас.jpg',
+      '/images/Projects/krasnoyarsk-airport/37.jpg',
       '/images/Projects/krasnoyarsk-airport/40.jpg',
       '/images/Projects/krasnoyarsk-airport/39.jpg',
       '/images/Projects/krasnoyarsk-airport/41.bmp',
@@ -449,7 +449,7 @@ export const projectsData = {
     images: [
       '/images/Projects/novosibirsk-mirotel/79.jpg',
       '/images/Projects/novosibirsk-mirotel/81.jpg',
-      '/images/Projects/novosibirsk-mirotel/82.jpg',
+      '/images/Projects/novosibirsk-mirotel/82-02.jpg',
     ],
     about: `<p>Гостиница Mirotel в Новосибирске — современный отель, расположенный на левом берегу города. Отель предлагает комфортабельные номера для деловых и туристических поездок, а также конференц-залы для проведения деловых мероприятий.</p>`,
     works: `
@@ -526,9 +526,9 @@ export const projectsData = {
     city: 'Бангладеш',
     country: 'Россия',
     slug: 'ruppur',
-    image: '/images/Projects/ruppur/ruppur-01.webp',
+    image: '/images/Projects/ruppur/ruppur-bang1.jpg',
     images: [
-      '/images/Projects/ruppur/ruppur-01.webp',
+      '/images/Projects/ruppur/ruppur-bang1.jpg',
       '/images/Projects/ruppur/photo_2024-08-14_11-28-30.jpg.webp',
       '/images/Projects/ruppur/03-DJI_2024062610133.jpg',
     ],

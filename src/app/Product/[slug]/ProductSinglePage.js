@@ -211,20 +211,38 @@ export default function ProductSinglePage({ params, initialProduct }) {
                       onAutoplay={startProgressAnimation}
                       className={styles.swiper}
                     >
-                      {images.map((image, index) => (
-                        <SwiperSlide key={index} className={styles.slide}>
-                          <div className={styles.imageContainer}>
-                            <Image
-                              src={image}
-                              alt={`${product.title} - фото ${index + 1}`}
-                              fill
-                              style={{ objectFit: 'cover' }}
-                              priority={index === 0}
-                              sizes='(max-width: 768px) 100vw, 70vw'
-                            />
-                          </div>
-                        </SwiperSlide>
-                      ))}
+                      {images.map((image, index) => {
+                        // Для protivopozharnoe-osteklenie/05.jpg используем contain, чтобы показать полностью
+                        // Для legkosbrosyvaemye-konstrukcii также используем contain
+                        const isProtivopozharnoe05 = image.includes(
+                          'protivopozharnoe-osteklenie/05.jpg'
+                        );
+                        const isLegkosbrosyvaemye =
+                          image.includes(
+                            'legkosbrosyvaemye-konstrukcii-01.png'
+                          ) ||
+                          image.includes(
+                            'legkosbrosyvaemye-konstrukcii-02.jpg'
+                          );
+                        const useContain =
+                          isProtivopozharnoe05 || isLegkosbrosyvaemye;
+                        return (
+                          <SwiperSlide key={index} className={styles.slide}>
+                            <div className={styles.imageContainer}>
+                              <Image
+                                src={image}
+                                alt={`${product.title} - фото ${index + 1}`}
+                                fill
+                                style={{
+                                  objectFit: useContain ? 'contain' : 'cover',
+                                }}
+                                priority={index === 0}
+                                sizes='(max-width: 768px) 100vw, 70vw'
+                              />
+                            </div>
+                          </SwiperSlide>
+                        );
+                      })}
                     </Swiper>
                     <div ref={paginationRef} className={styles.pagination}>
                       {images.map((_, index) => (

@@ -104,10 +104,8 @@ export const directionsData = {
     images: [
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-1.bmp',
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-2.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-3.bmp',
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-4.bmp',
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-5.bmp',
-      '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-6.bmp',
       '/images/Directions/Proektirovanie-fasadov/proektirovanie-fasadov-7.bmp',
     ],
     metaDescription:

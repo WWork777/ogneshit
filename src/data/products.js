@@ -8,12 +8,12 @@ export const productsData = {
       '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-01.webp',
     images: [
       '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-01.webp',
-      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-02.webp',
-      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-03.webp',
-      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-04.webp',
+      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-07.webp',
       '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-05.webp',
       '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-06.webp',
-      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-07.webp',
+      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-04.webp',
+      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-05.jpg',
+      '/images/Catalog/vitrazhnoe-osteklenie-fasadov/vitrazhnoe-osteklenie-fasadov-03.webp',
     ],
     description: `
       <p>Наша компания готова реализовывать любые типы витражных конструкций на основе отечественных и зарубежных профильных систем:</p>
@@ -40,7 +40,6 @@ export const productsData = {
     image:
       '/images/Catalog/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii-01.webp',
     images: [
-      '/images/Catalog/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii-01.webp',
       '/images/Catalog/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii-02.webp',
       '/images/Catalog/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii-03.webp',
       '/images/Catalog/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii/prostranstvennye-samonesushchie-svetoprozrachnye-konstrukcii-04.webp',
@@ -64,12 +63,10 @@ export const productsData = {
     image:
       '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-01.webp',
     images: [
-      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-01.webp',
-      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-02.webp',
-      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-03.webp',
-      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-04.webp',
-      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-05.webp',
+      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-09.webp',
       '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-06.webp',
+      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-03.webp',
+      '/images/Catalog/spajdernoe-osteklenie/spajdernoe-osteklenie-04.bmp',
     ],
     description: `
       <p>Наша компания имеет большой опыт реализации светопрозрачных конструкций с применением спайдерных систем крепления стекла к несущим элементам.</p>
@@ -90,14 +87,12 @@ export const productsData = {
     image: '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-01.webp',
     images: [
       '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-01.webp',
-      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-02.webp',
-      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-03.webp',
-      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-04.webp',
-      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-05.webp',
-      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-06.webp',
       '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-07.webp',
       '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-08.webp',
+      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-06.webp',
       '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-09.webp',
+      '/images/Catalog/sistemy-peregorodok/sistemy-peregorodok-02.bmp',
+      '/images/Catalog/sistemy-peregorodok/82-02.jpg',
     ],
     description: `
       <p>Мы реализуем всевозможные типы светопрозрачных перегородок:</p>
@@ -124,11 +119,8 @@ export const productsData = {
     title: 'Светопрозрачные ограждения',
     slug: 'svetoprozrachnye-ograzhdeniya',
     image:
-      '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-01.webp',
+      '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-04.webp',
     images: [
-      '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-01.webp',
-      '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-02.webp',
-      '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-03.webp',
       '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-04.webp',
       '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-05.webp',
       '/images/Catalog/svetoprozrachnye-ograzhdeniya/svetoprozrachnye-ograzhdeniya-06.webp',
@@ -153,18 +145,13 @@ export const productsData = {
       '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-01.webp',
     images: [
       '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-01.webp',
-      '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-02.webp',
-      '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-03.webp',
-      '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-04.webp',
-      '/images/Catalog/protivopozharnoe-osteklenie/protivopozharnoe-osteklenie-05.webp',
+      '/images/Catalog/sistemy-peregorodok/82-02.jpg',
+      '/images/Catalog/protivopozharnoe-osteklenie/03.jpg',
+      '/images/Catalog/protivopozharnoe-osteklenie/05.jpg',
     ],
     description: `
       <p>Компания «СПО Огнещит» начала свой путь с производства противопожарных светопрозрачных конструкций.</p>
       <p>Мы по-прежнему изготавливаем огнестойкие конструкции на основе алюминиевого профиля со специальным армированием и термостойким заполнением, в качестве светопрозрачного заполнения используется огнестойкое стекло, наша технология производства конструкций запатентована.</p>
-      <p>Наши конструкции соответствует требованиям ГОСТ 30247 и Федеральному закону N 123-ФЗ «Технический регламент о требованиях пожарной безопасности».</p>
-      <p>Каждое изделие сертифицировано и соответствует требованиям ТР ЕАЭС 043/2017 Технический регламент Евразийского экономического союза «О требованиях к средствам обеспечения пожарной безопасности и пожаротушения».</p>
-      <p>Система применительно к проектированию, производству, реализации и техническому обслуживанию конструкций, изготавливаемых нашей компанией, соответствует требованиям ГОСТ Р ИСО 9001-2008.</p>
-      <p>На каждом этапе производства все элементы конструкций проходят контроль качества.</p>
       <p>Мы изготавливаем следующие типы огнестойких светопрозрачных конструкций:</p>
       <ul>
         <li>Огнестойкие окна Е15-Е60, EI15-EI60</li>
@@ -172,6 +159,11 @@ export const productsData = {
         <li>Огнестойкие перегородки EIW15-EIW60</li>
         <li>Огнестойкие витражи (фасады) Е15-Е60, EI15-EI60</li>
       </ul>
+      <p>Наши конструкции соответствует требованиям ГОСТ 30247 и Федеральному закону N 123-ФЗ «Технический регламент о требованиях пожарной безопасности».</p>
+      <p>Каждое изделие сертифицировано и соответствует требованиям ТР ЕАЭС 043/2017 Технический регламент Евразийского экономического союза «О требованиях к средствам обеспечения пожарной безопасности и пожаротушения».</p>
+      <p>Система применительно к проектированию, производству, реализации и техническому обслуживанию конструкций, изготавливаемых нашей компанией, соответствует требованиям ГОСТ Р ИСО 9001-2008.</p>
+      <p>На каждом этапе производства все элементы конструкций проходят контроль качества.</p>
+      
     `,
     shortDescription:
       'Противопожарное остекление от СПО Огнещит. Огнестойкие окна, двери, перегородки и витражи с сертификацией ГОСТ.',
@@ -186,10 +178,10 @@ export const productsData = {
     title: 'Легкосбрасываемые конструкции',
     slug: 'legkosbrosyvaemye-konstrukcii',
     image:
-      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-01.webp',
+      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-01.png',
     images: [
-      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-01.webp',
-      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-02.webp',
+      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-01.png',
+      '/images/Catalog/legkosbrosyvaemye-konstrukcii/legkosbrosyvaemye-konstrukcii-02.jpg',
     ],
     description: `
       <p>Наша компания также специализируется на производстве легкосбрасываемых конструкций (ЛСК).</p>

@@ -173,7 +173,17 @@ export default function ProjectsContent() {
               onClick={handleProjectClick}
             >
               <article className={styles.projectCard}>
-                <div className={styles.projectImage}>
+                <div
+                  className={`${styles.projectImage} ${
+                    project.slug === 'vladivastok-burnyi'
+                      ? styles.burnyiImage
+                      : project.slug === 'astana-hilton'
+                      ? styles.hiltonImage
+                      : project.slug === 'aviacia'
+                      ? styles.aviaciaImage
+                      : ''
+                  }`}
+                >
                   <Image
                     src={project.image}
                     alt={project.title}

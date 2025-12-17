@@ -180,9 +180,26 @@ export default function ProjectSinglePage({ initialProject }) {
                 >
                   {project.images.map((image, index) => {
                     // Для almaty-kazakhmys-05.bmp и almaty-kazakhmys-07.bmp используем contain, чтобы показать полностью
-                    const isAlmatyKazakhmysFull = 
-                      image.includes('almaty-kazakhmys/almaty-kazakhmys-05.bmp') ||
-                      image.includes('almaty-kazakhmys/almaty-kazakhmys-07.bmp');
+                    // Для luzhniki-tennis/9.jpg также используем contain
+                    const isAlmatyKazakhmysFull =
+                      image.includes(
+                        'almaty-kazakhmys/almaty-kazakhmys-05.bmp'
+                      ) ||
+                      image.includes(
+                        'almaty-kazakhmys/almaty-kazakhmys-07.bmp'
+                      );
+                    const isLuzhnikiTennis9 = image.includes(
+                      'luzhniki-tennis/9.jpg'
+                    );
+                    const useContain =
+                      isAlmatyKazakhmysFull || isLuzhnikiTennis9;
+                    // Для aviacia-01.bmp сдвигаем влево
+                    const isAviacia01 = image.includes(
+                      'aviacia/aviacia-01.bmp'
+                    );
+                    const objectPosition = isAviacia01
+                      ? '75% center'
+                      : 'center center';
                     return (
                       <SwiperSlide key={index} className={styles.slide}>
                         <div className={styles.imageContainer}>
@@ -190,7 +207,10 @@ export default function ProjectSinglePage({ initialProject }) {
                             src={image}
                             alt={`${project.title} - фото ${index + 1}`}
                             fill
-                            style={{ objectFit: isAlmatyKazakhmysFull ? 'contain' : 'cover' }}
+                            style={{
+                              objectFit: useContain ? 'contain' : 'cover',
+                              objectPosition: objectPosition,
+                            }}
                             priority={index === 0}
                             sizes='(max-width: 768px) 100vw, 70vw'
                           />
