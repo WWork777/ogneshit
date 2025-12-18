@@ -11,8 +11,6 @@ export const projectsData = {
       '/images/Projects/siberia-arena/1.1.bmp',
       '/images/Projects/siberia-arena/1.jpg',
       '/images/Projects/siberia-arena/2.jpg',
-      // '/images/Projects/siberia-arena/3.jpg',
-      // '/images/Projects/siberia-arena/4.jpg',
       '/images/Projects/siberia-arena/5.jpg',
     ],
     about: `<p>Сибирь-Арена — многофункциональный спортивный комплекс в Новосибирске, предназначенный для проведения крупных спортивных мероприятий, концертов и культурных событий. Арена является одной из крупнейших в Сибири и может вмещать до 12 000 зрителей.</p>`,
@@ -33,7 +31,7 @@ export const projectsData = {
     image: '/images/Projects/luzhniki-tennis/12.bmp',
     images: [
       '/images/Projects/luzhniki-tennis/8.jpg',
-      '/images/Projects/luzhniki-tennis/11.jpg',
+      '/images/Projects/luzhniki-tennis/3.jpg',
       '/images/Projects/luzhniki-tennis/7.jpg',
       '/images/Projects/luzhniki-tennis/10.jpg',
       '/images/Projects/luzhniki-tennis/9.jpg',

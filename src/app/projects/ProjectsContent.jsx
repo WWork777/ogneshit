@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './ProjectsPage.module.scss';
@@ -17,25 +17,50 @@ export default function ProjectsContent() {
   const isRestoredRef = useRef(false);
   const userScrolledRef = useRef(false);
   const restoreTimeoutRef = useRef(null);
+  const scrollStartTimeRef = useRef(null);
   const projects = getAllProjects();
   const videos = getAllVideos();
 
   // Восстановление позиции скролла при монтировании
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !isRestoredRef.current) {
+  useLayoutEffect(() => {
+    // Сбрасываем флаги при монтировании для возможности восстановления
+    isRestoredRef.current = false;
+    userScrolledRef.current = false;
+    scrollStartTimeRef.current = Date.now();
+
+    if (typeof window !== 'undefined') {
       const savedScrollPosition = sessionStorage.getItem(PROJECTS_SCROLL_KEY);
 
       if (savedScrollPosition !== null) {
         const scrollPosition = parseInt(savedScrollPosition, 10);
+
+        // Проверяем, что позиция валидна (может быть и 0, но не NaN)
+        if (isNaN(scrollPosition) || scrollPosition < 0) {
+          isRestoredRef.current = true;
+          return;
+        }
+
         let lastScrollY = window.scrollY;
         let restoreAttempts = 0;
-        const maxAttempts = 3;
+        const maxAttempts = 6;
+
+        // Игнорируем скролл в первые 600ms после монтирования (это может быть автоматический скролл Next.js)
+        const isInitialScroll = () => {
+          return Date.now() - scrollStartTimeRef.current < 600;
+        };
 
         // Отслеживание пользовательского скролла
         const handleUserScroll = () => {
+          // Игнорируем скролл в первые 600ms
+          if (isInitialScroll()) {
+            lastScrollY = window.scrollY;
+            return;
+          }
+
           const currentScroll = window.scrollY;
-          // Если пользователь скроллит (разница больше 5px), останавливаем восстановление
-          if (Math.abs(currentScroll - lastScrollY) > 5) {
+          // Если пользователь скроллит (разница больше 15px), останавливаем восстановление
+          // Используем больший порог, чтобы игнорировать небольшие автоматические изменения
+          if (Math.abs(currentScroll - lastScrollY) > 15) {
             userScrolledRef.current = true;
             if (restoreTimeoutRef.current) {
               clearTimeout(restoreTimeoutRef.current);
@@ -55,7 +80,8 @@ export default function ProjectsContent() {
           const currentScroll = window.scrollY;
           const targetScroll = scrollPosition;
 
-          if (Math.abs(currentScroll - targetScroll) > 50) {
+          // Увеличиваем порог до 150px для более надежного восстановления
+          if (Math.abs(currentScroll - targetScroll) > 150) {
             window.scrollTo({
               top: targetScroll,
               behavior: 'instant',
@@ -70,7 +96,7 @@ export default function ProjectsContent() {
                   isRestoredRef.current = true;
                   window.removeEventListener('scroll', handleUserScroll);
                 }
-              }, 200);
+              }, 100);
             } else {
               isRestoredRef.current = true;
               window.removeEventListener('scroll', handleUserScroll);
@@ -84,15 +110,21 @@ export default function ProjectsContent() {
         // Отслеживаем пользовательский скролл
         window.addEventListener('scroll', handleUserScroll, { passive: true });
 
-        // Запускаем восстановление после небольшой задержки
-        restoreTimeoutRef.current = setTimeout(() => {
-          if (!userScrolledRef.current) {
+        // Запускаем восстановление с несколькими попытками для надежности
+        const attemptRestore = () => {
+          if (!userScrolledRef.current && !isRestoredRef.current) {
             restoreScroll();
-          } else {
-            isRestoredRef.current = true;
-            window.removeEventListener('scroll', handleUserScroll);
           }
-        }, 100);
+        };
+
+        // Первая попытка сразу (используем requestAnimationFrame для синхронизации с рендером)
+        requestAnimationFrame(() => {
+          restoreTimeoutRef.current = setTimeout(attemptRestore, 50);
+        });
+
+        // Дополнительные попытки для надежности
+        setTimeout(attemptRestore, 200);
+        setTimeout(attemptRestore, 400);
 
         // Очистка при размонтировании
         return () => {
@@ -107,12 +139,48 @@ export default function ProjectsContent() {
     }
   }, []);
 
-  // Сохранение позиции при клике на проект
-  const handleProjectClick = () => {
+  // Дополнительная проверка и восстановление через useEffect (резерв)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !isRestoredRef.current) {
+      const savedScrollPosition = sessionStorage.getItem(PROJECTS_SCROLL_KEY);
+      if (savedScrollPosition !== null) {
+        const scrollPosition = parseInt(savedScrollPosition, 10);
+        if (!isNaN(scrollPosition) && scrollPosition >= 0) {
+          // Проверяем текущую позицию и восстанавливаем, если нужно
+          const currentScroll = window.scrollY;
+          if (Math.abs(currentScroll - scrollPosition) > 50) {
+            // Небольшая задержка для гарантии, что DOM готов
+            setTimeout(() => {
+              window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+            }, 100);
+          }
+        }
+      }
+    }
+  }, []);
+
+  // Сохранение позиции скролла при взаимодействии с проектом
+  const saveScrollPosition = () => {
     if (typeof window !== 'undefined') {
-      const scrollPosition = window.scrollY;
+      const scrollPosition =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        0;
+      // Сохраняем позицию (включая 0, так как это тоже валидная позиция)
       sessionStorage.setItem(PROJECTS_SCROLL_KEY, scrollPosition.toString());
     }
+  };
+
+  // Сохранение позиции при клике на проект
+  const handleProjectClick = (e) => {
+    // Сохраняем позицию перед переходом
+    saveScrollPosition();
+  };
+
+  // Также сохраняем позицию при наведении для более надежного сохранения
+  const handleProjectMouseDown = () => {
+    saveScrollPosition();
   };
 
   const handleVideoPlay = (videoId) => {
@@ -171,6 +239,7 @@ export default function ProjectsContent() {
               key={project.id}
               className={styles.projectLink}
               onClick={handleProjectClick}
+              onMouseDown={handleProjectMouseDown}
             >
               <article className={styles.projectCard}>
                 <div

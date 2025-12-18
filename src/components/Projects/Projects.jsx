@@ -143,7 +143,7 @@ export default function Projects() {
                             : project.image.includes('omsk-avangard/88.jpg')
                             ? '10% center'
                             : project.image.includes('aviacia/aviacia-01.bmp')
-                            ? '80% center'
+                            ? '55% center'
                             : 'center center',
                         }}
                       />
