@@ -21,6 +21,11 @@ export const metadata = {
     icon: [
       {
         rel: 'icon',
+        type: 'image/x-icon',
+        url: '/favicon.ico',
+      },
+      {
+        rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
         url: '/favicon/favicon-32x32.png',
@@ -31,13 +36,8 @@ export const metadata = {
         sizes: '16x16',
         url: '/favicon/favicon-16x16.png',
       },
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        url: '/favicon/favicon.ico',
-      },
     ],
-    shortcut: '/favicon/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/favicon/apple-touch-icon.png',
   },
   manifest: '/favicon/site.webmanifest',
