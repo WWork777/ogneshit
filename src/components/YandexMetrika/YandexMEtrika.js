@@ -1,5 +1,5 @@
-"use client";
-import { useEffect } from "react";
+'use client';
+import { useEffect } from 'react';
 
 export default function YandexMetrika() {
   useEffect(() => {
@@ -20,9 +20,9 @@ export default function YandexMetrika() {
         (k.async = 1),
         (k.src = r),
         a.parentNode.insertBefore(k, a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
 
-    ym(105950742, "init", {
+    ym(105969033, 'init', {
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
@@ -34,9 +34,9 @@ export default function YandexMetrika() {
     <noscript>
       <div>
         <img
-          src="https://mc.yandex.ru/watch/105950742"
-          style={{ position: "absolute", left: "-9999px" }}
-          alt=""
+          src='https://mc.yandex.ru/watch/105969033'
+          style={{ position: 'absolute', left: '-9999px' }}
+          alt=''
         />
       </div>
     </noscript>
