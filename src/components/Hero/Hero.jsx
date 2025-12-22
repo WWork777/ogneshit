@@ -23,19 +23,19 @@ export default function Hero() {
 
   const slides = [
     {
-      title: 'СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности',
+      title: '«СПО ОГНЕЩИТ» комплексная реализация фасадов любой сложности',
       subtitle:
         'Производство, проектирование и монтаж всех типов светопрозрачных конструкций',
       image: '/images/Hero/hero-1.webp',
     },
     {
-      title: 'СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности',
+      title: '«СПО ОГНЕЩИТ» комплексная реализация фасадов любой сложности',
       subtitle:
         'Производство, проектирование и монтаж всех типов светопрозрачных конструкций',
       image: '/images/Hero/hero-2.webp',
     },
     {
-      title: 'СПО ОГНЕЩИТ комплексная реализация фасадов любой сложности',
+      title: '«СПО ОГНЕЩИТ» комплексная реализация фасадов любой сложности',
       subtitle:
         'Производство, проектирование и монтаж всех типов светопрозрачных конструкций',
       image: '/images/Hero/hero-3.webp',
@@ -79,7 +79,7 @@ export default function Hero() {
       clearInterval(progressIntervalRef.current);
     }
 
-    const autoplayDelay = 5000;
+    const autoplayDelay = 10000;
     const steps = 100;
     const stepTime = autoplayDelay / steps;
 
@@ -146,7 +146,7 @@ export default function Hero() {
         navigation={false}
         pagination={false}
         autoplay={{
-          delay: 5000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         loop={true}

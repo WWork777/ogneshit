@@ -21,24 +21,12 @@ export const metadata = {
     icon: [
       {
         rel: 'icon',
-        type: 'image/x-icon',
-        url: '/favicon.ico',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: '/favicon/favicon-32x32.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: '/favicon/favicon-16x16.png',
+        type: 'image/svg+xml',
+        url: '/favicon/favicon.svg',
       },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/favicon/apple-touch-icon.png',
+    shortcut: '/favicon/favicon.svg',
+    apple: '/favicon/favicon.svg',
   },
   manifest: '/favicon/site.webmanifest',
 };

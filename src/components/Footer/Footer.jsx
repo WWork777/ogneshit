@@ -1,8 +1,37 @@
 "use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+
+    if (pathname === '/') {
+      const element = document.querySelector(href);
+      if (element) {
+        // Разный отступ для разных секций
+        let headerOffset = 80;
+        if (href === '#about') {
+          headerOffset = 0; // Меньший отступ для "О компании"
+        }
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    } else {
+      // Если мы не на главной странице, переходим на главную с якорем
+      window.location.href = `/${href}`;
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -36,19 +65,39 @@ export default function Footer() {
         </div>
         <div className={styles.right}>
           <nav className={styles.nav}>
-            <a href="#about" className={styles.navLink}>
+            <a
+              href="#about"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, '#about')}
+            >
               О компании
             </a>
-            <a href="#portfolio" className={styles.navLink}>
+            <a
+              href="#portfolio"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, '#portfolio')}
+            >
               Портфолио
             </a>
-            <a href="#directions" className={styles.navLink}>
+            <a
+              href="#directions"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, '#directions')}
+            >
               Направления
             </a>
-            <a href="#catalog" className={styles.navLink}>
+            <a
+              href="#catalog"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, '#catalog')}
+            >
               Каталог продукции
             </a>
-            <a href="#contacts" className={styles.navLink}>
+            <a
+              href="#contacts"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, '#contacts')}
+            >
               Контакты
             </a>
           </nav>
