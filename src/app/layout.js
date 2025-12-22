@@ -2,6 +2,7 @@ import { Montserrat, Manrope } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import YandexMetrika from '@/components/YandexMetrika/YandexMEtrika';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <YandexMetrika />
       </body>
     </html>
   );
