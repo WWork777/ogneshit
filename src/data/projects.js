@@ -385,9 +385,9 @@ export const projectsData = {
     country: 'Россия',
     slug: 'novosibirsk-lokomotiv-arena',
     image:
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
+      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-02.webp',
     images: [
-      '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
+      // '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-01.webp',
       '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-02.webp',
       '/images/Projects/novosibirsk-lokomotiv-arena/novosibirsk-lokomotiv-arena-03.webp',
     ],
